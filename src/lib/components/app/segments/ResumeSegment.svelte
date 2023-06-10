@@ -3,7 +3,7 @@
     import SplitPageSegment from "../../generic/SplitPageSegment.svelte";
 </script>
 
-<SplitPageSegment {...$$restProps} id="about">
+<SplitPageSegment {...$$restProps} id="resume">
     <div slot="content">
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -17,8 +17,10 @@
     </div>
 
     <div slot="title">
-        <h1 class="shrink" in:redact>About Me</h1>
-        <h3 class="shrink" in:redact>Dennis Rigon</h3>
+        <h1 class="shrink" in:redact>Resume</h1>
+        <h3 class="shrink" in:redact>
+            Last updated {new Date().getFullYear()}
+        </h3>
     </div>
 </SplitPageSegment>
 

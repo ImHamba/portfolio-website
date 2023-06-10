@@ -2,8 +2,8 @@ export function redact(
     node,
     {
         delay = 0,
-        coverDuration = 200,
-        holdDuration = 300,
+        coverDuration = 300,
+        holdDuration = 200,
         uncoverDuration = 300,
         color = null,
     }
@@ -20,6 +20,7 @@ export function redact(
         return 1 - Math.pow(1 - x, 3);
     }
 
+    // animation to cover text from left to right with a coloured rectangle
     const coverState = (timer) => {
         return `
             background:
@@ -36,6 +37,7 @@ export function redact(
         return coverState(1);
     };
 
+    // animation to uncover text from left to right
     const uncoverState = (timer) => {
         return `
             background:
@@ -52,8 +54,9 @@ export function redact(
         delay,
         duration,
         css: (proportion) => {
-            // check if timer is within the cover or uncover duration
             let elapsedTime = proportion * duration;
+
+            // check if timer is within the cover, hold or uncover duration
             if (elapsedTime < coverDuration) {
                 return coverState(elapsedTime / coverDuration);
             } else if (elapsedTime < coverDuration + holdDuration) {

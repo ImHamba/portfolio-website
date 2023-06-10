@@ -3,7 +3,7 @@
     import SplitPageSegment from "../../generic/SplitPageSegment.svelte";
 </script>
 
-<SplitPageSegment {...$$restProps} id="about">
+<SplitPageSegment {...$$restProps} id="portfolio">
     <div slot="content">
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -17,8 +17,10 @@
     </div>
 
     <div slot="title">
-        <h1 class="shrink" in:redact>About Me</h1>
-        <h3 class="shrink" in:redact>Dennis Rigon</h3>
+        <h1 class="shrink" in:redact>Portfolio</h1>
+        <h3 class="shrink" in:redact>
+            All project source code can be found on Github
+        </h3>
     </div>
 </SplitPageSegment>
 

@@ -7,6 +7,7 @@
 
     let visible = false;
     export let number = "undefined page number";
+    export let fadeOut = false;
 
     let scroll;
 
@@ -18,7 +19,6 @@
     // determine position of panel on the site at initialisation
     onMount(() => {
         const rect = panel.getBoundingClientRect();
-        console.log(rect.top, rect.bottom);
         absPos = (rect.top + rect.bottom) / 2 + scroll;
         fullHeight = rect.bottom - rect.top;
     });
@@ -32,18 +32,29 @@
             // console.log(scroll, absPos, fullHeight, relPos, visible);
         }
     }
+
+    // update absPos and fullHeight if bounding rectangle changes due to window resize
+    $: {
+        if (absPos != null) {
+            const rect = panel.getBoundingClientRect();
+            absPos = (rect.top + rect.bottom) / 2 + scroll;
+            fullHeight = rect.bottom - rect.top;
+        }
+    }
+
+    // specify transition out animation depending on whether fade prop is true or false
+    const transitionOut = fadeOut
+        ? (node) => fade(node, { duration: 150 })
+        : () => {};
 </script>
 
 <svelte:window bind:scrollY={scroll} />
 
 <div class="panel" bind:this={panel}>
     {#if visible}
-        <CentredContainer>
-            <div class="title">
-                <slot />
-            </div>
-        </CentredContainer>
-
+        <div class="title" out:transitionOut>
+            <slot />
+        </div>
         <div class="number" in:redact>
             {number}
         </div>
@@ -57,7 +68,9 @@
 
     .title {
         position: fixed;
-        top: 43%;
+        top: 38%;
+        left: 15%;
+        width: 30%;
     }
 
     .number {
