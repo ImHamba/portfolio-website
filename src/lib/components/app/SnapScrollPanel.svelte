@@ -1,5 +1,5 @@
 <script>
-    import {range} from '../functions/util'
+    import {range} from '../../functions/util'
 
     let scroll = 0;
     $: console.log(scroll);

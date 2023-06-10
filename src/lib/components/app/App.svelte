@@ -1,6 +1,9 @@
 <script>
     import SnapScroll from "./SnapScrollPanel.svelte";
     import ContactModal from "./ContactModal.svelte";
+    import LandingSegment from "./segments/LandingSegment.svelte";
+    import AboutSegment from "./segments/AboutSegment.svelte";
+    import ContactSegment from "./segments/ContactSegment.svelte";
 
     let showContactModal = false;
 
@@ -12,9 +15,11 @@
 </script>
 
 <main>
-    <ContactModal visible={showContactModal} on:click={toggleContactModal}/>
-    <button on:click={toggleContactModal} />
-    <SnapScroll numPages={8} />
+    <LandingSegment />
+    <AboutSegment number="01" fadeOut={true}/>
+    <AboutSegment number="02" />
+    <AboutSegment number="03" fadeOut={true}/>
+    <ContactSegment />
 </main>
 
 <style>
