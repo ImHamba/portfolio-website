@@ -13,7 +13,6 @@ export function redact(
     // if color property not provided, set color as the text color
     if (color == null) {
         color = document.defaultView.getComputedStyle(node, null)["color"];
-        console.log(color);
     }
 
     function easeOutCubic(x) {

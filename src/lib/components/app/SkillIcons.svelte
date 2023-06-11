@@ -1,7 +1,13 @@
 <script>
+    import { fade } from "svelte/transition";
     import { range } from "../../functions/util";
     import SkillIcon from "./../generic/SkillIcon.svelte";
+    import { onMount } from "svelte";
+    import { flipTransition } from "../../functions/flipTransition";
 
+    let scroll;
+
+    // paths to icons for technologies
     let iconPaths = [
         "./images/python-icon.svg",
         "./images/javascript-icon.svg",
@@ -16,24 +22,67 @@
     iconPaths = iconPaths.concat(
         new Array(cols - (iconPaths.length % cols)).fill(null)
     );
+
+    let visible = false;
+    let grid;
+    let absPos = null;
+    let fullHeight;
+    let relPos;
+
+    // determine position of panel on the site at initialisation
+    onMount(() => {
+        const rect = grid.getBoundingClientRect();
+        absPos = rect.top + scroll;
+        fullHeight = window.innerHeight;
+    });
+
+    // update position of panel relative to viewport when user scrolls
+    // sets visible to true when the centre of panel is visible on screen
+    $: {
+        if (absPos != null) {
+            relPos = (scroll + fullHeight - absPos) / fullHeight;
+            visible = relPos >= 0.2 && relPos < 0.85;
+        }
+    }
+
+    // update absPos and fullHeight if bounding rectangle changes due to window resize
+    $: {
+        if (absPos != null) {
+            const rect = grid.getBoundingClientRect();
+            absPos = (rect.top + rect.bottom) / 2 + scroll;
+            fullHeight = window.innerHeight;
+        }
+    }
 </script>
 
-<div class="wrapper">
-    {#each range(0, rows) as row}
-        <div class="row" style:aspect-ratio={cols}>
-            {#each iconPaths.slice(row * cols, (row + 1) * cols) as iconPath}
-                <div class="col">
-                    {#if iconPath != null}
-                        <div class="tile">
-                            <SkillIcon imgPath={iconPath} />
-                        </div>
-                    {:else}
-                        <SkillIcon dummy={true} />
-                    {/if}
-                </div>
-            {/each}
-        </div>
-    {/each}
+<svelte:window bind:scrollY={scroll} />
+
+<div class="wrapper" bind:this={grid}>
+    {#if visible}
+        {#each range(0, rows) as row}
+            <div class="row" style:aspect-ratio={cols}>
+                {#each range(row * cols, (row + 1) * cols) as col}
+                    <div class="col">
+                        {#if iconPaths[col] != null}
+                            <div
+                                class="tile"
+                                in:flipTransition={{
+                                    delay: col * 25 + row * 50,
+                                    flipDuration1: 0,
+                                    flipDuration2: 500,
+                                }}
+                                out:fade
+                            >
+                                <SkillIcon imgPath={iconPaths[col]} />
+                            </div>
+                        {:else}
+                            <SkillIcon dummy={true} />
+                        {/if}
+                    </div>
+                {/each}
+            </div>
+        {/each}
+    {/if}
 </div>
 
 <style>
@@ -47,7 +96,6 @@
     .row {
         display: flex;
         width: 100%;
-        justify-content: space-around;
         align-items: center;
     }
 
@@ -57,7 +105,12 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 92%;
+        flex-grow: 1;
+        aspect-ratio: 1;
+        margin: 1%;
+
+        transform-style: preserve-3d;
+        perspective: 1000px;
     }
 
     .tile {
@@ -65,8 +118,10 @@
         justify-content: center;
         align-items: center;
         background-color: #f7f7f7;
-        border-radius: 25px;
-        width: 92%;
+        border-radius: 15%;
+        width: 100%;
         height: 100%;
+        backface-visibility: hidden;
+        border: 2px grey solid;
     }
 </style>
