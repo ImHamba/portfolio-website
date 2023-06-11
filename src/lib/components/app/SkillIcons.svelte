@@ -9,10 +9,18 @@
 
     // paths to icons for technologies
     let iconPaths = [
-        "./images/python-icon.svg",
-        "./images/javascript-icon.svg",
-        "./images/java-icon.svg",
-        "./images/svelte-icon.svg",
+        "./images/technologies/python-icon.svg",
+        "./images/technologies/javascript-icon.svg",
+        "./images/technologies/typescript-icon.svg",
+        "./images/technologies/java-icon.svg",
+
+        "./images/technologies/html-icon.svg",
+        "./images/technologies/css-icon.svg",
+        "./images/technologies/svelte-icon.svg",
+        null,
+
+        "./images/technologies/git-icon.svg",
+        "./images/technologies/github-icon.svg",
     ];
 
     const cols = 4;
@@ -53,6 +61,10 @@
             fullHeight = window.innerHeight;
         }
     }
+
+    const rowColToN = (row, col) => {
+        return row * cols + col;
+    };
 </script>
 
 <svelte:window bind:scrollY={scroll} />
@@ -61,19 +73,21 @@
     {#if visible}
         {#each range(0, rows) as row}
             <div class="row" style:aspect-ratio={cols}>
-                {#each range(row * cols, (row + 1) * cols) as col}
+                {#each range(0, cols) as col}
                     <div class="col">
-                        {#if iconPaths[col] != null}
+                        {#if iconPaths[rowColToN(row, col)] != null}
                             <div
                                 class="tile"
                                 in:flipTransition={{
-                                    delay: col * 25 + row * 50,
+                                    delay: col * 200 + row * 400,
                                     flipDuration1: 0,
                                     flipDuration2: 500,
                                 }}
                                 out:fade
                             >
-                                <SkillIcon imgPath={iconPaths[col]} />
+                                <SkillIcon
+                                    imgPath={iconPaths[rowColToN(row, col)]}
+                                />
                             </div>
                         {:else}
                             <SkillIcon dummy={true} />
