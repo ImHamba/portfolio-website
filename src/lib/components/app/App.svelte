@@ -9,6 +9,7 @@
     import PortfolioSegment from "./segments/PortfolioSegment.svelte";
     import IconLink from "../generic/IconLink.svelte";
     import IconLinks from "./IconLinks.svelte";
+    import SkillIcons from "./SkillIcons.svelte";
 
     let showContactModal = false;
 
@@ -20,6 +21,7 @@
 </script>
 
 <main>
+
     <div class="navbar-bound">
         <NavBar />
     </div>

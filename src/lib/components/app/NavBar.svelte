@@ -3,7 +3,7 @@
 
 <header class="navbar">
     <a class="logo" href="#home">
-        <img src="" alt="logo" />
+        <img src="./images/DR-icon.svg" alt="logo" />
     </a>
 
     <nav>
@@ -11,12 +11,9 @@
             <li><a href="#about">About</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-
-    <a class="contact" href="#contact">
-        <button>Contact</button>
-    </a>
 </header>
 
 <style>
@@ -29,6 +26,10 @@
         margin-right: auto;
     }
 
+    .logo img {
+        height: 20px;
+    }
+
     .navbar {
         display: flex;
         justify-content: flex-end;
@@ -39,9 +40,9 @@
         position: sticky;
         width: 100%;
         top: 0;
-        height: 60px;
+        height: 50px;
         background-color: #f7f7f7;
-        padding: 30px 20%;
+        padding: 10px 20%;
     }
 
     .nav_link li {
@@ -57,9 +58,9 @@
         color: #0088a9;
     }
 
-    button {
+    /* button {
         margin-left: 20px;
-        padding: 9px 25px;
+        padding: 5px 15px;
         border: none;
         border-radius: 50px;
         cursor: pointer;
@@ -70,5 +71,5 @@
 
     button:hover {
         background-color: #16a9ced4;
-    }
+    } */
 </style>

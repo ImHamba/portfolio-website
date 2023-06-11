@@ -4,6 +4,11 @@
 
 <div class="icon-links">
     <IconLink
+        imgPath="./images/up-icon.svg"
+        link="#home"
+        openInNewTab={false}
+    />
+    <IconLink
         imgPath="./images/github-mark.svg"
         link="https://github.com/ImHamba"
     />
