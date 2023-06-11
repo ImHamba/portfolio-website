@@ -1,31 +1,56 @@
 <script>
+    import { fade } from "svelte/transition";
     import { redact } from "../../../functions/redactTransition";
     import SplitPageSegment from "../../generic/SplitPageSegment.svelte";
 </script>
 
 <SplitPageSegment {...$$restProps} id="resume">
-    <div slot="content">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+    <div class="content" slot="content">
+        <div />
     </div>
 
-    <div slot="title">
-        <h1 class="shrink" in:redact>Resume</h1>
-        <h3 class="shrink" in:redact>
-            Last updated {new Date().getFullYear()}
-        </h3>
+    <div class="title" slot="title">
+        <div>
+            <h1 class="shrink" in:redact>Resume</h1>
+            <h3 class="shrink" in:redact>
+                References available upon request
+            </h3>
+        </div>
+
+        <div class="icon-container">
+            <a href="./resume/Test pdf.pdf" target="_blank">
+                <img
+                    class="icon"
+                    src="./images/pdf-icon.svg"
+                    alt="resume"
+                    in:fade
+                />
+            </a>
+        </div>
     </div>
 </SplitPageSegment>
 
 <style>
+    .title {
+        display: flex;
+    }
+
+    .icon-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        padding-top: 5%;
+    }
+
+    .icon {
+        height: 7vh;
+        width: 7vh;
+    }
+
     .shrink {
         width: fit-content;
+        white-space: nowrap;
     }
 </style>

@@ -20,6 +20,10 @@
         imgPath="./images/email-icon.svg"
         link="mailto:dennisrigondr@gmail.com"
     />
+    <IconLink
+        imgPath="./images/document-icon.svg"
+        link="./resume/Test pdf.pdf"
+    />
 </div>
 
 <style>

@@ -3,8 +3,15 @@
 </script>
 
 <PageSegment id="contact">
-    <h1>Contact Me</h1>
+    <div class="panel">
+        <h1>Contact Me</h1>
+    </div>
 </PageSegment>
 
 <style>
+    .panel {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
 </style>
