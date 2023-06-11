@@ -7,6 +7,8 @@
     import SkillsSegment from "./segments/SkillsSegment.svelte";
     import ResumeSegment from "./segments/ResumeSegment.svelte";
     import PortfolioSegment from "./segments/PortfolioSegment.svelte";
+    import IconLink from "../generic/IconLink.svelte";
+    import IconLinks from "./IconLinks.svelte";
 
     let showContactModal = false;
 
@@ -21,6 +23,9 @@
     <div class="navbar-bound">
         <NavBar />
     </div>
+
+    <IconLinks />
+
     <LandingSegment />
     <AboutSegment number="01" fadeOut={true} />
     <SkillsSegment number="02" />

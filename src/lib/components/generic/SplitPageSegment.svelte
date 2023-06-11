@@ -31,6 +31,6 @@
         display: flex;
         align-items: center;
         word-wrap: normal;
-        margin: 100px;
+        margin-right: 150px;
     }
 </style>

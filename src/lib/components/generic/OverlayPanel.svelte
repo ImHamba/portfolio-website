@@ -68,7 +68,7 @@
 
     .title {
         position: fixed;
-        top: 38%;
+        top: 40%;
         left: 15%;
         width: 30%;
     }
