@@ -1,10 +1,16 @@
 <script>
-    export let imgPath;
-    export let link;
+    export let imgPath = null;
+    export let link = null;
     export let openInNewTab = true;
+    export let description = null;
 </script>
 
-<a class="icon" href={link} target={openInNewTab ? "_blank" : null}>
+<a
+    class="icon"
+    href={link}
+    target={openInNewTab ? "_blank" : null}
+    title={description}
+>
     <img src={imgPath} alt="icon" />
 </a>
 

@@ -9,18 +9,18 @@
 
     // paths to icons for technologies
     let iconPaths = [
-        "./images/technologies/python-icon.svg",
-        "./images/technologies/javascript-icon.svg",
-        "./images/technologies/typescript-icon.svg",
-        "./images/technologies/java-icon.svg",
+        ["Python", "./images/technologies/python-icon.svg"],
+        ["Javascript", "./images/technologies/javascript-icon.svg"],
+        ["Typescript", "./images/technologies/typescript-icon.svg"],
+        ["Java", "./images/technologies/java-icon.svg"],
 
-        "./images/technologies/html-icon.svg",
-        "./images/technologies/css-icon.svg",
-        "./images/technologies/svelte-icon.svg",
+        ["Html", "./images/technologies/html-icon.svg"],
+        ["CSS", "./images/technologies/css-icon.svg"],
+        ["Svelte", "./images/technologies/svelte-icon.svg"],
         null,
 
-        "./images/technologies/git-icon.svg",
-        "./images/technologies/github-icon.svg",
+        ["Git", "./images/technologies/git-icon.svg"],
+        ["Github", "./images/technologies/github-icon.svg"],
     ];
 
     const cols = 4;
@@ -86,8 +86,9 @@
                                 out:fade
                             >
                                 <SkillIcon
-                                    imgPath={iconPaths[rowColToN(row, col)]}
+                                    imgPath={iconPaths[rowColToN(row, col)][1]}
                                 />
+                                {iconPaths[rowColToN(row, col)][0]}
                             </div>
                         {:else}
                             <SkillIcon dummy={true} />
@@ -131,6 +132,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         background-color: #f7f7f7;
         border-radius: 15%;
         width: 100%;
