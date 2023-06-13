@@ -160,16 +160,7 @@
 
 <svelte:window bind:innerWidth={pageWidth} bind:innerHeight={pageHeight} />
 
-<div class="container">
-    <canvas bind:this={canvas} />
-</div>
+<canvas bind:this={canvas} />
 
 <style>
-    .container {
-        position: absolute;
-        overflow: hidden;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-    }
 </style>

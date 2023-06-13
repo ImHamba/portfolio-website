@@ -1,6 +1,7 @@
 <script>
     import PageSegment from "../../generic/PageSegment.svelte";
     import Waves from "../Waves.svelte";
+    import WavesContainer from "../WavesContainer.svelte";
 </script>
 
 <PageSegment id="home">
@@ -25,7 +26,7 @@
             culpa qui officia deserunt mollit anim id est laborum.
         </p>
 
-        <Waves />
+        <WavesContainer />
     </div>
 </PageSegment>
 
