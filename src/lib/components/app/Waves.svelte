@@ -140,8 +140,10 @@
                     const grd_x1 = p[0].x;
                     const grd_y1 = p[0].y;
                     const t =
-                        [(p[0].x - p[3].x) * (p[2].x - p[3].x) + (p[0].y - p[3].y) * (p[2].y - p[3].y)] /
-                        [(p[2].x - p[3].x) ** 2 + (p[2].y - p[3].y) ** 2];
+                        [
+                            (p[0].x - p[3].x) * (p[2].x - p[3].x) +
+                                (p[0].y - p[3].y) * (p[2].y - p[3].y),
+                        ] / [(p[2].x - p[3].x) ** 2 + (p[2].y - p[3].y) ** 2];
                     const grd_x2 = p[3].x + t * (p[2].x - p[3].x);
                     const grd_y2 = p[3].y + t * (p[2].y - p[3].y);
 

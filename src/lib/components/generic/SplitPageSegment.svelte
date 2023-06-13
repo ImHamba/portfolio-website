@@ -2,9 +2,10 @@
     import OverlayPanel from "./OverlayPanel.svelte";
 
     export let id;
+    export let fixedHeight = true;
 </script>
 
-<div class="row" {id}>
+<div class="row" {id} style:height={fixedHeight ? "100%" : null}>
     <div class="column">
         <OverlayPanel {...$$restProps}>
             <slot name="title" />
@@ -19,7 +20,6 @@
 <style>
     .row {
         display: flex;
-        height: 100%;
     }
 
     .column {

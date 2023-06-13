@@ -49,7 +49,12 @@
     $: {
         if (absPos != null) {
             relPos = (scroll + fullHeight - absPos) / fullHeight;
-            visible = relPos >= 0.2 && relPos < 0.85;
+
+            // if already visible, will become invisible outside of full height of screen
+            if (visible) visible = relPos >= 0 && relPos < 1;
+
+            // if not current visible, will become visible within a reduced range of the screen
+            else visible = relPos >= 0.2 && relPos < 0.85;
         }
     }
 
