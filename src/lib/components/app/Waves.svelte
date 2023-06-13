@@ -67,13 +67,13 @@
                 {
                     mainWave: waveCurve(
                         distortedElapsed1,
-                        0.03 * pageHeight,
+                        0.02 * pageWidth,
                         0.3 * pageWidth,
                         20
                     ),
                     addlWave: waveCurve(
                         distortedElapsed1,
-                        0.03 * pageHeight,
+                        0.02 * pageWidth,
                         0.5 * pageWidth,
                         15
                     ),
@@ -83,17 +83,17 @@
                 {
                     mainWave: waveCurve(
                         distortedElapsed2,
-                        0.02 * pageHeight,
+                        0.014 * pageWidth,
                         0.25 * pageWidth,
                         15
                     ),
                     addlWave: waveCurve(
                         distortedElapsed2,
-                        0.02 * pageHeight,
+                        0.014 * pageWidth,
                         0.5 * pageWidth,
                         12
                     ),
-                    color: "#bababac3",
+                    color: "#bababa97",
                     rotation: 5,
                 },
                 ,
