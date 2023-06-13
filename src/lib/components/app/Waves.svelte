@@ -36,15 +36,15 @@
 
     // update ms elapsed since page was opened when time updates from interval
     $: elapsed = time - startTime;
-    $: distortedElapsed1 = distortElapsed(elapsed, 400, 8);
-    $: distortedElapsed2 = distortElapsed(elapsed, 200, 4);
+    $: distortedElapsed1 = distortElapsed(elapsed, 150, 5);
+    $: distortedElapsed2 = distortElapsed(elapsed, 150, 3);
 
     // keep canvas width updated if window size changes
     $: if (canvas != null) canvas.width = pageWidth;
     $: if (canvas != null) canvas.height = pageHeight;
 
-    const segmentThickness = 5;
-    const gradientWidth = 100;
+    const segmentThickness = 10;
+    $: gradientWidth = 0.08 * pageHeight;
     const translateX = 0;
     $: translateY = 0.9 * pageHeight;
 
@@ -69,13 +69,13 @@
                         distortedElapsed1,
                         0.02 * pageWidth,
                         0.3 * pageWidth,
-                        20
+                        40
                     ),
                     addlWave: waveCurve(
                         distortedElapsed1,
                         0.02 * pageWidth,
                         0.5 * pageWidth,
-                        15
+                        30
                     ),
                     color: "#eca80a3c",
                     rotation: 5,
@@ -85,13 +85,13 @@
                         distortedElapsed2,
                         0.014 * pageWidth,
                         0.25 * pageWidth,
-                        15
+                        25
                     ),
                     addlWave: waveCurve(
                         distortedElapsed2,
                         0.014 * pageWidth,
                         0.5 * pageWidth,
-                        12
+                        20
                     ),
                     color: "#bababa97",
                     rotation: 5,
@@ -113,29 +113,37 @@
                     let x4 = x1;
                     let y4 = y1 + gradientWidth;
 
-                    [x1, y1] = rotate(x1, y1, -wave.rotation);
-                    [x2, y2] = rotate(x2, y2, -wave.rotation);
-                    [x3, y3] = rotate(x3, y3, -wave.rotation);
-                    [x4, y4] = rotate(x4, y4, -wave.rotation);
+                    let p = [
+                        { x: x1, y: y1 },
+                        { x: x2, y: y2 },
+                        { x: x3, y: y3 },
+                        { x: x4, y: y4 },
+                    ];
 
-                    [x1, y1] = translate(x1, y1, translateX, translateY);
-                    [x2, y2] = translate(x2, y2, translateX, translateY);
-                    [x3, y3] = translate(x3, y3, translateX, translateY);
-                    [x4, y4] = translate(x4, y4, translateX, translateY);
+                    p = p.map((point) => {
+                        point = rotate(point.x, point.y, -wave.rotation);
+                        point = translate(
+                            point.x,
+                            point.y,
+                            translateX,
+                            translateY
+                        );
+                        return point;
+                    });
 
                     ctx.beginPath();
-                    ctx.moveTo(x1, y1);
-                    ctx.lineTo(x2, y2);
-                    ctx.lineTo(x3, y3);
-                    ctx.lineTo(x4, y4);
+                    ctx.moveTo(p[0].x, p[0].y);
+                    p.slice(1).forEach((point) => {
+                        ctx.lineTo(point.x, point.y);
+                    });
 
-                    const grd_x1 = x1;
-                    const grd_y1 = y1;
+                    const grd_x1 = p[0].x;
+                    const grd_y1 = p[0].y;
                     const t =
-                        [(x1 - x4) * (x3 - x4) + (y1 - y4) * (y3 - y4)] /
-                        [(x3 - x4) ** 2 + (y3 - y4) ** 2];
-                    const grd_x2 = x4 + t * (x3 - x4);
-                    const grd_y2 = y4 + t * (y3 - y4);
+                        [(p[0].x - p[3].x) * (p[2].x - p[3].x) + (p[0].y - p[3].y) * (p[2].y - p[3].y)] /
+                        [(p[2].x - p[3].x) ** 2 + (p[2].y - p[3].y) ** 2];
+                    const grd_x2 = p[3].x + t * (p[2].x - p[3].x);
+                    const grd_y2 = p[3].y + t * (p[2].y - p[3].y);
 
                     const gradient = ctx.createLinearGradient(
                         grd_x1,

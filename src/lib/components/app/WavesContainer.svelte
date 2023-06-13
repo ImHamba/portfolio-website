@@ -40,7 +40,7 @@
 
 <div class="container" bind:this={container}>
     {#if visible}
-        <div out:fade><Waves /></div>
+        <div in:fade={{duration:50}} out:fade><Waves /></div>
     {/if}
 </div>
 
