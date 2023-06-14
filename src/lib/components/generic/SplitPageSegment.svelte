@@ -7,11 +7,14 @@
     let scroll: number;
     let row: HTMLElement;
     let rowBottom: number;
+    let rowTop: number;
 
     $: {
         scroll;
         if (row != null) {
-            rowBottom = row.getBoundingClientRect().bottom;
+            const rect = row.getBoundingClientRect();
+            rowBottom = rect.bottom;
+            rowTop = rect.top;
         }
     }
 </script>
@@ -26,7 +29,11 @@
 >
     <div class="column">
         <div>
-            <OverlayPanel {...$$restProps} rectBtmOverride={rowBottom}>
+            <OverlayPanel
+                {...$$restProps}
+                rectBtmOverride={rowBottom}
+                rectTopOverride={rowTop}
+            >
                 <slot name="title" />
             </OverlayPanel>
         </div>
@@ -40,7 +47,6 @@
 <style>
     .row {
         display: flex;
-        border: 1px black solid;
         min-height: 100%;
     }
 
@@ -55,7 +61,7 @@
         min-height: 40vh;
     }
 
-    .column>div{
+    .column > div {
         align-self: stretch;
         width: 100%;
     }

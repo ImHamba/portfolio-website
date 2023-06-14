@@ -1,5 +1,5 @@
 <script>
-    export let imgPath;
+    export let imgPath = null;
     export let dummy = false;
 </script>
 

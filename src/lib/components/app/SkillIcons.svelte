@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
     import { fade } from "svelte/transition";
     import { range } from "../../functions/util";
     import SkillIcon from "./../generic/SkillIcon.svelte";
     import { flipTransition } from "../../functions/flipTransition";
     import CreateOnScrollWrapper from "../generic/CreateOnScrollWrapper.svelte";
 
-    let scroll;
+    let scroll: number;
 
     // paths to icons for technologies
     let iconPaths = [
@@ -31,14 +31,18 @@
         new Array(cols - (iconPaths.length % cols)).fill(null)
     );
 
-    const rowColToN = (row, col) => {
+    const rowColToN = (row: number, col: number) => {
         return row * cols + col;
     };
 </script>
 
 <svelte:window bind:scrollY={scroll} />
 
-<CreateOnScrollWrapper topLimitCreate="0.2" btmLimitCreate="0.2">
+<CreateOnScrollWrapper
+    topLimitCreate={0.2}
+    btmLimitCreate={0.2}
+    {...$$restProps}
+>
     <div class="wrapper">
         <div class="grid">
             {#each range(0, rows) as row}
