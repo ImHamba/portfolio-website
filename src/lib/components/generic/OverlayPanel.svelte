@@ -7,7 +7,7 @@
 
     let visible = false;
     export let number = "undefined page number";
-    export let fadeOut = false;
+    export let fadeOut = true;
 
     let scroll;
 
@@ -52,11 +52,11 @@
 
 <div class="panel" bind:this={panel}>
     {#if visible}
-        <div class="title" out:transitionOut>
-            <slot />
-        </div>
         <div class="number" in:redact>
             {number}
+        </div>
+        <div class="title" out:transitionOut>
+            <slot />
         </div>
     {/if}
 </div>
@@ -64,6 +64,7 @@
 <style>
     .panel {
         height: 100%;
+        width: 100%;
     }
 
     .title {
@@ -75,7 +76,23 @@
 
     .number {
         position: fixed;
-        top: 5%;
-        left: 3%;
+        top: 8%;
+        left: 5%;
+    }
+
+    @media screen and (max-width: 600px) {
+        .title {
+            position: relative;
+            top: 40%;
+            left: 15%;
+            width: 70%;
+        }
+
+        .number {
+            position: relative;
+            top: 15%;
+            left: 5%;
+            width: fit-content;
+        }
     }
 </style>

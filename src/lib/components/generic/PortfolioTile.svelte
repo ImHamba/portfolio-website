@@ -19,17 +19,21 @@
             </div>
 
             <div class="links">
-                <a href={githubLink} target="_blank">
-                    <img
-                        class="link-img"
-                        src="./images/github-white-icon.svg"
-                        alt="github"
-                    />
-                </a>
+                {#if githubLink != null}
+                    <a href={githubLink} target="_blank">
+                        <img
+                            class="link-img"
+                            src="./images/github-white-icon.svg"
+                            alt="github"
+                        />
+                    </a>
+                {/if}
 
-                <a class="button-wrapper" href={liveLink} target="_blank">
-                    <button>Live Demo</button>
-                </a>
+                {#if liveLink != null}
+                    <a class="button-wrapper" href={liveLink} target="_blank">
+                        <button>Live Demo</button>
+                    </a>
+                {/if}
             </div>
         </div>
     </div>
@@ -71,7 +75,7 @@
         width: 100%;
         height: 100%;
         object-fit: contain;
-        filter: blur(3px);
+        /* filter: blur(3px); */
         transition: all var(--hover-time) ease-in-out;
     }
 
@@ -81,7 +85,7 @@
         position: absolute;
         display: flex;
         flex-direction: column;
-        padding: 0 10% 10% 10%;
+        padding: 10%;
         text-align: center;
         transition: all var(--hover-time) ease-in-out;
     }

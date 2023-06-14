@@ -5,6 +5,9 @@
 
     const froggerDescription =
         "A small recreation of the classic arcade game Frogger, focusing on use of RxJS observables.";
+
+    const plantUmlDescription =
+        "An IntelliJ IDE extension to automatically generate PlantUML syntax from a Java project.";
 </script>
 
 <SplitPageSegment {...$$restProps} id="portfolio">
@@ -17,9 +20,11 @@
             liveLink="https://youtube.com"
         />
         <PortfolioTile
-            title="Frogger"
-            content={froggerDescription}
+            title="IntelliJ PlantUML Generator Extension"
+            content={plantUmlDescription}
             imagePath="./images/portfolio/frogger.png"
+            githubLink="https://github.com/ImHamba/Intellij-Plantuml-Generator-Plugin"
+            liveLink="https://youtube.com"
         />
     </div>
 
