@@ -1,19 +1,26 @@
 <script>
     import { redact } from "../../../functions/redactTransition";
+    import PortfolioTile from "../../generic/PortfolioTile.svelte";
     import SplitPageSegment from "../../generic/SplitPageSegment.svelte";
+
+    const froggerDescription =
+        "A small recreation of the classic arcade game Frogger, focusing on use of RxJS observables.";
 </script>
 
 <SplitPageSegment {...$$restProps} id="portfolio">
-    <div slot="content">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+    <div class="tile-container" slot="content">
+        <PortfolioTile
+            title="Frogger"
+            content={froggerDescription}
+            imagePath="./images/portfolio/frogger.png"
+            githubLink="https://github.com/ImHamba/Intellij-Plantuml-Generator-Plugin"
+            liveLink="https://youtube.com"
+        />
+        <PortfolioTile
+            title="Frogger"
+            content={froggerDescription}
+            imagePath="./images/portfolio/frogger.png"
+        />
     </div>
 
     <div slot="title">
@@ -25,6 +32,12 @@
 </SplitPageSegment>
 
 <style>
+    .tile-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
     .shrink {
         width: fit-content;
     }

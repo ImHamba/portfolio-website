@@ -20,6 +20,7 @@
 <style>
     .row {
         display: flex;
+        border: 1px black solid;
     }
 
     .column {
