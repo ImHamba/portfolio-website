@@ -6,10 +6,10 @@
 
     export let number = "undefined page number";
 
-    const transitionOut = (node) => fade(node, { duration: 150 })
+    const transitionOut = (node) => fade(node, { duration: 150 });
 </script>
 
-<CreateOnScrollWrapper>
+<CreateOnScrollWrapper {...$$restProps}>
     <div class="number" in:redact out:transitionOut>
         {number}
     </div>

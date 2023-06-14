@@ -71,6 +71,12 @@
         overflow: hidden;
     }
 
+    @media screen and (max-width: 1300px) {
+        .tile {
+            width: 100%;
+        }
+    }
+
     .image {
         width: 100%;
         height: 100%;

@@ -1,13 +1,31 @@
-<script>
+<script lang="ts">
     import OverlayPanel from "./OverlayPanel.svelte";
 
-    export let id;
+    export let id: string;
     export let fixedHeight = true;
+
+    let scroll: number;
+    let row: HTMLElement;
+    let rowBottom: number;
+
+    $: {
+        scroll;
+        if (row != null) {
+            rowBottom = row.getBoundingClientRect().bottom;
+        }
+    }
 </script>
 
-<div class="row row-mobile" {id} style:height={fixedHeight ? "100%" : null}>
+<svelte:window bind:scrollY={scroll} />
+
+<div
+    class="row"
+    {id}
+    style:height={fixedHeight ? "100%" : null}
+    bind:this={row}
+>
     <div class="column">
-        <OverlayPanel {...$$restProps}>
+        <OverlayPanel {...$$restProps} rectBtmOverride={rowBottom}>
             <slot name="title" />
         </OverlayPanel>
     </div>
@@ -43,10 +61,10 @@
             align-items: flex-start;
         }
 
-        .column:nth-child(1){
+        .column:nth-child(1) {
             flex-basis: 40%;
         }
-        .column:nth-child(2){
+        .column:nth-child(2) {
             flex-basis: 60%;
         }
     }

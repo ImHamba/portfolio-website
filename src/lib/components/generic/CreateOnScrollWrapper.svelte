@@ -4,6 +4,10 @@
     export let btmLimitCreate: number = 0;
     export let btmLimitDestroy: number = 0;
 
+    export let rectBtmOverride: number = null;
+
+    export let debug = false;
+
     let panel: HTMLElement = null;
     let visible = false;
     let scroll: number;
@@ -16,7 +20,15 @@
 
         if (panel != null) {
             const rect = panel.getBoundingClientRect();
-            const rectHeight = rect.bottom - rect.top;
+            let rectHeight: number;
+
+            // use either rectangle bottom or the bottom override
+            let rectBtm =
+                rectBtmOverride != null ? rectBtmOverride : rect.bottom;
+
+            if (debug) console.log(rectBtmOverride, rect.bottom);
+            rectHeight = rectBtm - rect.top;
+
             const midScreenPos = windowHeight / 2;
             let topLimit: number;
             let btmLimit: number;
@@ -24,12 +36,12 @@
             // if element is already visible, determine when its visibility based on the destroy limit proportions
             if (visible) {
                 topLimit = rect.top + rectHeight * topLimitDestroy;
-                btmLimit = rect.bottom - rectHeight * btmLimitDestroy;
+                btmLimit = rectBtm - rectHeight * btmLimitDestroy;
             }
             // otherwise determine its visibility based on the creation limit proportions
             else {
                 topLimit = rect.top + rectHeight * topLimitCreate;
-                btmLimit = rect.bottom - rectHeight * btmLimitCreate;
+                btmLimit = rectBtm - rectHeight * btmLimitCreate;
             }
 
             visible = btmLimit > midScreenPos && topLimit < midScreenPos;
