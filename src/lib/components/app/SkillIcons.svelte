@@ -2,8 +2,8 @@
     import { fade } from "svelte/transition";
     import { range } from "../../functions/util";
     import SkillIcon from "./../generic/SkillIcon.svelte";
-    import { onMount } from "svelte";
     import { flipTransition } from "../../functions/flipTransition";
+    import CreateOnScrollWrapper from "../generic/CreateOnScrollWrapper.svelte";
 
     let scroll;
 
@@ -31,42 +31,6 @@
         new Array(cols - (iconPaths.length % cols)).fill(null)
     );
 
-    let visible = false;
-    let grid;
-    let absPos = null;
-    let fullHeight;
-    let relPos;
-
-    // determine position of panel on the site at initialisation
-    onMount(() => {
-        const rect = grid.getBoundingClientRect();
-        absPos = rect.top + scroll;
-        fullHeight = window.innerHeight;
-    });
-
-    // update position of panel relative to viewport when user scrolls
-    // sets visible to true when the centre of panel is visible on screen
-    $: {
-        if (absPos != null) {
-            relPos = (scroll + fullHeight - absPos) / fullHeight;
-
-            // if already visible, will become invisible outside of full height of screen
-            if (visible) visible = relPos >= 0 && relPos < 1;
-
-            // if not current visible, will become visible within a reduced range of the screen
-            else visible = relPos >= 0.2 && relPos < 0.85;
-        }
-    }
-
-    // update absPos and fullHeight if bounding rectangle changes due to window resize
-    $: {
-        if (absPos != null) {
-            const rect = grid.getBoundingClientRect();
-            absPos = (rect.top + rect.bottom) / 2 + scroll;
-            fullHeight = window.innerHeight;
-        }
-    }
-
     const rowColToN = (row, col) => {
         return row * cols + col;
     };
@@ -74,43 +38,60 @@
 
 <svelte:window bind:scrollY={scroll} />
 
-<div class="wrapper" bind:this={grid}>
-    {#if visible}
-        {#each range(0, rows) as row}
-            <div class="row" style:aspect-ratio={cols}>
-                {#each range(0, cols) as col}
-                    <div class="col">
-                        {#if iconPaths[rowColToN(row, col)] != null}
-                            <div
-                                class="tile"
-                                in:flipTransition={{
-                                    delay: col * 200 + row * 400,
-                                    flipDuration1: 0,
-                                    flipDuration2: 500,
-                                }}
-                                out:fade
-                            >
-                                <SkillIcon
-                                    imgPath={iconPaths[rowColToN(row, col)][1]}
-                                />
-                                {iconPaths[rowColToN(row, col)][0]}
-                            </div>
-                        {:else}
-                            <SkillIcon dummy={true} />
-                        {/if}
-                    </div>
-                {/each}
-            </div>
-        {/each}
-    {/if}
-</div>
+<CreateOnScrollWrapper topLimitCreate="0.2" btmLimitCreate="0.2">
+    <div class="wrapper">
+        <div class="grid">
+            {#each range(0, rows) as row}
+                <div class="row" style:aspect-ratio={cols}>
+                    {#each range(0, cols) as col}
+                        <div class="col">
+                            {#if iconPaths[rowColToN(row, col)] != null}
+                                <div
+                                    class="tile"
+                                    in:flipTransition={{
+                                        delay: col * 200 + row * 400,
+                                        flipDuration1: 0,
+                                        flipDuration2: 500,
+                                    }}
+                                    out:fade
+                                >
+                                    <SkillIcon
+                                        imgPath={iconPaths[
+                                            rowColToN(row, col)
+                                        ][1]}
+                                    />
+                                    {iconPaths[rowColToN(row, col)][0]}
+                                </div>
+                            {:else}
+                                <SkillIcon dummy={true} />
+                            {/if}
+                        </div>
+                    {/each}
+                </div>
+            {/each}
+        </div>
+    </div>
+</CreateOnScrollWrapper>
 
 <style>
     .wrapper {
         display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+    }
+
+    .grid {
+        display: flex;
         flex-direction: column;
         width: 100%;
         margin-right: 15%;
+    }
+
+    @media screen and (max-width: 600px) {
+        .grid {
+            margin-right: 0px;
+        }
     }
 
     .row {

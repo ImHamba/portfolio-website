@@ -36,8 +36,8 @@
 
     // update ms elapsed since page was opened when time updates from interval
     $: elapsed = time - startTime;
-    $: distortedElapsed1 = distortElapsed(elapsed, 150, 5);
-    $: distortedElapsed2 = distortElapsed(elapsed, 150, 3);
+    $: distortedElapsed1 = distortElapsed(elapsed, 70, 4);
+    $: distortedElapsed2 = distortElapsed(elapsed, 40, 3);
 
     // keep canvas width updated if window size changes
     $: if (canvas != null) canvas.width = pageWidth;

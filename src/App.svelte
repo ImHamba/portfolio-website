@@ -10,6 +10,8 @@
     import IconLink from "./lib/components/generic/IconLink.svelte";
     import IconLinks from "./lib/components/app/IconLinks.svelte";
     import SkillIcons from "./lib/components/app/SkillIcons.svelte";
+    import CreateOnScrollWrapper from "./lib/components/generic/CreateOnScrollWrapper.svelte";
+    import OverlayPanel from "./lib/components/generic/OverlayPanel.svelte";
 
     let showContactModal = false;
 
@@ -21,7 +23,6 @@
 </script>
 
 <main>
-
     <div class="navbar-bound">
         <NavBar />
     </div>
