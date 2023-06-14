@@ -4,7 +4,14 @@
     import SplitPageSegment from "../../generic/SplitPageSegment.svelte";
 </script>
 
-<SplitPageSegment {...$$restProps} id="resume">
+<SplitPageSegment
+    {...$$restProps}
+    id="resume"
+    topLimitDestroy={0.1}
+    topLimitCreate={0.1}
+    btmLimitDestroy={0.2}
+    btmLimitCreate={0.2}
+>
     <div class="content" slot="content">
         <div />
     </div>
@@ -12,9 +19,7 @@
     <div class="title" slot="title">
         <div>
             <h1 class="shrink" in:redact>Resume</h1>
-            <h3 class="shrink" in:redact>
-                References available upon request
-            </h3>
+            <h3 class="shrink" in:redact>References available upon request</h3>
         </div>
 
         <div class="icon-container">
@@ -40,7 +45,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        
+
         padding-top: 5%;
     }
 
