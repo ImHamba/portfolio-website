@@ -10,11 +10,25 @@
         "An IntelliJ IDE extension to automatically generate PlantUML syntax from a Java project.";
 </script>
 
-<SplitPageSegment {...$$restProps} id="portfolio">
+<SplitPageSegment {...$$restProps} id="portfolio" fixedHeight={false}>
     <div class="tile-container" slot="content">
         <PortfolioTile
             title="Frogger"
             content={froggerDescription}
+            imagePath="./images/portfolio/frogger.png"
+            githubLink="https://github.com/ImHamba/Intellij-Plantuml-Generator-Plugin"
+            liveLink="https://youtube.com"
+        />
+        <PortfolioTile
+            title="IntelliJ PlantUML Generator Extension"
+            content={plantUmlDescription}
+            imagePath="./images/portfolio/frogger.png"
+            githubLink="https://github.com/ImHamba/Intellij-Plantuml-Generator-Plugin"
+            liveLink="https://youtube.com"
+        />
+        <PortfolioTile
+            title="IntelliJ PlantUML Generator Extension"
+            content={plantUmlDescription}
             imagePath="./images/portfolio/frogger.png"
             githubLink="https://github.com/ImHamba/Intellij-Plantuml-Generator-Plugin"
             liveLink="https://youtube.com"
@@ -41,7 +55,6 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 100%;
     }
     .shrink {
         width: fit-content;

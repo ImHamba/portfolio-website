@@ -25,9 +25,11 @@
     bind:this={row}
 >
     <div class="column">
-        <OverlayPanel {...$$restProps} rectBtmOverride={rowBottom}>
-            <slot name="title" />
-        </OverlayPanel>
+        <div>
+            <OverlayPanel {...$$restProps} rectBtmOverride={rowBottom}>
+                <slot name="title" />
+            </OverlayPanel>
+        </div>
     </div>
 
     <div class="column">
@@ -39,6 +41,7 @@
     .row {
         display: flex;
         border: 1px black solid;
+        min-height: 100%;
     }
 
     .column {
@@ -49,16 +52,22 @@
         word-wrap: normal;
         padding-right: calc(3% + 70px);
         overflow: hidden;
+        min-height: 40vh;
     }
 
-    @media screen and (max-width: 600px) {
+    .column>div{
+        align-self: stretch;
+        width: 100%;
+    }
+
+    @media screen and (max-width: 900px) {
         .row {
             flex-direction: column;
         }
 
         .column {
             padding-left: 7%;
-            align-items: flex-start;
+            flex-direction: row;
         }
 
         .column:nth-child(1) {

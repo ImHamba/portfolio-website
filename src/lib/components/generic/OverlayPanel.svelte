@@ -32,7 +32,7 @@
         left: 5%;
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 900px) {
         .title {
             position: relative;
             top: 40%;
