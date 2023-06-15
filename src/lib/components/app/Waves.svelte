@@ -77,7 +77,8 @@
                         0.5 * pageWidth,
                         30
                     ),
-                    color: "#eca80a3c",
+                    color1: "#0ad9ec57",
+                    color2: "#0ad9ec00",
                     rotation: 5,
                 },
                 {
@@ -93,7 +94,8 @@
                         0.5 * pageWidth,
                         20
                     ),
-                    color: "#bababa97",
+                    color1: "#057bca51",
+                    color2: "#057cca00",
                     rotation: 5,
                 },
                 ,
@@ -153,8 +155,8 @@
                         grd_x2,
                         grd_y2
                     );
-                    gradient.addColorStop(0, wave.color);
-                    gradient.addColorStop(1, "#ffffff00");
+                    gradient.addColorStop(0, wave.color1);
+                    gradient.addColorStop(1, wave.color2);
                     ctx.fillStyle = gradient;
                     ctx.fill();
 
