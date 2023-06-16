@@ -5,6 +5,7 @@
     import CreateOnScrollWrapper from "./CreateOnScrollWrapper.svelte";
 
     export let number = "undefined page number";
+    export let fullWidth = false;
 
     const transitionOut = (node) => fade(node, { duration: 150 });
 </script>
@@ -13,7 +14,7 @@
     <div class="number" in:redact out:transitionOut>
         {number}
     </div>
-    <div class="title" out:transitionOut>
+    <div class="title" style:width={fullWidth ? "70%" : "30%"} out:transitionOut>
         <slot />
     </div>
 </CreateOnScrollWrapper>
@@ -23,7 +24,6 @@
         position: fixed;
         top: 40%;
         left: 15%;
-        width: 30%;
     }
 
     .number {
