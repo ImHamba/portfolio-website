@@ -81,6 +81,9 @@
 </SplitPageSegment>
 
 <style>
+    * {
+        box-sizing: border-box;
+    }
     .title {
         display: flex;
         width: fit-content;
@@ -98,10 +101,8 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        padding-left: 25%;
-        padding-right: 25%;
+        padding: 0 20%;
 
-        padding-top: 2%;
         transition: all 1 ease-in-out 0s;
     }
 
@@ -127,16 +128,6 @@
     @media screen and (max-width: 900px) {
         .title {
             flex-direction: column;
-        }
-
-        .icon-container {
-            padding-left: 30px;
-
-            align-self: flex-start;
-        }
-
-        .pdf-wrapper {
-            padding: 0 0 5% 0;
         }
     }
 
