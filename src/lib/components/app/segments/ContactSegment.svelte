@@ -1,17 +1,29 @@
 <script>
     import PageSegment from "../../generic/PageSegment.svelte";
+    import ContactContainer from "../ContactContainer.svelte";
 </script>
 
 <PageSegment id="contact">
     <div class="panel">
-        <h1>Contact Me</h1>
+        <ContactContainer />
     </div>
 </PageSegment>
 
 <style>
     .panel {
         height: 100%;
+        width: 100%;
+        padding: 8% 30% 15% 30%;
+        box-sizing: border-box;
+        flex: 1;
+
         display: flex;
-        justify-content: center;
+        flex-flow: column;
+    }
+
+    @media screen and (max-width: 900px) {
+        .panel {
+            padding: 8% 15% 25% 15%;
+        }
     }
 </style>

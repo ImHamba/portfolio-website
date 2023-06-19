@@ -38,5 +38,6 @@
         align-items: center;
         flex-direction: column;
         padding: 0px 20%;
+        flex: 1;
     }
 </style>
