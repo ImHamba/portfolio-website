@@ -39,8 +39,6 @@
 <svelte:window bind:scrollY={scroll} />
 
 <CreateOnScrollWrapper
-    topLimitCreate={0.2}
-    btmLimitCreate={0.2}
     {...$$restProps}
 >
     <div class="wrapper">

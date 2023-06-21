@@ -8,6 +8,7 @@
     import ResumeSegment from "./lib/components/app/segments/ResumeSegment.svelte";
     import PortfolioSegment from "./lib/components/app/segments/PortfolioSegment.svelte";
     import IconLinks from "./lib/components/app/IconLinks.svelte";
+    import Modal from "./lib/components/generic/Modal.svelte";
 
     let showContactModal = false;
 

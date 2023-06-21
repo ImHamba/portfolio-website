@@ -29,8 +29,8 @@
         />
 
         <div slot="title">
-            <h1 class="shrink" in:redact>Skills</h1>
-            <h3 class="shrink" in:redact>What I can do for you</h3>
+            <h1 class="shrink" in:redact>Skills and Technologies</h1>
+            <h3 class="shrink" in:redact>Languages and tools I use</h3>
         </div>
     </SplitPageSegment>
 </div>

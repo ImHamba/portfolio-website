@@ -1,15 +1,18 @@
 <script>
-    import { fade } from 'svelte/transition'
-
     export let visible = false;
-    
 </script>
 
 {#if visible}
-    <div transition:fade class="backdrop" on:click|self on:keypress|self>
+    <div class="backdrop">
         <div class="modal">
-            <button on:click>x</button>
-            <slot/>
+            <img
+                on:click
+                on:keypress
+                src="./images/close-icon.svg"
+                alt="close"
+                class="close-btn"
+            />
+            <slot />
         </div>
     </div>
 {/if}
@@ -19,20 +22,35 @@
         width: 100%;
         height: 100%;
         position: fixed;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.25);
+
+        top: 0;
+        left: 0;
+        z-index: 1;
     }
 
     .modal {
-        padding: 10px;
         border-radius: 10px;
-        width: 50%;
+        width: 65%;
+        height: 60%;
         text-align: center;
         background: white;
 
         position: absolute;
         float: left;
         left: 50%;
-        top: 40%;
+        top: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    .close-btn {
+        position: absolute;
+        width: 3.5vh;
+        height: 3.5vh;
+        top: 0;
+        right: 0;
+        margin: 10px;
+        cursor: pointer;
+        opacity: 0.4;
     }
 </style>

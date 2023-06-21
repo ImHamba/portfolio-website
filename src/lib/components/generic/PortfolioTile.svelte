@@ -1,26 +1,53 @@
 <script lang="ts">
+    import PortfolioModal from "./PortfolioModal.svelte";
+
     export let title = "";
-    export let content = "";
+    export let description = "";
     export let imagePath: string;
     export let githubLink: string;
     export let liveLink: string;
+
+    let showModal = false;
+
+    const openModal = (e: Event) => {
+        showModal = true;
+    };
+
+    const closeModal = (e: Event) => {
+        showModal = false;
+    };
 </script>
+
+<PortfolioModal
+    visible={showModal}
+    {title}
+    {description}
+    {liveLink}
+    {githubLink}
+    {...$$restProps}
+    on:click={closeModal}
+/>
 
 <div class="tile-wrapper">
     <div class="tile">
         <img class="image" src={imagePath} alt="portfolio" />
 
-        <div class="text-container dimmer">
+        <div
+            class="text-container dimmer"
+            on:click={openModal}
+            on:keypress={openModal}
+        >
             <div class="title">
                 <h3>{title}</h3>
-            </div>
-            <div class="content">
-                {content}
             </div>
 
             <div class="links">
                 {#if githubLink != null}
-                    <a href={githubLink} target="_blank">
+                    <a
+                        href={githubLink}
+                        target="_blank"
+                        on:click|stopPropagation
+                    >
                         <img
                             class="link-img"
                             src="./images/github-white-icon.svg"
@@ -30,7 +57,12 @@
                 {/if}
 
                 {#if liveLink != null}
-                    <a class="button-wrapper" href={liveLink} target="_blank">
+                    <a
+                        class="button-wrapper"
+                        href={liveLink}
+                        target="_blank"
+                        on:click|stopPropagation
+                    >
                         <button>Live Demo</button>
                     </a>
                 {/if}
@@ -54,6 +86,8 @@
         width: 100%;
         padding: 5%;
         justify-content: center;
+
+        cursor: pointer;
     }
 
     .tile {
@@ -97,18 +131,11 @@
     }
 
     .title {
-        height: 30%;
+        height: 80%;
         width: 100%;
         text-align: center;
         color: white;
-    }
-
-    .content {
-        display: block;
-        height: 50%;
-        width: 100%;
-        color: white;
-        overflow: hidden;
+        padding: 0 5%;
     }
 
     .dimmer {
