@@ -5603,7 +5603,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			attr_dev(div, "class", "svelte-1rut8m2");
+    			attr_dev(div, "class", "svelte-1eukk0l");
     			add_location(div, file$5, 19, 20, 594);
     		},
     		m: function mount(target, anchor) {
@@ -5692,37 +5692,37 @@ var app = (function () {
     			a1 = element("a");
     			button1 = element("button");
     			button1.textContent = "Live Demo";
-    			attr_dev(img, "class", "modal-visual svelte-1rut8m2");
+    			attr_dev(img, "class", "modal-visual svelte-1eukk0l");
     			if (!src_url_equal(img.src, img_src_value = /*modalVisualPath*/ ctx[2])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "portfolio");
     			add_location(img, file$5, 12, 12, 339);
-    			attr_dev(div0, "class", "modal-visual-wrapper svelte-1rut8m2");
+    			attr_dev(div0, "class", "modal-visual-wrapper svelte-1eukk0l");
     			add_location(div0, file$5, 11, 8, 291);
-    			attr_dev(h2, "class", "title svelte-1rut8m2");
+    			attr_dev(h2, "class", "title svelte-1eukk0l");
     			add_location(h2, file$5, 15, 12, 471);
-    			attr_dev(div1, "class", "tags svelte-1rut8m2");
+    			attr_dev(div1, "class", "tags svelte-1eukk0l");
     			add_location(div1, file$5, 17, 12, 517);
-    			attr_dev(h3, "class", "about svelte-1rut8m2");
+    			attr_dev(h3, "class", "about svelte-1eukk0l");
     			add_location(h3, file$5, 23, 12, 671);
-    			attr_dev(div2, "class", "description svelte-1rut8m2");
+    			attr_dev(div2, "class", "description scroll svelte-1eukk0l");
     			add_location(div2, file$5, 25, 12, 715);
-    			attr_dev(button0, "class", "svelte-1rut8m2");
-    			add_location(button0, file$5, 31, 20, 928);
-    			attr_dev(a0, "class", "button-wrapper svelte-1rut8m2");
+    			attr_dev(button0, "class", "svelte-1eukk0l");
+    			add_location(button0, file$5, 31, 20, 935);
+    			attr_dev(a0, "class", "button-wrapper svelte-1eukk0l");
     			attr_dev(a0, "href", /*githubLink*/ ctx[4]);
     			attr_dev(a0, "target", "_blank");
-    			add_location(a0, file$5, 30, 16, 846);
-    			attr_dev(button1, "class", "svelte-1rut8m2");
-    			add_location(button1, file$5, 34, 20, 1069);
-    			attr_dev(a1, "class", "button-wrapper svelte-1rut8m2");
+    			add_location(a0, file$5, 30, 16, 853);
+    			attr_dev(button1, "class", "svelte-1eukk0l");
+    			add_location(button1, file$5, 34, 20, 1076);
+    			attr_dev(a1, "class", "button-wrapper svelte-1eukk0l");
     			attr_dev(a1, "href", /*liveLink*/ ctx[3]);
     			attr_dev(a1, "target", "_blank");
-    			add_location(a1, file$5, 33, 16, 989);
-    			attr_dev(div3, "class", "buttons svelte-1rut8m2");
-    			add_location(div3, file$5, 29, 12, 807);
-    			attr_dev(div4, "class", "text-wrapper svelte-1rut8m2");
+    			add_location(a1, file$5, 33, 16, 996);
+    			attr_dev(div3, "class", "buttons svelte-1eukk0l");
+    			add_location(div3, file$5, 29, 12, 814);
+    			attr_dev(div4, "class", "text-wrapper svelte-1eukk0l");
     			add_location(div4, file$5, 14, 8, 431);
-    			attr_dev(div5, "class", "modal-wrapper svelte-1rut8m2");
+    			attr_dev(div5, "class", "modal-wrapper svelte-1eukk0l");
     			add_location(div5, file$5, 10, 4, 254);
     		},
     		m: function mount(target, anchor) {
