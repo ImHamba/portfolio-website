@@ -27,7 +27,7 @@
 
             <h3 class="about">About</h3>
 
-            <div class="description">
+            <div class="description scroll">
                 {description}
             </div>
 
@@ -112,6 +112,7 @@
 
     .buttons {
         display: flex;
+        margin: 10px 0;
     }
 
     .button-wrapper {
@@ -133,5 +134,22 @@
 
     .button-wrapper button:hover {
         background-color: #e5e5e5ff;
+    }
+
+    .scroll {
+        overflow-y: auto;
+    }
+    .scroll::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .scroll::-webkit-scrollbar-track {
+        background: #f2f2f2ff;
+        border-radius: 10px;
+    }
+
+    .scroll::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #d9d9d9ff;
     }
 </style>
