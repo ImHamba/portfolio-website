@@ -2,7 +2,7 @@
     import PortfolioTile from "../../generic/PortfolioTile.svelte";
 
     const description =
-        "A small recreation of the classic arcade game Frogger, focusing on use of RxJS observables.";
+        "A recreation of the classic arcade game Frogger. This project was implemented using a functional reactive programming (FRP) style, focusing heavily on the use of RxJS observables to trigger and react to game events such as spawning cars using pure functions and all side effects centralised in a single location in the code.";
 
     const tags = ["Typescript", "Javascript", "RxJS", "Observables"];
 </script>

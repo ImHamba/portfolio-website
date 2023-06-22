@@ -33,10 +33,16 @@
 
             <div class="buttons">
                 <a class="button-wrapper" href={githubLink} target="_blank">
-                    <button>Code</button>
+                    <button>
+                        <img src="./images/code-icon.svg" alt="code icon" />
+                        <p>Code</p>
+                    </button>
                 </a>
                 <a class="button-wrapper" href={liveLink} target="_blank">
-                    <button>Live Demo</button>
+                    <button>
+                        <img src="./images/live-icon.svg" alt="code icon" />
+                        <p>Live Demo</p>
+                    </button>
                 </a>
             </div>
         </div>
@@ -46,10 +52,20 @@
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
 
+    * {
+        box-sizing: border-box;
+    }
+
     .modal-wrapper {
         width: 100%;
         height: 100%;
         display: flex;
+    }
+
+    @media screen and (max-width: 900px) {
+        .modal-wrapper {
+            flex-direction: column;
+        }
     }
 
     .modal-visual-wrapper {
@@ -57,8 +73,9 @@
         height: 100%;
 
         padding: 20px;
-        box-sizing: border-box;
         background-color: #e5e5e5ff;
+
+        flex: 1.5 1 0;
     }
 
     .modal-visual {
@@ -70,13 +87,22 @@
     .text-wrapper {
         width: 100%;
         height: 100%;
-        flex-basis: 70%;
+        flex: 1 1 0;
 
         display: flex;
         flex-direction: column;
 
-        box-sizing: border-box;
         padding: 3%;
+    }
+
+    @media screen and (max-width: 900px) {
+        .modal-visual-wrapper {
+            height: 30%;
+        }
+
+        .text-wrapper {
+            height: 70%;
+        }
     }
 
     .title {
@@ -95,6 +121,8 @@
         border: 1px black solid;
         border-radius: 4px;
         font-family: "Fira Code", monospace;
+        background-color: #f1f1f1ff;
+        /* color: white; */
     }
 
     .about {
@@ -113,10 +141,18 @@
     .buttons {
         display: flex;
         margin: 10px 0;
+
+        flex-wrap: wrap;
+    }
+
+    @media screen and (max-width: 900px) {
+        .buttons {
+            margin: 0;
+        }
     }
 
     .button-wrapper {
-        margin: 0 5px;
+        margin: 5px;
     }
 
     .button-wrapper button {
@@ -126,14 +162,34 @@
         height: 48px;
         max-height: 100%;
         cursor: pointer;
-        padding: 5px 15px;
+        padding: 5px 0;
         margin: 0;
         text-align: center;
         transition: all var(--link-hover-time) ease-in-out;
+
+        display: flex;
+        align-items: center;
     }
 
     .button-wrapper button:hover {
         background-color: #e5e5e5ff;
+    }
+
+    .button-wrapper button img {
+        width: 80%;
+        height: 80%;
+
+        padding: 0 10px 0 15px;
+    }
+
+    .button-wrapper button p {
+        width: 80%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+
+        padding: 0 15px 0 0;
     }
 
     .scroll {

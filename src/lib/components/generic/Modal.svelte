@@ -43,6 +43,13 @@
         transform: translate(-50%, -50%);
     }
 
+    @media screen and (max-width: 900px), screen and (max-height: 700px) {
+        .modal {
+            width: 90%;
+            height: 90%;
+        }
+    }
+
     .close-btn {
         position: absolute;
         width: 3.5vh;
