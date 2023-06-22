@@ -896,11 +896,11 @@ var app = (function () {
     			if (default_slot) default_slot.c();
     			if (!src_url_equal(img.src, img_src_value = "./images/close-icon.svg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "close");
-    			attr_dev(img, "class", "close-btn svelte-ypucp4");
+    			attr_dev(img, "class", "close-btn svelte-bln8q3");
     			add_location(img, file$m, 7, 12, 140);
-    			attr_dev(div0, "class", "modal svelte-ypucp4");
+    			attr_dev(div0, "class", "modal svelte-bln8q3");
     			add_location(div0, file$m, 6, 8, 107);
-    			attr_dev(div1, "class", "backdrop svelte-ypucp4");
+    			attr_dev(div1, "class", "backdrop svelte-bln8q3");
     			add_location(div1, file$m, 5, 4, 75);
     		},
     		m: function mount(target, anchor) {
@@ -5603,7 +5603,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			attr_dev(div, "class", "svelte-1eukk0l");
+    			attr_dev(div, "class", "svelte-14f2u0d");
     			add_location(div, file$5, 19, 20, 594);
     		},
     		m: function mount(target, anchor) {
@@ -5633,8 +5633,8 @@ var app = (function () {
     function create_default_slot(ctx) {
     	let div5;
     	let div0;
-    	let img;
-    	let img_src_value;
+    	let img0;
+    	let img0_src_value;
     	let t0;
     	let div4;
     	let h2;
@@ -5650,9 +5650,17 @@ var app = (function () {
     	let div3;
     	let a0;
     	let button0;
-    	let t9;
+    	let img1;
+    	let img1_src_value;
+    	let t8;
+    	let p0;
+    	let t10;
     	let a1;
     	let button1;
+    	let img2;
+    	let img2_src_value;
+    	let t11;
+    	let p1;
     	let each_value = /*tags*/ ctx[5];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -5665,7 +5673,7 @@ var app = (function () {
     		c: function create() {
     			div5 = element("div");
     			div0 = element("div");
-    			img = element("img");
+    			img0 = element("img");
     			t0 = space();
     			div4 = element("div");
     			h2 = element("h2");
@@ -5687,48 +5695,66 @@ var app = (function () {
     			div3 = element("div");
     			a0 = element("a");
     			button0 = element("button");
-    			button0.textContent = "Code";
-    			t9 = space();
+    			img1 = element("img");
+    			t8 = space();
+    			p0 = element("p");
+    			p0.textContent = "Code";
+    			t10 = space();
     			a1 = element("a");
     			button1 = element("button");
-    			button1.textContent = "Live Demo";
-    			attr_dev(img, "class", "modal-visual svelte-1eukk0l");
-    			if (!src_url_equal(img.src, img_src_value = /*modalVisualPath*/ ctx[2])) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "alt", "portfolio");
-    			add_location(img, file$5, 12, 12, 339);
-    			attr_dev(div0, "class", "modal-visual-wrapper svelte-1eukk0l");
+    			img2 = element("img");
+    			t11 = space();
+    			p1 = element("p");
+    			p1.textContent = "Live Demo";
+    			attr_dev(img0, "class", "modal-visual svelte-14f2u0d");
+    			if (!src_url_equal(img0.src, img0_src_value = /*modalVisualPath*/ ctx[2])) attr_dev(img0, "src", img0_src_value);
+    			attr_dev(img0, "alt", "portfolio");
+    			add_location(img0, file$5, 12, 12, 339);
+    			attr_dev(div0, "class", "modal-visual-wrapper svelte-14f2u0d");
     			add_location(div0, file$5, 11, 8, 291);
-    			attr_dev(h2, "class", "title svelte-1eukk0l");
+    			attr_dev(h2, "class", "title svelte-14f2u0d");
     			add_location(h2, file$5, 15, 12, 471);
-    			attr_dev(div1, "class", "tags svelte-1eukk0l");
+    			attr_dev(div1, "class", "tags svelte-14f2u0d");
     			add_location(div1, file$5, 17, 12, 517);
-    			attr_dev(h3, "class", "about svelte-1eukk0l");
+    			attr_dev(h3, "class", "about svelte-14f2u0d");
     			add_location(h3, file$5, 23, 12, 671);
-    			attr_dev(div2, "class", "description scroll svelte-1eukk0l");
+    			attr_dev(div2, "class", "description scroll svelte-14f2u0d");
     			add_location(div2, file$5, 25, 12, 715);
-    			attr_dev(button0, "class", "svelte-1eukk0l");
+    			if (!src_url_equal(img1.src, img1_src_value = "./images/code-icon.svg")) attr_dev(img1, "src", img1_src_value);
+    			attr_dev(img1, "alt", "code icon");
+    			attr_dev(img1, "class", "svelte-14f2u0d");
+    			add_location(img1, file$5, 32, 24, 969);
+    			attr_dev(p0, "class", "svelte-14f2u0d");
+    			add_location(p0, file$5, 33, 24, 1047);
+    			attr_dev(button0, "class", "svelte-14f2u0d");
     			add_location(button0, file$5, 31, 20, 935);
-    			attr_dev(a0, "class", "button-wrapper svelte-1eukk0l");
+    			attr_dev(a0, "class", "button-wrapper svelte-14f2u0d");
     			attr_dev(a0, "href", /*githubLink*/ ctx[4]);
     			attr_dev(a0, "target", "_blank");
     			add_location(a0, file$5, 30, 16, 853);
-    			attr_dev(button1, "class", "svelte-1eukk0l");
-    			add_location(button1, file$5, 34, 20, 1076);
-    			attr_dev(a1, "class", "button-wrapper svelte-1eukk0l");
+    			if (!src_url_equal(img2.src, img2_src_value = "./images/live-icon.svg")) attr_dev(img2, "src", img2_src_value);
+    			attr_dev(img2, "alt", "code icon");
+    			attr_dev(img2, "class", "svelte-14f2u0d");
+    			add_location(img2, file$5, 38, 24, 1243);
+    			attr_dev(p1, "class", "svelte-14f2u0d");
+    			add_location(p1, file$5, 39, 24, 1321);
+    			attr_dev(button1, "class", "svelte-14f2u0d");
+    			add_location(button1, file$5, 37, 20, 1209);
+    			attr_dev(a1, "class", "button-wrapper svelte-14f2u0d");
     			attr_dev(a1, "href", /*liveLink*/ ctx[3]);
     			attr_dev(a1, "target", "_blank");
-    			add_location(a1, file$5, 33, 16, 996);
-    			attr_dev(div3, "class", "buttons svelte-1eukk0l");
+    			add_location(a1, file$5, 36, 16, 1129);
+    			attr_dev(div3, "class", "buttons svelte-14f2u0d");
     			add_location(div3, file$5, 29, 12, 814);
-    			attr_dev(div4, "class", "text-wrapper svelte-1eukk0l");
+    			attr_dev(div4, "class", "text-wrapper svelte-14f2u0d");
     			add_location(div4, file$5, 14, 8, 431);
-    			attr_dev(div5, "class", "modal-wrapper svelte-1eukk0l");
+    			attr_dev(div5, "class", "modal-wrapper svelte-14f2u0d");
     			add_location(div5, file$5, 10, 4, 254);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div5, anchor);
     			append_dev(div5, div0);
-    			append_dev(div0, img);
+    			append_dev(div0, img0);
     			append_dev(div5, t0);
     			append_dev(div5, div4);
     			append_dev(div4, h2);
@@ -5751,13 +5777,19 @@ var app = (function () {
     			append_dev(div4, div3);
     			append_dev(div3, a0);
     			append_dev(a0, button0);
-    			append_dev(div3, t9);
+    			append_dev(button0, img1);
+    			append_dev(button0, t8);
+    			append_dev(button0, p0);
+    			append_dev(div3, t10);
     			append_dev(div3, a1);
     			append_dev(a1, button1);
+    			append_dev(button1, img2);
+    			append_dev(button1, t11);
+    			append_dev(button1, p1);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*modalVisualPath*/ 4 && !src_url_equal(img.src, img_src_value = /*modalVisualPath*/ ctx[2])) {
-    				attr_dev(img, "src", img_src_value);
+    			if (dirty & /*modalVisualPath*/ 4 && !src_url_equal(img0.src, img0_src_value = /*modalVisualPath*/ ctx[2])) {
+    				attr_dev(img0, "src", img0_src_value);
     			}
 
     			if (dirty & /*title*/ 1) set_data_dev(t1, /*title*/ ctx[0]);
@@ -6527,7 +6559,7 @@ var app = (function () {
     	return block;
     }
 
-    const description$1 = "A small recreation of the classic arcade game Frogger, focusing on use of RxJS observables.";
+    const description$1 = "A recreation of the classic arcade game Frogger. This project was implemented using a functional reactive programming (FRP) style, focusing heavily on the use of RxJS observables to trigger and react to game events such as spawning cars using pure functions and all side effects centralised in a single location in the code.";
 
     function instance$5($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
