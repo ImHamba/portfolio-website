@@ -14,6 +14,4 @@ export const translate = (x, y, xshift, yshift) => {
     return { x: x + xshift, y: y + yshift };
 };
 
-let x1 = 10;
-let y1 = 500;
-({ x1, y1 } = rotate(x1, y1, 20));
+export const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
