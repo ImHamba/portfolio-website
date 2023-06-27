@@ -36,17 +36,12 @@
 
     // update ms elapsed since page was opened when time updates from interval
     $: elapsed = time - startTime;
-    $: distortedElapsed1 = distortElapsed(elapsed, 70, 4);
+    $: distortedElapsed1 = distortElapsed(elapsed, 100, 6);
     $: distortedElapsed2 = distortElapsed(elapsed, 40, 3);
 
     // keep canvas width updated if window size changes
     $: if (canvas != null) canvas.width = pageWidth;
     $: if (canvas != null) canvas.height = pageHeight;
-
-    const segmentThickness = 10;
-    $: gradientWidth = 0.08 * pageHeight;
-    const translateX = 0;
-    $: translateY = 0.9 * pageHeight;
 
     // t: seconds to phase shift curve by
     // amp: amplitude of wave
@@ -58,96 +53,149 @@
         );
     };
 
-    // update curve if canvas changes due to window size change
+    // update the curve definition as time passes
+    let waves;
+    let scroll;
+    $: scrollLimit = Math.min(1, scroll / pageHeight);
+    $: console.log(scrollLimit);
+    $: waves = [
+        {
+            mainWave: waveCurve(
+                distortedElapsed1,
+                0.03 * pageWidth,
+                0.3 * pageWidth,
+                40
+            ),
+            addlWave: waveCurve(
+                distortedElapsed1,
+                0.02 * pageWidth,
+                0.5 * pageWidth,
+                30
+            ),
+            color1: "#edf9e2ff",
+            color2: "#edf9e200",
+            rotation: 5,
+            gradientThickness: 0.03 * pageHeight * scrollLimit,
+            translateY: 0.94 * pageHeight,
+        },
+        {
+            mainWave: waveCurve(
+                distortedElapsed2,
+                0.014 * pageWidth,
+                0.25 * pageWidth,
+                25
+            ),
+            addlWave: waveCurve(
+                distortedElapsed2,
+                0.014 * pageWidth,
+                0.5 * pageWidth,
+                20
+            ),
+            color1: "#e5edcbff",
+            color2: "#e5edcb00",
+            rotation: 5,
+            gradientThickness: 0.03 * pageHeight * scrollLimit,
+            translateY: 0.92 * pageHeight,
+        },
+    ];
+
+    // update the points associated with the wave curves as the curve equations change
+    const segmentThickness = 10;
+    const translateX = 0;
+    let wavePoints;
+    let gradientPoints;
+    $: {
+        [wavePoints, gradientPoints] = waves
+            .map((wave, i) => {
+                let thisWavePoints = [];
+                let thisGradientPoints = [];
+                for (let x = -10; x < 1 * pageWidth; x += segmentThickness) {
+                    let wavePoint = {
+                        x: x,
+                        y: wave.mainWave(x) + wave.addlWave(x),
+                    };
+                    let gradientPoint = {
+                        x: x,
+                        y: wavePoint.y + wave.gradientThickness,
+                    };
+
+                    wavePoint = rotate(
+                        wavePoint.x,
+                        wavePoint.y,
+                        -wave.rotation
+                    );
+                    wavePoint = translate(
+                        wavePoint.x,
+                        wavePoint.y,
+                        translateX,
+                        wave.translateY
+                    );
+                    gradientPoint = rotate(
+                        gradientPoint.x,
+                        gradientPoint.y,
+                        -wave.rotation
+                    );
+                    gradientPoint = translate(
+                        gradientPoint.x,
+                        gradientPoint.y,
+                        translateX,
+                        wave.translateY
+                    );
+
+                    thisWavePoints.push(wavePoint);
+                    thisGradientPoints.push(gradientPoint);
+                }
+                return [thisWavePoints, thisGradientPoints];
+            })
+            .reduce(
+                ([a, b], [ac, bc]) => {
+                    a.push(ac);
+                    b.push(bc);
+                    return [a, b];
+                },
+                [[], []]
+            );
+    }
+
+    // update canvas as curves change
     $: {
         if (canvas != null) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < waves.length; i++) {
+                let thisWavePoints = wavePoints[i];
+                let thisGradientPoints = gradientPoints[i];
 
-            const waves = [
-                {
-                    mainWave: waveCurve(
-                        distortedElapsed1,
-                        0.02 * pageWidth,
-                        0.3 * pageWidth,
-                        40
-                    ),
-                    addlWave: waveCurve(
-                        distortedElapsed1,
-                        0.02 * pageWidth,
-                        0.5 * pageWidth,
-                        30
-                    ),
-                    color1: "#0ad9ec57",
-                    color2: "#0ad9ec00",
-                    rotation: 5,
-                },
-                {
-                    mainWave: waveCurve(
-                        distortedElapsed2,
-                        0.014 * pageWidth,
-                        0.25 * pageWidth,
-                        25
-                    ),
-                    addlWave: waveCurve(
-                        distortedElapsed2,
-                        0.014 * pageWidth,
-                        0.5 * pageWidth,
-                        20
-                    ),
-                    color1: "#057bca51",
-                    color2: "#057cca00",
-                    rotation: 5,
-                },
-                ,
-            ];
+                ctx.beginPath();
+                ctx.moveTo(pageWidth, 0);
+                ctx.lineTo(0, 0);
 
-            waves.forEach((wave) => {
-                for (let x = -10; x < 1 * pageWidth; x += segmentThickness) {
-                    let x1 = x;
-                    let y1 = wave.mainWave(x1) + wave.addlWave(x1);
+                for (const point of thisWavePoints) {
+                    ctx.lineTo(point.x, point.y);
+                }
+                ctx.fillStyle = waves[i].color1;
+                ctx.fill();
 
-                    let x2 = x1 + segmentThickness;
-                    let y2 = wave.mainWave(x2) + wave.addlWave(x2);
-
-                    let x3 = x2;
-                    let y3 = y2 + gradientWidth;
-
-                    let x4 = x1;
-                    let y4 = y1 + gradientWidth;
-
-                    let p = [
-                        { x: x1, y: y1 },
-                        { x: x2, y: y2 },
-                        { x: x3, y: y3 },
-                        { x: x4, y: y4 },
-                    ];
-
-                    p = p.map((point) => {
-                        point = rotate(point.x, point.y, -wave.rotation);
-                        point = translate(
-                            point.x,
-                            point.y,
-                            translateX,
-                            translateY
-                        );
-                        return point;
-                    });
+                for (let j = 0; j < thisWavePoints.length - 1; j++) {
+                    const p1 = thisWavePoints[j];
+                    const p2 = thisWavePoints[j + 1];
+                    const p3 = thisGradientPoints[j + 1];
+                    const p4 = thisGradientPoints[j];
 
                     ctx.beginPath();
-                    ctx.moveTo(p[0].x, p[0].y);
-                    p.slice(1).forEach((point) => {
-                        ctx.lineTo(point.x, point.y);
-                    });
+                    ctx.moveTo(p1.x, p1.y);
+                    ctx.lineTo(p2.x, p2.y);
+                    ctx.lineTo(p3.x, p3.y);
+                    ctx.lineTo(p4.x, p4.y);
 
-                    const grd_x1 = p[0].x;
-                    const grd_y1 = p[0].y;
+                    const grd_x1 = p1.x;
+                    const grd_y1 = p1.y;
                     const t =
                         [
-                            (p[0].x - p[3].x) * (p[2].x - p[3].x) +
-                                (p[0].y - p[3].y) * (p[2].y - p[3].y),
-                        ] / [(p[2].x - p[3].x) ** 2 + (p[2].y - p[3].y) ** 2];
-                    const grd_x2 = p[3].x + t * (p[2].x - p[3].x);
-                    const grd_y2 = p[3].y + t * (p[2].y - p[3].y);
+                            (p1.x - p4.x) * (p3.x - p4.x) +
+                                (p1.y - p4.y) * (p3.y - p4.y),
+                        ] / [(p3.x - p4.x) ** 2 + (p3.y - p4.y) ** 2];
+                    const grd_x2 = p4.x + t * (p3.x - p4.x);
+                    const grd_y2 = p4.y + t * (p3.y - p4.y);
 
                     const gradient = ctx.createLinearGradient(
                         grd_x1,
@@ -155,22 +203,21 @@
                         grd_x2,
                         grd_y2
                     );
-                    gradient.addColorStop(0, wave.color1);
-                    gradient.addColorStop(1, wave.color2);
+                    gradient.addColorStop(0, waves[i].color1);
+                    gradient.addColorStop(1, waves[i].color2);
                     ctx.fillStyle = gradient;
                     ctx.fill();
-
-                    ctx.beginPath();
-                    ctx.moveTo(grd_x1, grd_y1);
-                    ctx.lineTo(grd_x2, grd_y2);
-                    // ctx.stroke();
                 }
-            });
+            }
         }
     }
 </script>
 
-<svelte:window bind:innerWidth={pageWidth} bind:innerHeight={pageHeight} />
+<svelte:window
+    bind:innerWidth={pageWidth}
+    bind:innerHeight={pageHeight}
+    bind:scrollY={scroll}
+/>
 
 <canvas bind:this={canvas} />
 

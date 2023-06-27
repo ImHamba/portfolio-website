@@ -5,11 +5,9 @@
 </script>
 
 <div class="container">
-    <CreateOnScrollWrapper btmLimitCreate="0.3">
-        <div in:fade={{ duration: 150 }} out:fade>
+        <div >
             <Waves />
         </div>
-    </CreateOnScrollWrapper>
 </div>
 
 <style>
