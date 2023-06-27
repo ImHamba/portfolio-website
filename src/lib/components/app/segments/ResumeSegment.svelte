@@ -92,6 +92,7 @@
     .content-container {
         width: 100%;
         height: 100%;
+        min-height: inherit;
         display: flex;
     }
 
@@ -109,6 +110,7 @@
     .pdf-wrapper {
         width: 100%;
         height: 100%;
+        min-height: inherit;
         display: flex;
         flex-direction: column;
 
@@ -128,6 +130,11 @@
     @media screen and (max-width: 900px) {
         .title {
             flex-direction: column;
+        }
+
+        .pdf-wrapper {
+            height: 1px;
+            padding: 0;
         }
     }
 
@@ -157,6 +164,5 @@
 
     .shrink {
         width: fit-content;
-        white-space: nowrap;
     }
 </style>

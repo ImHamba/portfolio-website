@@ -67,15 +67,15 @@
             ),
             addlWave: waveCurve(
                 distortedElapsed1,
-                0.02 * pageWidth,
+                0.015 * pageWidth,
                 0.5 * pageWidth,
                 30
             ),
             color1: "#edf9e2ff",
             color2: "#edf9e200",
-            rotation: 5,
+            rotation: 4,
             gradientThickness: 0.03 * pageHeight * scrollLimit,
-            translateY: 0.94 * pageHeight,
+            translateY: 0.91 * pageHeight,
         },
         {
             mainWave: waveCurve(
@@ -92,9 +92,9 @@
             ),
             color1: "#e5edcbff",
             color2: "#e5edcb00",
-            rotation: 5,
+            rotation: 4,
             gradientThickness: 0.03 * pageHeight * scrollLimit,
-            translateY: 0.92 * pageHeight,
+            translateY: 0.89 * pageHeight,
         },
     ];
 
@@ -105,10 +105,10 @@
     let gradientPoints;
     $: {
         [wavePoints, gradientPoints] = waves
-            .map((wave, i) => {
+            .map((wave) => {
                 let thisWavePoints = [];
                 let thisGradientPoints = [];
-                for (let x = -10; x < 1 * pageWidth; x += segmentThickness) {
+                for (let x = -10; x < 1.1 * pageWidth; x += segmentThickness) {
                     let wavePoint = {
                         x: x,
                         y: wave.mainWave(x) + wave.addlWave(x),

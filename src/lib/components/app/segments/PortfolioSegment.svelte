@@ -6,7 +6,7 @@
     import PlantumlTile from "../PortfolioTiles/PlantumlTile.svelte";
 </script>
 
-<SplitPageSegment {...$$restProps} id="portfolio" autoHeight={true}>
+<SplitPageSegment {...$$restProps} id="portfolio">
     <div class="tile-container" slot="content">
         <FroggerTile />
         <PlantumlTile />

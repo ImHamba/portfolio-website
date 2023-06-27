@@ -26,10 +26,10 @@
     <IconLinks />
 
     <LandingSegment />
-    <AboutSegment number="01" fadeOut={true} />
+    <AboutSegment number="01" />
     <SkillsSegment number="02" />
     <PortfolioSegment number="03" />
-    <ResumeSegment number="04" fadeOut={true} />
+    <ResumeSegment number="04" />
     <ContactSegment />
 </main>
 

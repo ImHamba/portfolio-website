@@ -23,12 +23,7 @@
 
 <svelte:window bind:scrollY={scroll} />
 
-<div
-    class="row"
-    {id}
-    style:min-height={finalSpecifiedHeight}
-    bind:this={row}
->
+<div class="row" {id} style:min-height={finalSpecifiedHeight} bind:this={row}>
     <div class="column">
         <div>
             <OverlayPanel
@@ -57,9 +52,13 @@
         display: flex;
         align-items: center;
         word-wrap: normal;
-        padding-right: calc(3% + 70px);
+
         overflow: hidden;
         min-height: 40vh;
+    }
+
+    .column:nth-child(2) {
+        padding-right: calc(3% + 70px);
     }
 
     .column > div {
@@ -73,15 +72,13 @@
         }
 
         .column {
-            padding-left: 7%;
+            padding-right: calc(3% + 70px);
+            padding-left: 10%;
             flex-direction: row;
         }
 
-        .column:nth-child(1) {
-            flex-basis: 40%;
-        }
         .column:nth-child(2) {
-            flex-basis: 60%;
+            min-height: 60vh;
         }
     }
 </style>

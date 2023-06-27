@@ -32,10 +32,6 @@
             { name: "Git", path: "./images/technologies/git-icon.svg" },
             { name: "Github", path: "./images/technologies/github-icon.svg" },
         ],
-        [
-            { name: "Git", path: "./images/technologies/git-icon.svg" },
-            { name: "Github", path: "./images/technologies/github-icon.svg" },
-        ],
     ];
 
     function easeInOutQuad(x: number): number {
@@ -54,9 +50,9 @@
                         <div
                             class="tile"
                             in:flipTransition={{
-                                delay: 400 * row + 300 * col,
-                                flipDuration1: 500,
-                                flipDuration2: 500,
+                                delay: 200 * row + 100 * col,
+                                flipDuration1: 400,
+                                flipDuration2: 400,
                                 ease: easeInOutQuad,
                             }}
                             out:fade
