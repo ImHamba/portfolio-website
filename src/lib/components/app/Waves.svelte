@@ -57,7 +57,6 @@
     let waves;
     let scroll;
     $: scrollLimit = Math.min(1, scroll / pageHeight);
-    $: console.log(scrollLimit);
     $: waves = [
         {
             mainWave: waveCurve(

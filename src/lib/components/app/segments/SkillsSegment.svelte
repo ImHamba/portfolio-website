@@ -4,6 +4,9 @@
     import SkillIcons from "../SkillIcons.svelte";
 
     let scroll: number;
+    let pageWidth: number;
+    let specifiedHeight: number;
+    $: specifiedHeight = pageWidth <= 900 ? 100 : 100;
     let outer: HTMLElement;
     let rowBottom: number;
     let rowTop: number;
@@ -18,10 +21,15 @@
     }
 </script>
 
-<svelte:window bind:scrollY={scroll} />
+<svelte:window bind:scrollY={scroll} bind:innerWidth={pageWidth} />
 
 <div class="outer" bind:this={outer}>
-    <SplitPageSegment {...$$restProps} id="skills" rectTopOverride={100}>
+    <SplitPageSegment
+        {...$$restProps}
+        id="skills"
+        rectTopOverride={100}
+        {specifiedHeight}
+    >
         <SkillIcons
             slot="content"
             rectBtmOverride={rowBottom}

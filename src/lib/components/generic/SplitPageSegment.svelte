@@ -2,7 +2,9 @@
     import OverlayPanel from "./OverlayPanel.svelte";
 
     export let id: string;
-    export let fixedHeight = true;
+    export let specifiedHeight: number = 0;
+
+    $: finalSpecifiedHeight = `${Math.max(specifiedHeight, 100)}vh`;
 
     let scroll: number;
     let row: HTMLElement;
@@ -24,7 +26,7 @@
 <div
     class="row"
     {id}
-    style:height={fixedHeight ? "100%" : null}
+    style:min-height={finalSpecifiedHeight}
     bind:this={row}
 >
     <div class="column">
@@ -47,7 +49,6 @@
 <style>
     .row {
         display: flex;
-        min-height: 100vh;
     }
 
     .column {

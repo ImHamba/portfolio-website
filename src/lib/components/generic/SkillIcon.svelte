@@ -14,7 +14,8 @@
     .icon {
         height: 50%;
         width: 50%;
-        padding: 8px;
+        padding: 10px;
         transition: all 0.3s ease 0s;
+        backface-visibility: hidden;
     }
 </style>

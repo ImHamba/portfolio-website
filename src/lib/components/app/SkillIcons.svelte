@@ -1,72 +1,68 @@
 <script lang="ts">
     import { fade } from "svelte/transition";
-    import { range } from "../../functions/util";
     import SkillIcon from "./../generic/SkillIcon.svelte";
     import { flipTransition } from "../../functions/flipTransition";
     import CreateOnScrollWrapper from "../generic/CreateOnScrollWrapper.svelte";
 
+    let pageWidth: number;
     let scroll: number;
 
     // paths to icons for technologies
     let iconPaths = [
-        ["Python", "./images/technologies/python-icon.svg"],
-        ["Javascript", "./images/technologies/javascript-icon.svg"],
-        ["Typescript", "./images/technologies/typescript-icon.svg"],
-        ["Java", "./images/technologies/java-icon.svg"],
+        [
+            { name: "Python", path: "./images/technologies/python-icon.svg" },
+            {
+                name: "Javascript",
+                path: "./images/technologies/javascript-icon.svg",
+            },
+            {
+                name: "Typescript",
+                path: "./images/technologies/typescript-icon.svg",
+            },
+            { name: "Java", path: "./images/technologies/java-icon.svg" },
+        ],
 
-        ["Html", "./images/technologies/html-icon.svg"],
-        ["CSS", "./images/technologies/css-icon.svg"],
-        ["Svelte", "./images/technologies/svelte-icon.svg"],
-        null,
+        [
+            { name: "Html", path: "./images/technologies/html-icon.svg" },
+            { name: "CSS", path: "./images/technologies/css-icon.svg" },
+            { name: "Svelte", path: "./images/technologies/svelte-icon.svg" },
+        ],
 
-        ["Git", "./images/technologies/git-icon.svg"],
-        ["Github", "./images/technologies/github-icon.svg"],
+        [
+            { name: "Git", path: "./images/technologies/git-icon.svg" },
+            { name: "Github", path: "./images/technologies/github-icon.svg" },
+        ],
+        [
+            { name: "Git", path: "./images/technologies/git-icon.svg" },
+            { name: "Github", path: "./images/technologies/github-icon.svg" },
+        ],
     ];
 
-    const cols = 4;
-    const rows = Math.ceil(iconPaths.length / cols);
-
-    // fill iconPaths up to a multiple of cols with dummy elements to keep grid aligned
-    iconPaths = iconPaths.concat(
-        new Array(cols - (iconPaths.length % cols)).fill(null)
-    );
-
-    const rowColToN = (row: number, col: number) => {
-        return row * cols + col;
-    };
+    function easeInOutQuad(x: number): number {
+        return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+    }
 </script>
 
-<svelte:window bind:scrollY={scroll} />
+<svelte:window bind:scrollY={scroll} bind:innerWidth={pageWidth} />
 
-<CreateOnScrollWrapper
-    {...$$restProps}
->
-    <div class="wrapper">
-        <div class="grid">
-            {#each range(0, rows) as row}
-                <div class="row" style:aspect-ratio={cols}>
-                    {#each range(0, cols) as col}
-                        <div class="col">
-                            {#if iconPaths[rowColToN(row, col)] != null}
-                                <div
-                                    class="tile"
-                                    in:flipTransition={{
-                                        delay: col * 200 + row * 400,
-                                        flipDuration1: 0,
-                                        flipDuration2: 500,
-                                    }}
-                                    out:fade
-                                >
-                                    <SkillIcon
-                                        imgPath={iconPaths[
-                                            rowColToN(row, col)
-                                        ][1]}
-                                    />
-                                    {iconPaths[rowColToN(row, col)][0]}
-                                </div>
-                            {:else}
-                                <SkillIcon dummy={true} />
-                            {/if}
+<CreateOnScrollWrapper {...$$restProps} alwaysVisible={pageWidth <= 500}>
+    <div class="wrapper1">
+        <div class="wrapper2">
+            {#each iconPaths as iconSegment, row}
+                <div class="segment scroll" transition:fade={{ duration: 100 }}>
+                    {#each iconSegment as icon, col}
+                        <div
+                            class="tile"
+                            in:flipTransition={{
+                                delay: 400 * row + 300 * col,
+                                flipDuration1: 500,
+                                flipDuration2: 500,
+                                ease: easeInOutQuad,
+                            }}
+                            out:fade
+                        >
+                            <SkillIcon imgPath={icon.path} />
+                            <div>{icon.name}</div>
                         </div>
                     {/each}
                 </div>
@@ -76,56 +72,109 @@
 </CreateOnScrollWrapper>
 
 <style>
-    .wrapper {
-        display: flex;
-        width: 100%;
+    .wrapper1 {
         height: 100%;
-        align-items: center;
-    }
-
-    .grid {
-        display: flex;
-        flex-direction: column;
         width: 100%;
-        margin-right: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    @media screen and (max-width: 600px) {
-        .grid {
-            margin-right: 0px;
+    .wrapper2 {
+        display: flex;
+        width: fit-content;
+        height: fit-content;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    .segment {
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 5px;
+        padding: 10px;
+        background-color: #f2f2f2;
+        border-radius: 20px;
+
+        perspective: 50rem;
+    }
+
+    @media screen and (max-width: 500px) {
+        .wrapper2 {
+            width: 100%;
+        }
+        .segment {
+            width: 100%;
+            align-items: start;
+            flex-wrap: nowrap;
+        }
+
+        .scroll {
+            overflow-x: auto;
+        }
+
+        .scroll::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .scroll::-webkit-scrollbar-track {
+            background: none;
+            margin: 0 20px;
+        }
+
+        .scroll::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: #d9d9d9ff;
         }
     }
 
-    .row {
-        display: flex;
-        width: 100%;
-        align-items: center;
-    }
-
-    .col {
-        display: flex;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        flex-grow: 1;
-        aspect-ratio: 1;
-        margin: 1%;
-
-        transform-style: preserve-3d;
-        perspective: 1000px;
-    }
-
     .tile {
+        --tile-size: 7vw;
+
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         background-color: #f7f7f7;
         border-radius: 15%;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
+        width: var(--tile-size);
+        height: var(--tile-size);
+
         border: 2px grey solid;
+        margin: 5px;
+        flex-shrink: 0;
+
+        transform-style: preserve-3d;
+    }
+
+    .tile > div {
+        padding: 0;
+        margin: 0;
+        backface-visibility: hidden;
+    }
+
+    @media screen and (max-width: 1500px) {
+        .tile {
+            --tile-size: 8vw;
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        .tile {
+            --tile-size: 9vw;
+        }
+    }
+    @media screen and (max-width: 900px) {
+        .tile {
+            --tile-size: 15vw;
+        }
+    }
+    @media screen and (max-width: 500px) {
+        .tile {
+            --tile-size: 25vw;
+        }
     }
 </style>

@@ -1,5 +1,4 @@
 <script lang="ts">
-    import ContactModal from "./lib/components/app/ContactModal.svelte";
     import LandingSegment from "./lib/components/app/segments/LandingSegment.svelte";
     import AboutSegment from "./lib/components/app/segments/AboutSegment.svelte";
     import ContactSegment from "./lib/components/app/segments/ContactSegment.svelte";
@@ -8,7 +7,6 @@
     import ResumeSegment from "./lib/components/app/segments/ResumeSegment.svelte";
     import PortfolioSegment from "./lib/components/app/segments/PortfolioSegment.svelte";
     import IconLinks from "./lib/components/app/IconLinks.svelte";
-    import Modal from "./lib/components/generic/Modal.svelte";
 
     let showContactModal = false;
 

@@ -7,8 +7,11 @@
     export let rectBtmOverride: number = null;
     export let rectTopOverride: number = null;
 
+    export let alwaysVisible = false;
+
     let panel: HTMLElement = null;
     let visible = false;
+
     let scroll: number;
     let windowHeight: number;
 
@@ -53,7 +56,7 @@
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 
 <div class="panel" bind:this={panel}>
-    {#if visible}
+    {#if visible || alwaysVisible}
         <slot />
     {/if}
 </div>
