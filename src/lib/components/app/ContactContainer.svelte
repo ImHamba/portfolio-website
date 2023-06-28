@@ -170,7 +170,7 @@
     }
 
     .submit-btn {
-        background-color: #00000000;
+        background-color: var(--bgr-color);
         cursor: pointer;
         border: grey 2px solid;
         padding: 14px 25px;
@@ -207,7 +207,6 @@
         display: flex;
         flex-direction: column;
         text-decoration: none;
-        color: black;
         padding: 10px;
 
         cursor: pointer;

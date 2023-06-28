@@ -150,10 +150,12 @@
 
     .icon-wrapper {
         display: flex;
+        width: fit-content;
         flex-direction: column;
+        align-items: center;
         text-decoration: none;
-        color: black;
         padding: 10px;
+        color: var(--txt-dark);
 
         cursor: pointer;
     }

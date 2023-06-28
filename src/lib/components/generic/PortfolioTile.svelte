@@ -41,7 +41,7 @@
                 <h3>{title}</h3>
             </div>
 
-            <div class="links">
+            <!-- <div class="links">
                 {#if githubLink != null}
                     <a
                         href={githubLink}
@@ -66,7 +66,7 @@
                         <button>Live Demo</button>
                     </a>
                 {/if}
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
@@ -95,7 +95,6 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        background-color: #f7f7f7;
         border-radius: 25px;
         width: 70%;
         min-width: 200px;
@@ -125,16 +124,17 @@
         position: absolute;
         display: flex;
         flex-direction: column;
+
+        justify-content: center;
+
         padding: 10%;
-        text-align: center;
         transition: all var(--hover-time) ease-in-out;
     }
 
     .title {
-        height: 80%;
         width: 100%;
         text-align: center;
-        color: white;
+        color: var(--txt-light);
         padding: 0 5%;
     }
 

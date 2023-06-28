@@ -15,3 +15,8 @@ export const translate = (x, y, xshift, yshift) => {
 };
 
 export const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
+
+export const getCSSvariable = (name) => {
+    var style = getComputedStyle(document.body);
+    return style.getPropertyValue(name);
+};
