@@ -13,8 +13,6 @@
 <SplitPageSegment
     {...$$restProps}
     id="resume"
-    topLimitDestroy={0.1}
-    topLimitCreate={0.1}
     btmLimitDestroy={0.2}
     btmLimitCreate={0.2}
 >
@@ -27,30 +25,27 @@
 
     <div class="content-container" slot="content">
         {#if iconMode}
-            <div class="icon-container">
-                <a class="icon-wrapper" href="./resume/Test pdf.pdf" download>
-                    <img
-                        class="icon"
-                        src="./images/pdf-icon.svg"
-                        alt="resume"
-                        in:fade
-                    />
-                    <p class="icon-label">Download</p>
-                </a>
+            <div class="btn-container">
+                <button class="resume-btn">
+                    <a href="./resume/Test pdf.pdf">
+                        <img src="./images/pdf-icon.svg" alt="resume" in:fade />
+                        <h4 class="prompt-text">Download</h4>
+                    </a>
+                </button>
 
-                <div
-                    class="icon-wrapper"
+                <button
+                    id="embed-btn"
+                    class="resume-btn"
                     on:click={toggleMode}
                     on:keypress={toggleMode}
                 >
                     <img
-                        class="icon"
                         src="./images/expand-icon.svg"
                         alt="embed pdf"
                         in:fade
                     />
-                    <p class="icon-label">Embed</p>
-                </div>
+                    <h4 class="prompt-text">Embed</h4>
+                </button>
             </div>
         {:else}
             <div class="pdf-wrapper">
@@ -96,15 +91,19 @@
         display: flex;
     }
 
-    .icon-container {
+    .btn-container {
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: space-around;
         align-items: center;
         padding: 0 20%;
+    }
 
-        transition: all 1 ease-in-out 0s;
+    @media screen and (max-width: 900px) {
+        .btn-container {
+            flex-direction: column;
+        }
     }
 
     .pdf-wrapper {
@@ -138,6 +137,53 @@
         }
     }
 
+    .resume-btn {
+        margin: 10px;
+        border-radius: 15px;
+        background-color: var(--accent5);
+        padding: 5px 20px;
+        border: none;
+        box-shadow: #00000066 0 2px 4px, #0000004d 0 7px 13px -3px,
+            #a88f00 0 -3px 0 inset;
+
+        transition: all 0.1s ease-out 0s;
+        cursor: pointer;
+        width: 100%;
+        max-width: 200px;
+        min-width: 150px;
+    }
+
+    .resume-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: #00000066 0 2px 4px, #0000004d 0 7px 13px,
+            #a88f00 0 -3px 0 inset;
+    }
+
+    .resume-btn a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: var(--txt-dark);
+    }
+
+    #embed-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .resume-btn img {
+        overflow: hidden;
+        height: 2.5em;
+        width: 2.5em;
+        min-height: 2.5em;
+        min-width: 2.5em;
+        animation: bob 5s infinite;
+        transition: all 0.3s ease-in-out 0s;
+        margin-right: 10px;
+    }
+
     .icon {
         height: 7vh;
         width: 7vh;
@@ -145,7 +191,7 @@
     }
 
     .icon:hover {
-        transform: scale(1.05);
+        transform: scale(1.1);
     }
 
     .icon-wrapper {
@@ -158,10 +204,6 @@
         color: var(--txt-dark);
 
         cursor: pointer;
-    }
-
-    .icon-label {
-        text-align: center;
     }
 
     .shrink {
