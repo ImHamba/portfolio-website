@@ -8,10 +8,6 @@
 
 <style>
     .panel {
-        display: block;
-        overflow: auto;
         min-height: 100vh;
-        display: flex;
-        flex-flow: column;
     }
 </style>

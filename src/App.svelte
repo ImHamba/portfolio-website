@@ -19,9 +19,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <main>
-    <div class="navbar-bound">
-        <NavBar />
-    </div>
+    <NavBar />
 
     <IconLinks />
 
@@ -35,12 +33,6 @@
 
 <style>
     main {
-        width: 100%;
-    }
-
-    .navbar-bound {
-        position: absolute;
-        height: 50%;
         width: 100%;
     }
 </style>

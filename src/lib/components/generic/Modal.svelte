@@ -41,6 +41,7 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        overflow: hidden;
     }
 
     @media screen and (max-width: 900px), screen and (max-height: 700px) {

@@ -4,18 +4,16 @@
     import CreateOnScrollWrapper from "../generic/CreateOnScrollWrapper.svelte";
 </script>
 
-<div class="container">
-        <div >
-            <Waves />
-        </div>
+<div id="waves-container">
+    <Waves />
 </div>
 
 <style>
-    .container {
-        position: absolute;
-        overflow: hidden;
-        width: 100%;
-        height: 100%;
+    #waves-container {
+        grid-row-start: 1;
+        grid-column-start: 1;
+
+        grid-template-columns: 1fr;
         z-index: -1;
     }
 </style>

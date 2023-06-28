@@ -11,6 +11,7 @@
 
 <style>
     .panel {
+        min-height: inherit;
         height: 100%;
         width: 100%;
         padding: 8% 30% 15% 30%;
