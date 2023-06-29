@@ -2,6 +2,8 @@
     import { fade } from "svelte/transition";
     import { redact } from "../../../functions/redactTransition";
     import SplitPageSegment from "../../generic/SplitPageSegment.svelte";
+    import SpecialButton from "../../generic/SpecialButton.svelte";
+    import { getCSSvariable } from "../../../functions/util";
 
     let iconMode = true;
 
@@ -26,26 +28,40 @@
     <div class="content-container" slot="content">
         {#if iconMode}
             <div class="btn-container">
-                <button class="resume-btn">
-                    <a href="./resume/Test pdf.pdf">
-                        <img src="./images/pdf-icon.svg" alt="resume" in:fade />
-                        <h4 class="prompt-text">Download</h4>
-                    </a>
-                </button>
-
-                <button
-                    id="embed-btn"
-                    class="resume-btn"
-                    on:click={toggleMode}
-                    on:keypress={toggleMode}
-                >
-                    <img
-                        src="./images/expand-icon.svg"
-                        alt="embed pdf"
-                        in:fade
-                    />
-                    <h4 class="prompt-text">Embed</h4>
-                </button>
+                <div>
+                    <SpecialButton
+                        --color1={getCSSvariable("accent5")}
+                        --color2="#a88f00"
+                    >
+                        <a
+                            class="resume-btn"
+                            href="./resume/Test pdf.pdf"
+                            download
+                        >
+                            <img
+                                src="./images/pdf-icon.svg"
+                                alt="resume"
+                                in:fade
+                            />
+                            <h4 class="prompt-text">Download</h4>
+                        </a>
+                    </SpecialButton>
+                </div>
+                <div on:click={toggleMode} on:keypress={toggleMode}>
+                    <SpecialButton
+                        --color1={getCSSvariable("accent5")}
+                        --color2="#a88f00"
+                    >
+                        <div id="embed-btn" class="resume-btn">
+                            <img
+                                src="./images/expand-icon.svg"
+                                alt="embed pdf"
+                                in:fade
+                            />
+                            <h4 class="prompt-text">Embed</h4>
+                        </div>
+                    </SpecialButton>
+                </div>
             </div>
         {:else}
             <div class="pdf-wrapper">
@@ -89,21 +105,36 @@
         height: 100%;
         min-height: inherit;
         display: flex;
+        align-items: center;
+    }
+
+    @media screen and (max-width: 900px) {
+        .content-container {
+            align-items: start;
+        }
     }
 
     .btn-container {
         width: 100%;
-        height: 100%;
+        height: fit-content;
         display: flex;
-        justify-content: space-around;
         align-items: center;
-        padding: 0 20%;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0 10%;
     }
 
     @media screen and (max-width: 900px) {
         .btn-container {
             flex-direction: column;
         }
+    }
+
+    .btn-container > div {
+        margin: 10px;
+        flex: 1 1 0px;
+        min-width: 185px;
+        max-width: 200px;
     }
 
     .pdf-wrapper {
@@ -138,33 +169,14 @@
     }
 
     .resume-btn {
-        margin: 10px;
-        border-radius: 15px;
-        background-color: var(--accent5);
-        padding: 5px 20px;
-        border: none;
-        box-shadow: #00000066 0 2px 4px, #0000004d 0 7px 13px -3px,
-            #a88f00 0 -3px 0 inset;
-
-        transition: all 0.1s ease-out 0s;
-        cursor: pointer;
         width: 100%;
-        max-width: 200px;
-        min-width: 150px;
-    }
-
-    .resume-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: #00000066 0 2px 4px, #0000004d 0 7px 13px,
-            #a88f00 0 -3px 0 inset;
-    }
-
-    .resume-btn a {
         display: flex;
         align-items: center;
         justify-content: center;
         text-decoration: none;
         color: var(--txt-dark);
+
+        padding: 5px 20px;
     }
 
     #embed-btn {
@@ -177,11 +189,14 @@
         overflow: hidden;
         height: 2.5em;
         width: 2.5em;
-        min-height: 2.5em;
-        min-width: 2.5em;
         animation: bob 5s infinite;
         transition: all 0.3s ease-in-out 0s;
-        margin-right: 10px;
+        margin-right: 20px;
+    }
+
+    #embed-btn img {
+        height: 2em;
+        width: 2em;
     }
 
     .icon {

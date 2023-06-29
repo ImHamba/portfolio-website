@@ -57,7 +57,7 @@
         position: fixed;
         width: 100%;
         height: 50px;
-        background-color: #f7f7f7;
+        background-color: var(--grey-light);
         padding: 10px 20%;
 
         /* transition: all 0.3s ease 0s; */
@@ -70,11 +70,14 @@
 
     .nav_link li a {
         transition: all 0.3s ease 0s;
+        text-decoration: none;
+        color: var(--txt-dark);
+        font-weight: bold;
     }
 
-    .nav_link li a:hover {
+    /* .nav_link li a:hover {
         color: #0088a9;
-    }
+    } */
 
     /* button {
         margin-left: 20px;

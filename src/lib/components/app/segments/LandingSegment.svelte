@@ -1,5 +1,7 @@
 <script>
+    import { getCSSvariable } from "../../../functions/util";
     import PageSegment from "../../generic/PageSegment.svelte";
+    import SpecialButton from "../../generic/SpecialButton.svelte";
     import WavesContainer from "../WavesContainer.svelte";
 </script>
 
@@ -16,15 +18,20 @@
                     I'm a developer with a passion for all things coding and
                     tech, with a previous background in engineering.
                 </h3>
-                <button class="projects-btn">
-                    <a href="#portfolio">
-                        <img
-                            src="./images/down-arrow-icon.svg"
-                            alt="down arrow"
-                        />
-                        <h4 class="prompt-text">See my projects</h4>
-                    </a>
-                </button>
+                <div>
+                    <SpecialButton
+                        --color1={getCSSvariable("accent5")}
+                        --color2="#a88f00"
+                    >
+                        <a class="btn-content" href="#portfolio">
+                            <img
+                                src="./images/down-arrow-icon.svg"
+                                alt="down arrow"
+                            />
+                            <h4 class="prompt-text">See my projects</h4>
+                        </a>
+                    </SpecialButton>
+                </div>
             </div>
             <div class="image-panel">
                 <img
@@ -105,36 +112,20 @@
         }
     }
 
-    .projects-btn {
-        margin: 10px;
-        border-radius: 15px;
-        background-color: var(--accent5);
-        padding: 5px 20px;
-        border: none;
-        box-shadow: #00000066 0 2px 4px, #0000004d 0 7px 13px -3px,
-            #a88f00 0 -3px 0 inset;
-
-        transition: all 0.1s ease-out 0s;
-    }
-
-    .projects-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: #00000066 0 2px 4px, #0000004d 0 7px 13px,
-            #a88f00 0 -3px 0 inset;
-    }
-
-    .projects-btn a {
+    .btn-content {
         display: flex;
         align-items: center;
         text-decoration: none;
+        padding: 5px 20px;
     }
 
-    .projects-btn img {
+    .btn-content img {
         overflow: hidden;
         height: 2.5em;
         width: 2.5em;
         animation: bob 5s infinite;
         transition: all 0.3s ease-in-out 0s;
+        margin-right: 5px;
     }
 
     @keyframes bob {
@@ -150,7 +141,7 @@
     }
 
     .prompt-text {
-        color: black;
+        color: var(--txt-dark);
     }
 
     .image-panel {

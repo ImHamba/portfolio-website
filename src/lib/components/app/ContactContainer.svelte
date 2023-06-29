@@ -2,6 +2,8 @@
     import { fade } from "svelte/transition";
     //staticforms.xyz email key
     import { EMAIL_KEY } from "../../data/staticformskey";
+    import SpecialButton from "../generic/SpecialButton.svelte";
+    import { getCSSvariable } from "../../functions/util";
 
     let name;
     let email;
@@ -66,7 +68,14 @@
                 required
                 bind:value={contactMessage}
             />
-            <button class="submit-btn">Submit</button>
+            <div id="btn-wrapper">
+                <SpecialButton
+                    --color1="{getCSSvariable("accent5")}"
+                    --color2="#a88f00"
+                >
+                    <h4 id="btn-text">Submit</h4>
+                </SpecialButton>
+            </div>
 
             <input type="hidden" name="accessKey" value={EMAIL_KEY} />
             <input
@@ -169,20 +178,13 @@
         border-radius: 8px;
     }
 
-    .submit-btn {
-        background-color: var(--bgr-color);
-        cursor: pointer;
-        border: grey 2px solid;
-        padding: 14px 25px;
-        margin: 10px;
-        border-radius: 50px;
-        min-width: 25%;
-
-        transition: all 0.3s ease 0s;
+    #btn-text {
+        margin: 0;
+        padding: 20px 50px;
     }
 
-    .submit-btn:hover {
-        background-color: #f5f5f5ff;
+    #btn-wrapper {
+        margin: 20px;
     }
 
     .response {

@@ -1,5 +1,7 @@
 <script lang="ts">
+    import { getCSSvariable } from "../../functions/util";
     import Modal from "./Modal.svelte";
+    import SpecialButton from "./SpecialButton.svelte";
 
     export let title: string;
     export let description: string;
@@ -32,18 +34,33 @@
             </div>
 
             <div class="buttons">
-                <a class="button-wrapper" href={githubLink} target="_blank">
-                    <button>
-                        <img src="./images/code-icon.svg" alt="code icon" />
-                        <p>Code</p>
-                    </button>
-                </a>
-                <a class="button-wrapper" href={liveLink} target="_blank">
-                    <button>
-                        <img src="./images/live-icon.svg" alt="code icon" />
-                        <p>Live Demo</p>
-                    </button>
-                </a>
+                <div class="btn-wrapper">
+                    <SpecialButton
+                        --color1={getCSSvariable("grey-light")}
+                        --color2="#b8b8b8"
+                    >
+                        <a
+                            class="btn-content"
+                            href={githubLink}
+                            target="_blank"
+                        >
+                            <img src="./images/code-icon.svg" alt="code icon" />
+                            <h4>Code</h4>
+                        </a>
+                    </SpecialButton>
+                </div>
+
+                <div class="btn-wrapper">
+                    <SpecialButton
+                        --color1={getCSSvariable("grey-light")}
+                        --color2="#b8b8b8"
+                    >
+                        <a class="btn-content" href={liveLink} target="_blank">
+                            <img src="./images/live-icon.svg" alt="code icon" />
+                            <h4>Live Demo</h4>
+                        </a>
+                    </SpecialButton>
+                </div>
             </div>
         </div>
     </div>
@@ -73,7 +90,7 @@
         height: 100%;
 
         padding: 20px;
-        background-color: #e5e5e5ff;
+        background-color: var(--grey-light);
 
         flex: 1.5 1 0;
     }
@@ -93,6 +110,7 @@
         flex-direction: column;
 
         padding: 3%;
+        background-color: white;
     }
 
     @media screen and (max-width: 900px) {
@@ -117,12 +135,11 @@
 
     .tags > div {
         margin: 7px;
-        padding: 7px;
+        padding: 7px 10px;
         border: 1px black solid;
         border-radius: 4px;
         font-family: "Fira Code", monospace;
-        background-color: #f1f1f1ff;
-        /* color: white; */
+        background-color: var(--grey-light);
     }
 
     .about {
@@ -151,45 +168,38 @@
         }
     }
 
-    .button-wrapper {
-        margin: 5px;
+    .btn-wrapper {
+        margin: 8px 10px;
     }
 
-    .button-wrapper button {
-        background-color: #f6f6f6ff;
-        border: 1px solid black;
-        border-radius: 4px;
-        height: 48px;
+    .btn-content {
+        height: 53px;
         max-height: 100%;
         cursor: pointer;
-        padding: 5px 0;
+        padding: 5px 25px;
         margin: 0;
         text-align: center;
-        transition: all var(--link-hover-time) ease-in-out;
 
         display: flex;
         align-items: center;
+
+        text-decoration: none;
+        color: var(--txt-dark);
     }
 
-    .button-wrapper button:hover {
-        background-color: #e5e5e5ff;
+    .btn-content img {
+        width: 2.5em;
+        height: 2.5em;
+
+        padding-right: 10px;
     }
 
-    .button-wrapper button img {
-        width: 80%;
-        height: 80%;
-
-        padding: 0 10px 0 15px;
-    }
-
-    .button-wrapper button p {
+    .btn-content h4 {
         width: 80%;
         height: 80%;
         display: flex;
         align-items: center;
         white-space: nowrap;
-
-        padding: 0 15px 0 0;
     }
 
     .scroll {
@@ -200,12 +210,12 @@
     }
 
     .scroll::-webkit-scrollbar-track {
-        background: #f2f2f2ff;
+        background: var(--grey-light);
         border-radius: 10px;
     }
 
     .scroll::-webkit-scrollbar-thumb {
         border-radius: 10px;
-        background: #d9d9d9ff;
+        background: var(--custom-scrollbar-color);
     }
 </style>

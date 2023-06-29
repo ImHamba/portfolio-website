@@ -93,7 +93,7 @@
         flex-wrap: wrap;
         margin: 5px;
         padding: 10px;
-        background-color: #f2f2f2;
+        background-color: #ffd90046;
         border-radius: 20px;
 
         perspective: 50rem;
@@ -124,7 +124,7 @@
 
         .scroll::-webkit-scrollbar-thumb {
             border-radius: 10px;
-            background: #d9d9d9ff;
+            background: var(--custom-scrollbar-color);
         }
     }
 
