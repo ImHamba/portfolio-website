@@ -3,16 +3,22 @@
 * {
 	font-family: 'Montserrat', sans-serif;
 
-	--bgr-color: white;
+	--bgr-color: #f5f6fa;
 	
 	--accent1: #F1FFE7;
 	--accent2: #c2ffc4;
 	--accent3: #8cdda3;
 	--accent4: #32A287;
-	--accent5: #f4cf00;
+	--accent5: #ffd700;
 
 	--txt-light: #fcfcfc;
 	--txt-dark: #282121;
+
+	--grey-light: #f0f0f0;
+	--grey-accent: #e8e8e8;
+	--grey-dark: #b2b2b2;
+
+	--custom-scrollbar-color: #00000026;
 }
 
 html, body {
