@@ -3288,17 +3288,17 @@ var app = (function () {
     			t2 = space();
     			div1 = element("div");
     			img = element("img");
-    			attr_dev(br, "class", "svelte-kc1x41");
+    			attr_dev(br, "class", "svelte-igdtr1");
     			add_location(br, file$d, 90, 16, 2691);
-    			attr_dev(h1, "class", "svelte-kc1x41");
+    			attr_dev(h1, "class", "svelte-igdtr1");
     			add_location(h1, file$d, 88, 12, 2620);
-    			attr_dev(div0, "class", "response svelte-kc1x41");
+    			attr_dev(div0, "class", "response svelte-igdtr1");
     			add_location(div0, file$d, 87, 8, 2584);
-    			attr_dev(img, "class", "icon svelte-kc1x41");
+    			attr_dev(img, "class", "icon svelte-igdtr1");
     			if (!src_url_equal(img.src, img_src_value = "./images/back-icon.svg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "embed pdf");
     			add_location(img, file$d, 100, 12, 2926);
-    			attr_dev(div1, "class", "icon-wrapper svelte-kc1x41");
+    			attr_dev(div1, "class", "icon-wrapper svelte-igdtr1");
     			add_location(div1, file$d, 95, 8, 2788);
     		},
     		m: function mount(target, anchor) {
@@ -3412,23 +3412,23 @@ var app = (function () {
     			t6 = space();
     			input3 = element("input");
     			attr_dev(h1, "id", "title");
-    			attr_dev(h1, "class", "svelte-kc1x41");
+    			attr_dev(h1, "class", "svelte-igdtr1");
     			add_location(h1, file$d, 36, 8, 917);
     			attr_dev(input0, "name", "name");
-    			attr_dev(input0, "class", "name input svelte-kc1x41");
+    			attr_dev(input0, "class", "name input svelte-igdtr1");
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "Name*");
     			input0.required = true;
     			add_location(input0, file$d, 46, 16, 1255);
     			attr_dev(input1, "name", "email");
-    			attr_dev(input1, "class", "email input svelte-kc1x41");
+    			attr_dev(input1, "class", "email input svelte-igdtr1");
     			attr_dev(input1, "type", "email");
     			attr_dev(input1, "placeholder", "Email*");
     			input1.required = true;
     			add_location(input1, file$d, 54, 16, 1515);
-    			attr_dev(div0, "class", "small-fields svelte-kc1x41");
+    			attr_dev(div0, "class", "small-fields svelte-igdtr1");
     			add_location(div0, file$d, 45, 12, 1211);
-    			attr_dev(textarea, "class", "message input svelte-kc1x41");
+    			attr_dev(textarea, "class", "message input svelte-igdtr1");
     			attr_dev(textarea, "placeholder", "Leave your message here");
     			attr_dev(textarea, "name", "message");
     			textarea.required = true;
@@ -3437,19 +3437,19 @@ var app = (function () {
     			set_style(div, "--color1", getCSSvariable("accent5"));
     			set_style(div, "--color2", "#a88f00");
     			attr_dev(div1, "id", "btn-wrapper");
-    			attr_dev(div1, "class", "svelte-kc1x41");
+    			attr_dev(div1, "class", "svelte-igdtr1");
     			add_location(div1, file$d, 70, 12, 2032);
     			attr_dev(input2, "type", "hidden");
     			attr_dev(input2, "name", "accessKey");
     			input2.value = EMAIL_KEY;
-    			attr_dev(input2, "class", "svelte-kc1x41");
+    			attr_dev(input2, "class", "svelte-igdtr1");
     			add_location(input2, file$d, 79, 12, 2324);
     			attr_dev(input3, "type", "hidden");
     			attr_dev(input3, "name", "subject");
     			input3.value = input3_value_value = "Portfolio website message from " + /*name*/ ctx[0];
-    			attr_dev(input3, "class", "svelte-kc1x41");
+    			attr_dev(input3, "class", "svelte-igdtr1");
     			add_location(input3, file$d, 80, 12, 2396);
-    			attr_dev(form, "class", "form svelte-kc1x41");
+    			attr_dev(form, "class", "form svelte-igdtr1");
     			attr_dev(form, "action", "https://api.staticforms.xyz/submit");
     			attr_dev(form, "method", "post");
     			attr_dev(form, "target", "container");
@@ -3569,7 +3569,7 @@ var app = (function () {
     			h4 = element("h4");
     			h4.textContent = "Submit";
     			attr_dev(h4, "id", "btn-text");
-    			attr_dev(h4, "class", "svelte-kc1x41");
+    			attr_dev(h4, "class", "svelte-igdtr1");
     			add_location(h4, file$d, 75, 20, 2225);
     		},
     		m: function mount(target, anchor) {
@@ -3612,7 +3612,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			if_block.c();
-    			attr_dev(div, "class", "container svelte-kc1x41");
+    			attr_dev(div, "class", "container svelte-igdtr1");
     			add_location(div, file$d, 34, 0, 862);
     		},
     		l: function claim(nodes) {
@@ -3919,114 +3919,141 @@ var app = (function () {
 
     	let scrolling_timeout;
     	let header;
+    	let div;
     	let a0;
-    	let img;
-    	let img_src_value;
+    	let img0;
+    	let img0_src_value;
     	let t0;
+    	let img1;
+    	let img1_src_value;
+    	let t1;
     	let nav;
     	let ul;
     	let li0;
     	let a1;
-    	let t2;
+    	let t3;
     	let li1;
     	let a2;
-    	let t4;
+    	let t5;
     	let li2;
     	let a3;
-    	let t6;
+    	let t7;
     	let li3;
     	let a4;
     	let mounted;
     	let dispose;
-    	add_render_callback(/*onwindowscroll*/ ctx[3]);
+    	add_render_callback(/*onwindowscroll*/ ctx[10]);
+    	add_render_callback(/*onwindowresize*/ ctx[11]);
 
     	const block = {
     		c: function create() {
     			header = element("header");
+    			div = element("div");
     			a0 = element("a");
-    			img = element("img");
+    			img0 = element("img");
     			t0 = space();
+    			img1 = element("img");
+    			t1 = space();
     			nav = element("nav");
     			ul = element("ul");
     			li0 = element("li");
     			a1 = element("a");
-    			a1.textContent = "About";
-    			t2 = space();
+    			a1.textContent = "Skills";
+    			t3 = space();
     			li1 = element("li");
     			a2 = element("a");
     			a2.textContent = "Portfolio";
-    			t4 = space();
+    			t5 = space();
     			li2 = element("li");
     			a3 = element("a");
     			a3.textContent = "Resume";
-    			t6 = space();
+    			t7 = space();
     			li3 = element("li");
     			a4 = element("a");
     			a4.textContent = "Contact";
-    			if (!src_url_equal(img.src, img_src_value = "./images/DR-icon.svg")) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "alt", "logo");
-    			attr_dev(img, "class", "svelte-lkwyh5");
-    			add_location(img, file$b, 16, 8, 464);
-    			attr_dev(a0, "class", "logo svelte-lkwyh5");
+    			attr_dev(img0, "class", "icon svelte-nantzo");
+    			if (!src_url_equal(img0.src, img0_src_value = "./images/DR-icon.svg")) attr_dev(img0, "src", img0_src_value);
+    			attr_dev(img0, "alt", "logo");
+    			add_location(img0, file$b, 39, 12, 1045);
+    			attr_dev(a0, "class", "logo svelte-nantzo");
     			attr_dev(a0, "href", "#home");
-    			add_location(a0, file$b, 15, 4, 425);
-    			attr_dev(a1, "href", "#about");
-    			attr_dev(a1, "class", "svelte-lkwyh5");
-    			add_location(a1, file$b, 21, 16, 581);
-    			attr_dev(li0, "class", "svelte-lkwyh5");
-    			add_location(li0, file$b, 21, 12, 577);
+    			add_location(a0, file$b, 38, 8, 1002);
+    			attr_dev(img1, "id", "hamburger");
+    			if (!src_url_equal(img1.src, img1_src_value = "./images/hamburger-menu-icon.svg")) attr_dev(img1, "src", img1_src_value);
+    			attr_dev(img1, "alt", "open menu");
+    			attr_dev(img1, "class", "svelte-nantzo");
+    			add_location(img1, file$b, 42, 8, 1129);
+    			attr_dev(div, "class", "mobile-header svelte-nantzo");
+    			add_location(div, file$b, 37, 4, 965);
+    			attr_dev(a1, "href", "#skills");
+    			attr_dev(a1, "class", "svelte-nantzo");
+    			add_location(a1, file$b, 59, 16, 1613);
+    			attr_dev(li0, "class", "svelte-nantzo");
+    			add_location(li0, file$b, 59, 12, 1609);
     			attr_dev(a2, "href", "#portfolio");
-    			attr_dev(a2, "class", "svelte-lkwyh5");
-    			add_location(a2, file$b, 22, 16, 630);
-    			attr_dev(li1, "class", "svelte-lkwyh5");
-    			add_location(li1, file$b, 22, 12, 626);
+    			attr_dev(a2, "class", "svelte-nantzo");
+    			add_location(a2, file$b, 60, 16, 1664);
+    			attr_dev(li1, "class", "svelte-nantzo");
+    			add_location(li1, file$b, 60, 12, 1660);
     			attr_dev(a3, "href", "#resume");
-    			attr_dev(a3, "class", "svelte-lkwyh5");
-    			add_location(a3, file$b, 23, 16, 687);
-    			attr_dev(li2, "class", "svelte-lkwyh5");
-    			add_location(li2, file$b, 23, 12, 683);
+    			attr_dev(a3, "class", "svelte-nantzo");
+    			add_location(a3, file$b, 61, 16, 1721);
+    			attr_dev(li2, "class", "svelte-nantzo");
+    			add_location(li2, file$b, 61, 12, 1717);
     			attr_dev(a4, "href", "#contact");
-    			attr_dev(a4, "class", "svelte-lkwyh5");
-    			add_location(a4, file$b, 24, 16, 738);
-    			attr_dev(li3, "class", "svelte-lkwyh5");
-    			add_location(li3, file$b, 24, 12, 734);
-    			attr_dev(ul, "class", "nav_link svelte-lkwyh5");
-    			add_location(ul, file$b, 20, 8, 542);
-    			attr_dev(nav, "class", "svelte-lkwyh5");
-    			add_location(nav, file$b, 19, 4, 527);
-    			attr_dev(header, "class", "navbar svelte-lkwyh5");
+    			attr_dev(a4, "class", "svelte-nantzo");
+    			add_location(a4, file$b, 62, 16, 1772);
+    			attr_dev(li3, "class", "svelte-nantzo");
+    			add_location(li3, file$b, 62, 12, 1768);
+    			attr_dev(ul, "class", "nav-links expanded svelte-nantzo");
+    			set_style(ul, "--expanded-height", /*expanded*/ ctx[4] ? `${/*menuHeight*/ ctx[5]}px` : 0);
+    			add_location(ul, file$b, 52, 8, 1362);
+    			attr_dev(nav, "class", "svelte-nantzo");
+    			add_location(nav, file$b, 51, 4, 1347);
+    			attr_dev(header, "class", "navbar svelte-nantzo");
     			set_style(header, "top", `${/*navShift*/ ctx[1]}px`);
-    			add_location(header, file$b, 14, 0, 368);
+    			add_location(header, file$b, 36, 0, 908);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, header, anchor);
-    			append_dev(header, a0);
-    			append_dev(a0, img);
-    			append_dev(header, t0);
+    			append_dev(header, div);
+    			append_dev(div, a0);
+    			append_dev(a0, img0);
+    			append_dev(div, t0);
+    			append_dev(div, img1);
+    			append_dev(header, t1);
     			append_dev(header, nav);
     			append_dev(nav, ul);
     			append_dev(ul, li0);
     			append_dev(li0, a1);
-    			append_dev(ul, t2);
+    			append_dev(ul, t3);
     			append_dev(ul, li1);
     			append_dev(li1, a2);
-    			append_dev(ul, t4);
+    			append_dev(ul, t5);
     			append_dev(ul, li2);
     			append_dev(li2, a3);
-    			append_dev(ul, t6);
+    			append_dev(ul, t7);
     			append_dev(ul, li3);
     			append_dev(li3, a4);
+    			/*ul_binding*/ ctx[12](ul);
 
     			if (!mounted) {
-    				dispose = listen_dev(window, "scroll", () => {
-    					scrolling = true;
-    					clearTimeout(scrolling_timeout);
-    					scrolling_timeout = setTimeout(clear_scrolling, 100);
-    					/*onwindowscroll*/ ctx[3]();
-    				});
+    				dispose = [
+    					listen_dev(window, "scroll", () => {
+    						scrolling = true;
+    						clearTimeout(scrolling_timeout);
+    						scrolling_timeout = setTimeout(clear_scrolling, 100);
+    						/*onwindowscroll*/ ctx[10]();
+    					}),
+    					listen_dev(window, "resize", /*onwindowresize*/ ctx[11]),
+    					listen_dev(img1, "click", /*toggleMenu*/ ctx[6], false, false, false, false),
+    					listen_dev(img1, "keypress", /*toggleMenu*/ ctx[6], false, false, false, false),
+    					listen_dev(ul, "click", /*collapseMenu*/ ctx[7], false, false, false, false),
+    					listen_dev(ul, "keypress", /*collapseMenu*/ ctx[7], false, false, false, false)
+    				];
 
     				mounted = true;
     			}
@@ -4039,6 +4066,10 @@ var app = (function () {
     				scrolling_timeout = setTimeout(clear_scrolling, 100);
     			}
 
+    			if (dirty & /*expanded, menuHeight*/ 48) {
+    				set_style(ul, "--expanded-height", /*expanded*/ ctx[4] ? `${/*menuHeight*/ ctx[5]}px` : 0);
+    			}
+
     			if (dirty & /*navShift*/ 2) {
     				set_style(header, "top", `${/*navShift*/ ctx[1]}px`);
     			}
@@ -4047,8 +4078,9 @@ var app = (function () {
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(header);
+    			/*ul_binding*/ ctx[12](null);
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -4068,7 +4100,27 @@ var app = (function () {
     	validate_slots('NavBar', slots, []);
     	let scroll = 0;
     	let scrollHistory = [0, 0];
+
+    	// used to move the navbar into and out of view as the user scrolls up or down
     	let navShift = 0;
+
+    	let navShiftChange;
+    	let menuHeight;
+    	let innerWidth;
+
+    	// toggles hamburger menu in mobile view
+    	let menu;
+
+    	let expanded = false;
+
+    	const toggleMenu = () => {
+    		$$invalidate(4, expanded = !expanded);
+    	};
+
+    	const collapseMenu = () => {
+    		$$invalidate(4, expanded = false);
+    	};
+
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -4079,12 +4131,40 @@ var app = (function () {
     		$$invalidate(0, scroll = window.pageYOffset);
     	}
 
-    	$$self.$capture_state = () => ({ clamp, scroll, scrollHistory, navShift });
+    	function onwindowresize() {
+    		$$invalidate(2, innerWidth = window.innerWidth);
+    	}
+
+    	function ul_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			menu = $$value;
+    			$$invalidate(3, menu);
+    		});
+    	}
+
+    	$$self.$capture_state = () => ({
+    		clamp,
+    		scroll,
+    		scrollHistory,
+    		navShift,
+    		navShiftChange,
+    		menuHeight,
+    		innerWidth,
+    		menu,
+    		expanded,
+    		toggleMenu,
+    		collapseMenu
+    	});
 
     	$$self.$inject_state = $$props => {
     		if ('scroll' in $$props) $$invalidate(0, scroll = $$props.scroll);
-    		if ('scrollHistory' in $$props) $$invalidate(2, scrollHistory = $$props.scrollHistory);
+    		if ('scrollHistory' in $$props) $$invalidate(8, scrollHistory = $$props.scrollHistory);
     		if ('navShift' in $$props) $$invalidate(1, navShift = $$props.navShift);
+    		if ('navShiftChange' in $$props) $$invalidate(9, navShiftChange = $$props.navShiftChange);
+    		if ('menuHeight' in $$props) $$invalidate(5, menuHeight = $$props.menuHeight);
+    		if ('innerWidth' in $$props) $$invalidate(2, innerWidth = $$props.innerWidth);
+    		if ('menu' in $$props) $$invalidate(3, menu = $$props.menu);
+    		if ('expanded' in $$props) $$invalidate(4, expanded = $$props.expanded);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -4092,19 +4172,44 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*scrollHistory, scroll*/ 5) {
-    			$$invalidate(2, scrollHistory = [scrollHistory[1], scroll]);
+    		if ($$self.$$.dirty & /*scrollHistory, scroll*/ 257) {
+    			$$invalidate(8, scrollHistory = [scrollHistory[1], scroll]);
     		}
 
-    		if ($$self.$$.dirty & /*navShift, scrollHistory*/ 6) {
+    		if ($$self.$$.dirty & /*expanded, scrollHistory, navShift, navShiftChange*/ 786) {
     			{
-    				$$invalidate(1, navShift += scrollHistory[0] - scrollHistory[1]);
-    				$$invalidate(1, navShift = clamp(navShift, -50, 0));
+    				if (expanded) {
+    					$$invalidate(1, navShift = 0);
+    					$$invalidate(8, scrollHistory[0] = scrollHistory[1], scrollHistory);
+    				} else {
+    					$$invalidate(9, navShiftChange = scrollHistory[0] - scrollHistory[1]);
+    					$$invalidate(1, navShift = clamp(navShift + navShiftChange, -65, 0));
+    				}
+    			}
+    		}
+
+    		if ($$self.$$.dirty & /*menu, innerWidth*/ 12) {
+    			if (menu != null) {
+    				$$invalidate(5, menuHeight = menu.scrollHeight);
     			}
     		}
     	};
 
-    	return [scroll, navShift, scrollHistory, onwindowscroll];
+    	return [
+    		scroll,
+    		navShift,
+    		innerWidth,
+    		menu,
+    		expanded,
+    		menuHeight,
+    		toggleMenu,
+    		collapseMenu,
+    		scrollHistory,
+    		navShiftChange,
+    		onwindowscroll,
+    		onwindowresize,
+    		ul_binding
+    	];
     }
 
     class NavBar extends SvelteComponentDev {

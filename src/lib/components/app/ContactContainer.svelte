@@ -125,7 +125,7 @@
 
     @media screen and (max-width: 900px) {
         #title {
-            align-self: start;
+            /* align-self: start; */
         }
     }
 

@@ -6,25 +6,64 @@
     let scrollHistory = [0, 0];
     $: scrollHistory = [scrollHistory[1], scroll];
 
+    // used to move the navbar into and out of view as the user scrolls up or down
     let navShift = 0;
+    let navShiftChange: number;
     $: {
-        navShift += scrollHistory[0] - scrollHistory[1];
-        navShift = clamp(navShift, -50, 0);
+        if (expanded) {
+            navShift = 0;
+            scrollHistory[0] = scrollHistory[1];
+        } else {
+            navShiftChange = scrollHistory[0] - scrollHistory[1];
+            navShift = clamp(navShift + navShiftChange, -65, 0);
+        }
     }
 
-    // $: console.log(navShift);
+    let menuHeight: number;
+    let innerWidth: number;
+    $: if (menu != null) {
+        innerWidth;
+        menuHeight = menu.scrollHeight;
+    }
+
+    // toggles hamburger menu in mobile view
+    let menu: HTMLElement;
+    let expanded = false;
+    const toggleMenu = () => {
+        expanded = !expanded;
+    };
+
+    const collapseMenu = () => {
+        expanded = false;
+    };
 </script>
 
-<svelte:window bind:scrollY={scroll} />
+<svelte:window bind:scrollY={scroll} bind:innerWidth />
 
 <header class="navbar" style:top={`${navShift}px`}>
-    <a class="logo" href="#home">
-        <img src="./images/DR-icon.svg" alt="logo" />
-    </a>
+    <div class="mobile-header">
+        <a class="logo" href="#home">
+            <img class="icon" src="./images/DR-icon.svg" alt="logo" />
+        </a>
+
+        <img
+            id="hamburger"
+            src="./images/hamburger-menu-icon.svg"
+            alt="open menu"
+            on:click={toggleMenu}
+            on:keypress={toggleMenu}
+        />
+    </div>
 
     <nav>
-        <ul class="nav_link">
-            <li><a href="#about">About</a></li>
+        <ul
+            class="nav-links expanded"
+            style:--expanded-height={expanded ? `${menuHeight}px` : 0}
+            bind:this={menu}
+            on:click={collapseMenu}
+            on:keypress={collapseMenu}
+        >
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#resume">Resume</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -35,11 +74,15 @@
 <style>
     * {
         margin: 0;
+        padding: 0;
     }
 
     .logo {
         cursor: pointer;
-        margin-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* margin-right: auto; */
     }
 
     .logo img {
@@ -49,7 +92,7 @@
     .navbar {
         z-index: 1;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         align-items: center;
         list-style: none;
         box-sizing: border-box;
@@ -57,40 +100,92 @@
         position: fixed;
         width: 100%;
         height: 50px;
-        background-color: var(--grey-light);
+        background-color: #ffffff73;
         padding: 10px 20%;
 
-        /* transition: all 0.3s ease 0s; */
+        box-shadow: 0px 2px 10px #70707057;
+        backdrop-filter: blur(8px);
     }
 
-    .nav_link li {
-        display: inline-block;
-        padding: 0px 20px;
+    .nav-links {
+        display: grid;
+        grid-auto-flow: column;
+        list-style-type: none;
+        column-gap: 40px;
+        padding: 0;
     }
 
-    .nav_link li a {
+    .nav-links li {
+        width: min-content;
+        white-space: nowrap;
+    }
+
+    .nav-links li a {
         transition: all 0.3s ease 0s;
         text-decoration: none;
         color: var(--txt-dark);
         font-weight: bold;
     }
 
-    /* .nav_link li a:hover {
-        color: #0088a9;
-    } */
-
-    /* button {
-        margin-left: 20px;
-        padding: 5px 15px;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease 0s;
-        background-color: #16a9ce;
-        color: white;
+    #hamburger {
+        display: none;
     }
 
-    button:hover {
-        background-color: #16a9ced4;
-    } */
+    @media screen and (max-width: 900px) {
+        #hamburger {
+            display: block;
+            cursor: pointer;
+            height: 30px;
+        }
+
+        .mobile-header {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 40px 10px 40px;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            flex-direction: column;
+            min-height: 50px;
+            height: fit-content;
+            padding: 0;
+            padding-top: 10px;
+        }
+
+        nav {
+            width: 100%;
+        }
+
+        .nav-links {
+            grid-auto-flow: row;
+            /* row-gap: 20px; */
+            column-gap: 0;
+            justify-items: center;
+            overflow: hidden;
+
+            width: 100%;
+            transition: all 0.3s ease-in-out 0s;
+            max-height: 0px;
+        }
+
+        .expanded {
+            max-height: var(--expanded-height);
+        }
+
+        .nav-links li {
+            text-align: center;
+            width: 100%;
+            padding: 13px;
+            z-index: 2;
+            border-top: 1px #00000022 solid;
+            margin-top: -1px;
+        }
+
+        .nav-links li:nth-child(1) {
+            margin-top: 0px;
+        }
+    }
 </style>
