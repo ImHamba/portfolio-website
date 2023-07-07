@@ -2128,11 +2128,11 @@ var app = (function () {
     			h4.textContent = "See my projects";
     			if (!src_url_equal(img.src, img_src_value = "./images/down-arrow-icon.svg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "down arrow");
-    			attr_dev(img, "class", "svelte-56v5fe");
+    			attr_dev(img, "class", "svelte-5hyzdk");
     			add_location(img, file$h, 26, 28, 1098);
-    			attr_dev(h4, "class", "prompt-text svelte-56v5fe");
+    			attr_dev(h4, "class", "prompt-text svelte-5hyzdk");
     			add_location(h4, file$h, 30, 28, 1282);
-    			attr_dev(a, "class", "btn-content svelte-56v5fe");
+    			attr_dev(a, "class", "btn-content svelte-5hyzdk");
     			attr_dev(a, "href", "#portfolio");
     			add_location(a, file$h, 25, 24, 1027);
     		},
@@ -2223,10 +2223,10 @@ var app = (function () {
     			add_location(h2, file$h, 12, 20, 472);
     			add_location(h30, file$h, 13, 20, 513);
     			attr_dev(div0, "id", "pre-name");
-    			attr_dev(div0, "class", "svelte-56v5fe");
+    			attr_dev(div0, "class", "svelte-5hyzdk");
     			add_location(div0, file$h, 11, 16, 431);
     			attr_dev(h1, "id", "name");
-    			attr_dev(h1, "class", "svelte-56v5fe");
+    			attr_dev(h1, "class", "svelte-5hyzdk");
     			add_location(h1, file$h, 15, 16, 574);
     			attr_dev(h31, "id", "post-name");
     			add_location(h31, file$h, 16, 16, 623);
@@ -2234,17 +2234,17 @@ var app = (function () {
     			set_style(div, "--color1", getCSSvariable("accent5"));
     			set_style(div, "--color2", "#a88f00");
     			add_location(div1, file$h, 20, 16, 831);
-    			attr_dev(div2, "class", "text-panel svelte-56v5fe");
+    			attr_dev(div2, "class", "text-panel svelte-5hyzdk");
     			add_location(div2, file$h, 10, 12, 389);
-    			attr_dev(img, "class", "portrait hexagon svelte-56v5fe");
+    			attr_dev(img, "class", "portrait hexagon svelte-5hyzdk");
     			if (!src_url_equal(img.src, img_src_value = "./images/portrait.jpg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "portrait of Dennis");
     			add_location(img, file$h, 36, 16, 1495);
-    			attr_dev(div3, "class", "image-panel svelte-56v5fe");
+    			attr_dev(div3, "class", "image-panel svelte-5hyzdk");
     			add_location(div3, file$h, 35, 12, 1452);
-    			attr_dev(div4, "class", "panel-wrapper svelte-56v5fe");
+    			attr_dev(div4, "class", "panel-wrapper svelte-5hyzdk");
     			add_location(div4, file$h, 9, 8, 348);
-    			attr_dev(div5, "class", "landing-wrapper svelte-56v5fe");
+    			attr_dev(div5, "class", "landing-wrapper svelte-5hyzdk");
     			add_location(div5, file$h, 8, 4, 309);
     		},
     		m: function mount(target, anchor) {
@@ -3288,18 +3288,18 @@ var app = (function () {
     			t2 = space();
     			div1 = element("div");
     			img = element("img");
-    			attr_dev(br, "class", "svelte-evxylt");
-    			add_location(br, file$d, 90, 16, 2682);
-    			attr_dev(h1, "class", "svelte-evxylt");
-    			add_location(h1, file$d, 88, 12, 2611);
-    			attr_dev(div0, "class", "response svelte-evxylt");
-    			add_location(div0, file$d, 87, 8, 2575);
-    			attr_dev(img, "class", "icon svelte-evxylt");
+    			attr_dev(br, "class", "svelte-kc1x41");
+    			add_location(br, file$d, 90, 16, 2691);
+    			attr_dev(h1, "class", "svelte-kc1x41");
+    			add_location(h1, file$d, 88, 12, 2620);
+    			attr_dev(div0, "class", "response svelte-kc1x41");
+    			add_location(div0, file$d, 87, 8, 2584);
+    			attr_dev(img, "class", "icon svelte-kc1x41");
     			if (!src_url_equal(img.src, img_src_value = "./images/back-icon.svg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "embed pdf");
-    			add_location(img, file$d, 100, 12, 2917);
-    			attr_dev(div1, "class", "icon-wrapper svelte-evxylt");
-    			add_location(div1, file$d, 95, 8, 2779);
+    			add_location(img, file$d, 100, 12, 2926);
+    			attr_dev(div1, "class", "icon-wrapper svelte-kc1x41");
+    			add_location(div1, file$d, 95, 8, 2788);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -3411,48 +3411,49 @@ var app = (function () {
     			input2 = element("input");
     			t6 = space();
     			input3 = element("input");
-    			attr_dev(h1, "class", "svelte-evxylt");
+    			attr_dev(h1, "id", "title");
+    			attr_dev(h1, "class", "svelte-kc1x41");
     			add_location(h1, file$d, 36, 8, 917);
     			attr_dev(input0, "name", "name");
-    			attr_dev(input0, "class", "name input svelte-evxylt");
+    			attr_dev(input0, "class", "name input svelte-kc1x41");
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "Name*");
     			input0.required = true;
-    			add_location(input0, file$d, 46, 16, 1244);
+    			add_location(input0, file$d, 46, 16, 1255);
     			attr_dev(input1, "name", "email");
-    			attr_dev(input1, "class", "email input svelte-evxylt");
+    			attr_dev(input1, "class", "email input svelte-kc1x41");
     			attr_dev(input1, "type", "email");
     			attr_dev(input1, "placeholder", "Email*");
     			input1.required = true;
-    			add_location(input1, file$d, 54, 16, 1504);
-    			attr_dev(div0, "class", "small-fields svelte-evxylt");
-    			add_location(div0, file$d, 45, 12, 1200);
-    			attr_dev(textarea, "class", "message input svelte-evxylt");
+    			add_location(input1, file$d, 54, 16, 1515);
+    			attr_dev(div0, "class", "small-fields svelte-kc1x41");
+    			add_location(div0, file$d, 45, 12, 1211);
+    			attr_dev(textarea, "class", "message input svelte-kc1x41");
     			attr_dev(textarea, "placeholder", "Leave your message here");
     			attr_dev(textarea, "name", "message");
     			textarea.required = true;
-    			add_location(textarea, file$d, 63, 12, 1785);
+    			add_location(textarea, file$d, 63, 12, 1796);
     			set_style(div, "display", "contents");
     			set_style(div, "--color1", getCSSvariable("accent5"));
     			set_style(div, "--color2", "#a88f00");
     			attr_dev(div1, "id", "btn-wrapper");
-    			attr_dev(div1, "class", "svelte-evxylt");
-    			add_location(div1, file$d, 70, 12, 2021);
+    			attr_dev(div1, "class", "svelte-kc1x41");
+    			add_location(div1, file$d, 70, 12, 2032);
     			attr_dev(input2, "type", "hidden");
     			attr_dev(input2, "name", "accessKey");
     			input2.value = EMAIL_KEY;
-    			attr_dev(input2, "class", "svelte-evxylt");
-    			add_location(input2, file$d, 79, 12, 2315);
+    			attr_dev(input2, "class", "svelte-kc1x41");
+    			add_location(input2, file$d, 79, 12, 2324);
     			attr_dev(input3, "type", "hidden");
     			attr_dev(input3, "name", "subject");
     			input3.value = input3_value_value = "Portfolio website message from " + /*name*/ ctx[0];
-    			attr_dev(input3, "class", "svelte-evxylt");
-    			add_location(input3, file$d, 80, 12, 2387);
-    			attr_dev(form, "class", "form svelte-evxylt");
+    			attr_dev(input3, "class", "svelte-kc1x41");
+    			add_location(input3, file$d, 80, 12, 2396);
+    			attr_dev(form, "class", "form svelte-kc1x41");
     			attr_dev(form, "action", "https://api.staticforms.xyz/submit");
     			attr_dev(form, "method", "post");
     			attr_dev(form, "target", "container");
-    			add_location(form, file$d, 37, 8, 954);
+    			add_location(form, file$d, 37, 8, 965);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -3559,7 +3560,7 @@ var app = (function () {
     	return block;
     }
 
-    // (72:16) <SpecialButton                      --color1="{getCSSvariable("accent5")}"                      --color2="#a88f00"                  >
+    // (72:16) <SpecialButton                      --color1={getCSSvariable("accent5")}                      --color2="#a88f00"                  >
     function create_default_slot$4(ctx) {
     	let h4;
 
@@ -3568,8 +3569,8 @@ var app = (function () {
     			h4 = element("h4");
     			h4.textContent = "Submit";
     			attr_dev(h4, "id", "btn-text");
-    			attr_dev(h4, "class", "svelte-evxylt");
-    			add_location(h4, file$d, 75, 20, 2216);
+    			attr_dev(h4, "class", "svelte-kc1x41");
+    			add_location(h4, file$d, 75, 20, 2225);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h4, anchor);
@@ -3584,7 +3585,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$4.name,
     		type: "slot",
-    		source: "(72:16) <SpecialButton                      --color1=\\\"{getCSSvariable(\\\"accent5\\\")}\\\"                      --color2=\\\"#a88f00\\\"                  >",
+    		source: "(72:16) <SpecialButton                      --color1={getCSSvariable(\\\"accent5\\\")}                      --color2=\\\"#a88f00\\\"                  >",
     		ctx
     	});
 
@@ -3611,7 +3612,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			if_block.c();
-    			attr_dev(div, "class", "container svelte-evxylt");
+    			attr_dev(div, "class", "container svelte-kc1x41");
     			add_location(div, file$d, 34, 0, 862);
     		},
     		l: function claim(nodes) {
@@ -3786,7 +3787,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(contactcontainer.$$.fragment);
-    			attr_dev(div, "class", "panel svelte-13zqgso");
+    			attr_dev(div, "class", "panel svelte-yqlv38");
     			add_location(div, file$c, 6, 4, 184);
     		},
     		m: function mount(target, anchor) {
@@ -5180,13 +5181,13 @@ var app = (function () {
     			t1 = space();
     			h3 = element("h3");
     			h3.textContent = "References available upon request";
-    			attr_dev(h1, "class", "shrink svelte-1yk0rkr");
+    			attr_dev(h1, "class", "shrink svelte-1xj93y5");
     			add_location(h1, file$7, 19, 12, 592);
-    			attr_dev(h3, "class", "shrink svelte-1yk0rkr");
+    			attr_dev(h3, "class", "shrink svelte-1xj93y5");
     			add_location(h3, file$7, 20, 12, 646);
-    			attr_dev(div0, "class", "svelte-1yk0rkr");
+    			attr_dev(div0, "class", "svelte-1xj93y5");
     			add_location(div0, file$7, 18, 8, 573);
-    			attr_dev(div1, "class", "title svelte-1yk0rkr");
+    			attr_dev(div1, "class", "title svelte-1xj93y5");
     			attr_dev(div1, "slot", "title");
     			add_location(div1, file$7, 17, 4, 531);
     		},
@@ -5251,14 +5252,14 @@ var app = (function () {
     			attr_dev(img, "id", "back-icon");
     			if (!src_url_equal(img.src, img_src_value = "./images/back-icon.svg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "embed pdf");
-    			attr_dev(img, "class", "svelte-1yk0rkr");
+    			attr_dev(img, "class", "svelte-1xj93y5");
     			add_location(img, file$7, 64, 16, 2392);
-    			attr_dev(object, "class", "embed-pdf svelte-1yk0rkr");
+    			attr_dev(object, "class", "embed-pdf svelte-1xj93y5");
     			attr_dev(object, "data", "./resume/Test pdf.pdf#zoom=75");
     			attr_dev(object, "type", "application/pdf");
     			attr_dev(object, "title", "Resume");
     			add_location(object, file$7, 73, 16, 2677);
-    			attr_dev(div, "class", "pdf-wrapper svelte-1yk0rkr");
+    			attr_dev(div, "class", "pdf-wrapper svelte-1xj93y5");
     			add_location(div, file$7, 63, 12, 2349);
     		},
     		m: function mount(target, anchor) {
@@ -5354,14 +5355,14 @@ var app = (function () {
     			set_style(div, "display", "contents");
     			set_style(div, "--color1", getCSSvariable("accent5"));
     			set_style(div, "--color2", "#a88f00");
-    			attr_dev(div0, "class", "svelte-1yk0rkr");
+    			attr_dev(div0, "class", "svelte-1xj93y5");
     			add_location(div0, file$7, 27, 16, 878);
     			set_style(div_1, "display", "contents");
     			set_style(div_1, "--color1", getCSSvariable("accent5"));
     			set_style(div_1, "--color2", "#a88f00");
-    			attr_dev(div1, "class", "svelte-1yk0rkr");
+    			attr_dev(div1, "class", "svelte-1xj93y5");
     			add_location(div1, file$7, 46, 16, 1638);
-    			attr_dev(div2, "class", "btn-container svelte-1yk0rkr");
+    			attr_dev(div2, "class", "btn-container svelte-1xj93y5");
     			add_location(div2, file$7, 26, 12, 833);
     		},
     		m: function mount(target, anchor) {
@@ -5449,11 +5450,11 @@ var app = (function () {
     			h4.textContent = "Download";
     			if (!src_url_equal(img.src, img_src_value = "./images/pdf-icon.svg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "resume");
-    			attr_dev(img, "class", "svelte-1yk0rkr");
+    			attr_dev(img, "class", "svelte-1xj93y5");
     			add_location(img, file$7, 37, 28, 1277);
-    			attr_dev(h4, "class", "prompt-text svelte-1yk0rkr");
+    			attr_dev(h4, "class", "prompt-text svelte-1xj93y5");
     			add_location(h4, file$7, 42, 28, 1491);
-    			attr_dev(a, "class", "resume-btn svelte-1yk0rkr");
+    			attr_dev(a, "class", "resume-btn svelte-1xj93y5");
     			attr_dev(a, "href", "./resume/Test pdf.pdf");
     			attr_dev(a, "download", "");
     			add_location(a, file$7, 32, 24, 1074);
@@ -5508,12 +5509,12 @@ var app = (function () {
     			h4.textContent = "Embed";
     			if (!src_url_equal(img.src, img_src_value = "./images/expand-icon.svg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "embed pdf");
-    			attr_dev(img, "class", "svelte-1yk0rkr");
+    			attr_dev(img, "class", "svelte-1xj93y5");
     			add_location(img, file$7, 52, 28, 1950);
-    			attr_dev(h4, "class", "prompt-text svelte-1yk0rkr");
+    			attr_dev(h4, "class", "prompt-text svelte-1xj93y5");
     			add_location(h4, file$7, 57, 28, 2170);
     			attr_dev(div, "id", "embed-btn");
-    			attr_dev(div, "class", "resume-btn svelte-1yk0rkr");
+    			attr_dev(div, "class", "resume-btn svelte-1xj93y5");
     			add_location(div, file$7, 51, 24, 1881);
     		},
     		m: function mount(target, anchor) {
@@ -5569,7 +5570,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			if_block.c();
-    			attr_dev(div, "class", "content-container svelte-1yk0rkr");
+    			attr_dev(div, "class", "content-container svelte-1xj93y5");
     			attr_dev(div, "slot", "content");
     			add_location(div, file$7, 24, 4, 749);
     		},

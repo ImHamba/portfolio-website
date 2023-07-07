@@ -205,17 +205,6 @@
     #back-icon:hover {
         transform: scale(1.05);
     }
-    /* 
-    .icon-wrapper {
-        display: flex;
-
-        flex-direction: column;
-        align-items: center;
-        text-decoration: none;
-        padding: 0;
-        margin: 0;
-        color: var(--txt-dark);
-    } */
 
     .shrink {
         width: fit-content;

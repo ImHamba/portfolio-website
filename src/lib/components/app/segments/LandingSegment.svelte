@@ -75,6 +75,7 @@
             justify-content: start;
 
             padding-bottom: 40%;
+            padding-right: calc(3% + 70px);
         }
     }
 
@@ -102,8 +103,11 @@
 
     #name {
         font-size: 5em;
-        margin-top: 0;
+        margin: 0;
+        padding: 0;
+        border: none;
         color: var(--accent5);
+        margin-left: -2px;
     }
 
     @media screen and (max-width: 900px) {

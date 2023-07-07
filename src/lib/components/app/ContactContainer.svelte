@@ -34,7 +34,7 @@
 
 <div class="container">
     {#if !submitted}
-        <h1 in:fade>Contact Me</h1>
+        <h1 id="title" in:fade>Contact Me</h1>
         <form
             class="form"
             on:submit|preventDefault={handleSubmit}
@@ -70,7 +70,7 @@
             />
             <div id="btn-wrapper">
                 <SpecialButton
-                    --color1="{getCSSvariable("accent5")}"
+                    --color1={getCSSvariable("accent5")}
                     --color2="#a88f00"
                 >
                     <h4 id="btn-text">Submit</h4>
@@ -121,6 +121,12 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    @media screen and (max-width: 900px) {
+        #title {
+            align-self: start;
+        }
     }
 
     .form {
