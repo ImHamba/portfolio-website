@@ -58,7 +58,7 @@
                             out:fade
                         >
                             <SkillIcon imgPath={icon.path} />
-                            <div>{icon.name}</div>
+                            <div id="skill-name">{icon.name}</div>
                         </div>
                     {/each}
                 </div>
@@ -93,7 +93,7 @@
         flex-wrap: wrap;
         margin: 5px;
         padding: 10px;
-        background-color: #ffd90046;
+        background-image: linear-gradient(120deg, #ffd90093, #ffd90015);
         border-radius: 20px;
 
         perspective: 50rem;

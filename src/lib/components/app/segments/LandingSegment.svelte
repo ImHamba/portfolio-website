@@ -157,8 +157,9 @@
         max-width: 60%;
         width: auto;
         height: auto;
-        border-radius: 25px;
-        box-shadow: 15px 15px 30px var(--accent1);
+        border-radius: 15px;
+        border: 2px black solid;
+        box-shadow: 10px 10px 3px #000000ba;
     }
 
     @media screen and (max-width: 1200px) {

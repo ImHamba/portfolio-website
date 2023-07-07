@@ -65,19 +65,14 @@
             </div>
         {:else}
             <div class="pdf-wrapper">
-                <div
-                    class="icon-wrapper"
+                <img
+                    id="back-icon"
+                    src="./images/back-icon.svg"
+                    alt="embed pdf"
+                    in:fade
                     on:click={toggleMode}
                     on:keypress={toggleMode}
-                >
-                    <img
-                        class="icon"
-                        src="./images/back-icon.svg"
-                        alt="embed pdf"
-                        style:transform="scale(0.65)"
-                        in:fade
-                    />
-                </div>
+                />
 
                 <object
                     class="embed-pdf"
@@ -199,27 +194,28 @@
         width: 2em;
     }
 
-    .icon {
-        height: 7vh;
-        width: 7vh;
-        transition: all 0.1s ease 0s;
+    #back-icon {
+        width: 5vh;
+        height: 5vh;
+        transition: all 0.2s ease 0s;
+        cursor: pointer;
+        margin: 10px;
     }
 
-    .icon:hover {
-        transform: scale(1.1);
+    #back-icon:hover {
+        transform: scale(1.05);
     }
-
+    /* 
     .icon-wrapper {
         display: flex;
-        width: fit-content;
+
         flex-direction: column;
         align-items: center;
         text-decoration: none;
-        padding: 10px;
+        padding: 0;
+        margin: 0;
         color: var(--txt-dark);
-
-        cursor: pointer;
-    }
+    } */
 
     .shrink {
         width: fit-content;
