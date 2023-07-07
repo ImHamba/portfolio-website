@@ -40,33 +40,6 @@
             <div class="title">
                 <h3>{title}</h3>
             </div>
-
-            <!-- <div class="links">
-                {#if githubLink != null}
-                    <a
-                        href={githubLink}
-                        target="_blank"
-                        on:click|stopPropagation
-                    >
-                        <img
-                            class="link-img"
-                            src="./images/github-white-icon.svg"
-                            alt="github"
-                        />
-                    </a>
-                {/if}
-
-                {#if liveLink != null}
-                    <a
-                        class="button-wrapper"
-                        href={liveLink}
-                        target="_blank"
-                        on:click|stopPropagation
-                    >
-                        <button>Live Demo</button>
-                    </a>
-                {/if}
-            </div> -->
         </div>
     </div>
 </div>
@@ -155,47 +128,5 @@
 
     .tile:hover .text-container {
         transform: scale(var(--hover-scale));
-    }
-
-    .links {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        height: 20%;
-    }
-
-    .link-img {
-        width: 100%;
-        height: 100%;
-        padding: 0 10px 0 10px;
-        transition: all var(--link-hover-time) ease-in-out;
-    }
-
-    .link-img:hover {
-        transform: scale(var(--link-hover-scale));
-    }
-
-    .button-wrapper {
-        display: flex;
-        height: 100%;
-        align-items: center;
-    }
-
-    .button-wrapper button {
-        background-color: #23b1ca;
-        border: none;
-        border-radius: 25px;
-        height: 48px;
-        max-height: 100%;
-        cursor: pointer;
-        color: white;
-        padding: 5px 15px;
-        margin: 0;
-        text-align: center;
-        transition: all var(--link-hover-time) ease-in-out;
-    }
-
-    .button-wrapper button:hover {
-        transform: scale(var(--link-hover-scale));
     }
 </style>

@@ -4,11 +4,11 @@
     const description =
         "An IntelliJ IDE plugin to automatically generate PlantUML syntax from a Java project.";
 
-    const tags = ["Java", "OOP", "Plugin"];
+    const tags = ["Java", "OOP", "Plugin", "IntelliJ IDEA"];
 </script>
 
 <PortfolioTile
-    title="IntelliJ IDEA PlantUML Generator Plugin"
+    title="PlantUML Generator Plugin for IntelliJ IDEA"
     {description}
     imagePath="./images/portfolio/frogger.png"
     modalVisualPath="./images/portfolio/frogger.png"

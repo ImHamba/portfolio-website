@@ -131,10 +131,11 @@
     .tags {
         display: flex;
         flex-wrap: wrap;
+        margin: 10px 0px;
     }
 
     .tags > div {
-        margin: 7px;
+        margin: 7px 14px 7px 0px;
         padding: 7px 10px;
         border: 1px black solid;
         border-radius: 4px;
@@ -157,7 +158,7 @@
 
     .buttons {
         display: flex;
-        margin: 10px 0;
+        margin-top: 10px;
 
         flex-wrap: wrap;
     }
@@ -176,7 +177,7 @@
         height: 53px;
         max-height: 100%;
         cursor: pointer;
-        padding: 5px 25px;
+        padding: 0px 15px;
         margin: 0;
         text-align: center;
 
@@ -200,6 +201,7 @@
         display: flex;
         align-items: center;
         white-space: nowrap;
+        margin: 0px;
     }
 
     .scroll {
