@@ -83,6 +83,9 @@
         flex-direction: column;
         padding: 0;
         margin: 0;
+
+        /* border-radius: 20px;
+        box-shadow: 0 0 8px #0000009d; */
     }
 
     .segment {
@@ -91,10 +94,12 @@
         flex-direction: row;
         align-items: center;
         flex-wrap: wrap;
-        margin: 5px;
+        margin: 15px 0px 15px 10px;
         padding: 10px;
         background-image: linear-gradient(120deg, #ffd90093, #ffd90015);
+
         border-radius: 20px;
+        box-shadow: 0 0 8px #00000075;
 
         perspective: 50rem;
     }
@@ -105,6 +110,7 @@
         }
         .segment {
             width: 100%;
+            box-sizing: border-box;
             align-items: start;
             flex-wrap: nowrap;
         }

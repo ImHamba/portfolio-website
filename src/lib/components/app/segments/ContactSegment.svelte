@@ -14,7 +14,7 @@
         min-height: inherit;
         height: 100%;
         width: 100%;
-        padding: 8% 30% 15% 30%;
+        padding: 5% 30% 8% 30%;
         box-sizing: border-box;
         flex: 1;
 

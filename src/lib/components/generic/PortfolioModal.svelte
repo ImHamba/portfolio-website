@@ -114,6 +114,9 @@
     }
 
     @media screen and (max-width: 900px) {
+        .text-wrapper {
+            padding: 3% 5% 1% 5%;
+        }
         .modal-visual-wrapper {
             height: 30%;
         }
@@ -143,6 +146,16 @@
         background-color: var(--grey-light);
     }
 
+    @media screen and (max-width: 900px) {
+        .tags {
+            margin: 0;
+        }
+        .tags > div {
+            margin: 4px 8px 4px 0px;
+            padding: 4px 7px;
+        }
+    }
+
     .about {
         text-align: start;
         margin: 10px 0;
@@ -154,6 +167,12 @@
         font-family: "Fira Code", monospace;
         text-align: start;
         margin: 10px 0;
+    }
+
+    @media screen and (max-width: 900px) {
+        .description {
+            margin: 0;
+        }
     }
 
     .buttons {
@@ -202,6 +221,13 @@
         align-items: center;
         white-space: nowrap;
         margin: 0px;
+    }
+
+    @media screen and (max-width: 900px) {
+        .btn-content {
+            height: 45px;
+            padding: 0px 10px;
+        }
     }
 
     .scroll {

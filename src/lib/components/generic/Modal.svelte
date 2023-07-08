@@ -33,7 +33,7 @@
         border-radius: 10px;
         box-shadow: 0 0 10px #0000007b;
         width: 65%;
-        height: 60%;
+        height: 80%;
         text-align: center;
         background: white;
 

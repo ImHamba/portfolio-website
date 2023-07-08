@@ -123,12 +123,6 @@
         justify-content: center;
     }
 
-    @media screen and (max-width: 900px) {
-        #title {
-            /* align-self: start; */
-        }
-    }
-
     .form {
         display: flex;
         flex-direction: column;

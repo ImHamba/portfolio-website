@@ -59,8 +59,8 @@
 
     // update ms elapsed since page was opened when time updates from interval
     $: elapsed = time - startTime;
-    $: distortedElapsed1 = distortElapsed(elapsed, 100, 6);
-    $: distortedElapsed2 = distortElapsed(elapsed, 40, 3);
+    $: distortedElapsed1 = distortElapsed(elapsed, 120, 9);
+    $: distortedElapsed2 = distortElapsed(elapsed, 80, 6);
 
     // keep canvas width updated if window size changes
     $: if (canvas != null) canvas.width = pageWidth;
@@ -94,7 +94,7 @@
                     30
                 ),
                 fillStyle: gradient1,
-                rotation: 4,
+                rotation: 6,
                 // gradientThickness: 0.06 * pageHeight,
                 translateY: 0.92 * canvas.height,
             },
@@ -112,7 +112,7 @@
                     20
                 ),
                 fillStyle: gradient2,
-                rotation: 4,
+                rotation: 6,
                 // gradientThickness: 0.06 * pageHeight,
                 translateY: 0.89 * canvas.height,
             },

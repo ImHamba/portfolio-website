@@ -28,6 +28,7 @@
         flex-direction: column;
         width: 100%;
         align-items: center;
+        padding-left: 10px;
     }
     .shrink {
         width: fit-content;

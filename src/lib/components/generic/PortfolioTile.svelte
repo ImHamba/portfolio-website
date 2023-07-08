@@ -12,14 +12,29 @@
     export let tags: string[] = [];
 
     let showModal = false;
+    const body = document.body;
 
-    const openModal = (e: Event) => {
+    const openModal = () => {
         showModal = true;
-        console.log("a");
+
+        body.style.overflowY = "hidden";
+
+        // scroll = document.documentElement.scrollTop;
+        // body.style.position = "fixed";
+        // body.style.top = `-${scroll}px`;
+        // body.style.overflowY = "scroll";
     };
 
-    const closeModal = (e: Event) => {
+    const closeModal = () => {
         showModal = false;
+
+        // body.style.position = "static";
+        body.style.overflowY = "auto";
+
+        // document.documentElement.style.scrollBehavior = "auto";
+        // document.documentElement.scrollTop = scroll + 100;
+        // document.documentElement.scrollTop = scroll;
+        // document.documentElement.style.scrollBehavior = "smooth";
     };
 </script>
 
@@ -46,7 +61,7 @@
         {shortDescription}
     </div>
     <div class="btn-wrapper" on:click={openModal} on:keypress={openModal}>
-        <SpecialButton --color1={getCSSvariable("accent2")} --color2="#b8b8b8">
+        <SpecialButton --color1={getCSSvariable("accent2")} --color2="#89a48b">
             <h4 class="btn-txt">More Info</h4>
         </SpecialButton>
     </div>
@@ -97,7 +112,7 @@
     .tags {
         display: flex;
         flex-wrap: wrap;
-        margin: 5px;
+        margin: 5px 20px;
         justify-content: center;
     }
 
