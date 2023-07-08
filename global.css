@@ -18,6 +18,11 @@
 	--grey-accent: #e8e8e8;
 	--grey-dark: #b2b2b2;
 
+	--left-margin: 10%;
+	--right-margin: calc(3% + 70px);
+	--mobile-left-margin: 10%;
+	--mobile-right-margin: calc(4% + 46px);
+
 	--custom-scrollbar-color: #00000026;
 }
 
