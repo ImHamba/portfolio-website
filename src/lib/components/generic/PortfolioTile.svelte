@@ -1,16 +1,21 @@
 <script lang="ts">
+    import { getCSSvariable } from "../../functions/util";
     import PortfolioModal from "./PortfolioModal.svelte";
+    import SpecialButton from "./SpecialButton.svelte";
 
     export let title = "";
+    export let shortDescription = "";
     export let description = "";
     export let imagePath: string;
     export let githubLink: string;
     export let liveLink: string;
+    export let tags: string[] = [];
 
     let showModal = false;
 
     const openModal = (e: Event) => {
         showModal = true;
+        console.log("a");
     };
 
     const closeModal = (e: Event) => {
@@ -24,109 +29,97 @@
     {description}
     {liveLink}
     {githubLink}
+    {tags}
     {...$$restProps}
     on:click={closeModal}
 />
 
-<div class="tile-wrapper">
-    <div class="tile">
-        <img class="image" src={imagePath} alt="portfolio" />
-
-        <div
-            class="text-container dimmer"
-            on:click={openModal}
-            on:keypress={openModal}
-        >
-            <div class="title">
-                <h3>{title}</h3>
-            </div>
-        </div>
+<div class="tile-box">
+    <img src={imagePath} alt="screenshot of project" />
+    <h3 class="title">{title}</h3>
+    <div class="tags">
+        {#each tags as tag}
+            <div>{tag}</div>
+        {/each}
+    </div>
+    <div class="description">
+        {shortDescription}
+    </div>
+    <div class="btn-wrapper" on:click={openModal} on:keypress={openModal}>
+        <SpecialButton --color1={getCSSvariable("accent2")} --color2="#b8b8b8">
+            <h4 class="btn-txt">More Info</h4>
+        </SpecialButton>
     </div>
 </div>
 
 <style>
     * {
-        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        /* border: 1px black solid; */
     }
 
-    .tile-wrapper {
-        --hover-time: 0.3s;
-        --hover-scale: 1.05;
-        --link-hover-time: 0.05s;
-        --link-hover-scale: 1.05;
-
+    .tile-box {
         display: flex;
-        width: 100%;
-        padding: 5%;
-        justify-content: center;
-
-        cursor: pointer;
-    }
-
-    .tile {
-        position: relative;
-        display: flex;
-        align-items: center;
         flex-direction: column;
-        border-radius: 25px;
         width: 70%;
-        min-width: 200px;
-        height: min-content;
-        aspect-ratio: 4/3;
-        border: 2px grey solid;
+        max-width: 500px;
+        min-width: 350px;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 0px;
+        border-radius: 15px;
         overflow: hidden;
+
+        /* border: 3px grey solid; */
+        box-shadow: 0 0 8px #0000009d;
     }
 
-    @media screen and (max-width: 1300px) {
-        .tile {
+    @media screen and (max-width: 550px) {
+        .tile-box {
+            min-width: auto;
             width: 100%;
         }
     }
 
-    .image {
+    .tile-box img {
         width: 100%;
-        height: 100%;
-        object-fit: contain;
-        /* filter: blur(3px); */
-        transition: all var(--hover-time) ease-in-out;
-    }
-
-    .text-container {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-
-        justify-content: center;
-
-        padding: 10%;
-        transition: all var(--hover-time) ease-in-out;
+        max-height: 250px;
+        object-fit: cover;
+        object-position: bottom;
     }
 
     .title {
-        width: 100%;
         text-align: center;
-        color: var(--txt-light);
-        padding: 0 5%;
+        margin: 10px 20px 0px 20px;
     }
 
-    .dimmer {
-        position: absolute;
-        width: 101%;
-        height: 101%;
-        background-color: #00000088;
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 5px;
+        justify-content: center;
     }
 
-    .dimmer:hover {
-        background-color: #000000d8;
+    .tags > div {
+        margin: 3px;
+        padding: 3px 5px;
+        border: 1px black solid;
+        border-radius: 4px;
+        font-family: "Fira Code", monospace;
+        background-color: var(--grey-light);
     }
 
-    .tile:hover .image {
-        transform: scale(var(--hover-scale));
+    .description {
+        margin: 0 20px 10px 20px;
     }
 
-    .tile:hover .text-container {
-        transform: scale(var(--hover-scale));
+    .btn-wrapper {
+        max-width: 130px;
+        margin: 0 15px 15px 15px;
+    }
+
+    .btn-txt {
+        padding: 15px 10px;
     }
 </style>

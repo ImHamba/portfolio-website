@@ -75,7 +75,8 @@
             justify-content: start;
 
             padding-bottom: 40%;
-            padding-right: calc(3% + 70px);
+            padding-right: var(--mobile-right-margin);
+            padding-left: var(--mobile-left-margin);
         }
     }
 

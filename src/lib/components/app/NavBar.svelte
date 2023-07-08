@@ -43,7 +43,13 @@
 <header class="navbar" style:top={`${navShift}px`}>
     <div class="mobile-header">
         <a class="logo" href="#home">
-            <img class="icon" src="./images/DR-icon.svg" alt="logo" />
+            <img
+                class="icon"
+                src="./images/DR-icon.svg"
+                alt="logo"
+                on:click={collapseMenu}
+                on:keypress={collapseMenu}
+            />
         </a>
 
         <img
@@ -178,14 +184,22 @@
         .nav-links li {
             text-align: center;
             width: 100%;
-            padding: 13px;
+
             z-index: 2;
             border-top: 1px #00000022 solid;
             margin-top: -1px;
+            display: flex;
         }
 
         .nav-links li:nth-child(1) {
             margin-top: 0px;
+        }
+
+        .nav-links li a {
+            width: 100%;
+            height: 100%;
+            padding: 13px;
+            box-sizing: border-box;
         }
     }
 </style>

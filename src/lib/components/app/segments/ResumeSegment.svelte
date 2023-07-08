@@ -74,13 +74,15 @@
                     on:keypress={toggleMode}
                 />
 
-                <object
-                    class="embed-pdf"
-                    data="./resume/Test pdf.pdf#zoom=75"
-                    type="application/pdf"
-                    title="Resume"
-                    in:fade
-                />
+                <div class="embed-wrapper">
+                    <object
+                        class="embed-pdf"
+                        data="./resume/Test pdf.pdf#zoom=75"
+                        type="application/pdf"
+                        title="Resume"
+                        in:fade
+                    />
+                </div>
             </div>
         {/if}
     </div>
@@ -143,13 +145,22 @@
         box-sizing: border-box;
     }
 
+    .embed-wrapper {
+        width: 100%;
+        height: 100%;
+        /* border: 1px black solid; */
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+
     .embed-pdf {
         width: 100%;
         height: 100%;
 
         border-radius: 10px;
-
-        border: 2px black solid;
+        box-shadow: 0 0 15px #000000be;
+        /* border: 2px black solid; */
     }
 
     @media screen and (max-width: 900px) {
@@ -160,6 +171,10 @@
         .pdf-wrapper {
             height: 1px;
             padding: 0;
+        }
+
+        .embed-wrapper {
+            padding: 20px 0px;
         }
     }
 

@@ -24,7 +24,7 @@
 
     @media screen and (max-width: 900px) {
         .panel {
-            padding: 8% calc(3% + 70px) 25% 10%;
+            padding: 10% var(--mobile-right-margin) 20% var(--mobile-left-margin);
         }
     }
 </style>

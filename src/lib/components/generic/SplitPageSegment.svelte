@@ -58,7 +58,7 @@
     }
 
     .column:nth-child(2) {
-        padding-right: calc(3% + 70px);
+        padding-right: var(--right-margin);
     }
 
     .column > div {
@@ -72,13 +72,14 @@
         }
 
         .column {
-            padding-right: calc(3% + 70px);
-            padding-left: 10%;
+            padding-right: var(--mobile-right-margin);
+            padding-left: var(--mobile-left-margin);
             flex-direction: row;
         }
 
         .column:nth-child(2) {
             min-height: 60vh;
+            padding-right: var(--mobile-right-margin);
         }
     }
 </style>
