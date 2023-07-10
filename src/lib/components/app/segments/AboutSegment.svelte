@@ -1,5 +1,6 @@
 <script>
     import { redact } from "../../../functions/redactTransition";
+    import GlitchText from "../../generic/GlitchText.svelte";
     import SplitPageSegment from "../../generic/SplitPageSegment.svelte";
 </script>
 
@@ -18,12 +19,18 @@
 
     <div slot="title">
         <h1 class="shrink" in:redact>About Me</h1>
-        <h3 class="shrink" in:redact>Dennis Rigon</h3>
+        <GlitchText layers={3} initialGlitchEnabled={false}>
+            <h3 class="shrink" in:redact>Dennis Rigon</h3>
+        </GlitchText>
     </div>
 </SplitPageSegment>
 
 <style>
     .shrink {
         width: fit-content;
+    }
+
+    h3 {
+        margin: 0px;
     }
 </style>

@@ -1,7 +1,5 @@
 <script>
-    import { fade } from "svelte/transition";
     import Waves from "./Waves.svelte";
-    import CreateOnScrollWrapper from "../generic/CreateOnScrollWrapper.svelte";
 </script>
 
 <div id="waves-container">

@@ -17,7 +17,7 @@
     <div slot="title">
         <h1 class="shrink" in:redact>Portfolio</h1>
         <h3 class="shrink" in:redact>
-            All project source code can be found on Github
+            Links to live demo and code are provided in project info
         </h3>
     </div>
 </SplitPageSegment>

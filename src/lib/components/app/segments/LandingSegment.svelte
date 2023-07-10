@@ -1,5 +1,7 @@
 <script>
+    import { onMount } from "svelte";
     import { getCSSvariable } from "../../../functions/util";
+    import GlitchText from "../../generic/GlitchText.svelte";
     import PageSegment from "../../generic/PageSegment.svelte";
     import SpecialButton from "../../generic/SpecialButton.svelte";
     import WavesContainer from "../WavesContainer.svelte";
@@ -10,10 +12,21 @@
         <div class="panel-wrapper">
             <div class="text-panel">
                 <div id="pre-name">
-                    <h2>Hey there!</h2>
-                    <h3>My name is</h3>
+                    <!-- <h2>Welcome!</h2> -->
+                    <h2>Hello! My name is</h2>
                 </div>
-                <h1 id="name">Dennis Rigon</h1>
+                <div class="name-wrapper">
+                    <div>
+                        <GlitchText layers="5" glitchSize="15" glitchShift="30">
+                            <div class="name-wrapper">
+                                <h1 class="name">DENNIS RIGON</h1>
+                                <h1 class="name shadow1">DENNIS RIGON</h1>
+                            </div>
+                        </GlitchText>
+                    </div>
+                    <h1 class="name shadow2">DENNIS RIGON</h1>
+                </div>
+
                 <h3 id="post-name">
                     I'm a developer with a passion for all things coding and
                     tech, with a previous background in engineering.
@@ -35,13 +48,18 @@
             </div>
             <div class="image-panel">
                 <img
-                    class="portrait hexagon"
+                    class="portrait"
                     src="./images/portrait.jpg"
                     alt="portrait of Dennis"
                 />
             </div>
         </div>
+
         <WavesContainer />
+
+        <div class="dot-matrix-layer1">
+            <div class="dot-matrix-layer2" />
+        </div>
     </div>
 </PageSegment>
 
@@ -51,6 +69,64 @@
         min-height: inherit;
         display: grid;
         grid-template-columns: 1fr;
+    }
+
+    .dot-matrix-layer1 {
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+
+        -webkit-mask-image: linear-gradient(
+            to right,
+            black,
+            transparent 15%,
+            transparent 85%,
+            black
+        );
+    }
+    .dot-matrix-layer2 {
+        height: 100%;
+        width: 100%;
+
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            transparent 10%,
+            black 50%,
+            transparent 70%,
+            transparent 80%
+        );
+
+        background-image: radial-gradient(var(--accent3) 20%, transparent 28%);
+        background-size: 3vh 3vh;
+    }
+
+    @media screen and (max-width: 900px) {
+        .dot-matrix-layer1 {
+            -webkit-mask-image: linear-gradient(
+                to right,
+                black,
+                transparent 35%,
+                transparent 65%,
+                black
+            );
+        }
+        .dot-matrix-layer2 {
+            -webkit-mask-image: linear-gradient(
+                to bottom,
+                transparent 0%,
+                transparent 10%,
+                black 50%,
+                transparent 80%,
+                transparent 100%
+            );
+        }
     }
 
     /* grid layout used to underlay waves canvas */
@@ -87,8 +163,6 @@
         align-items: end;
         text-align: end;
         flex-direction: column;
-
-        /* color: var(--txt-light); */
     }
 
     @media screen and (max-width: 900px) {
@@ -102,19 +176,49 @@
         margin-bottom: 5px;
     }
 
-    #name {
-        font-size: 5em;
+    #pre-name * {
+        font-family: "Fira Code";
+    }
+
+    .name-wrapper {
+        width: fit-content;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .name-wrapper > * {
+        grid-row-start: 1;
+        grid-column-start: 1;
+    }
+
+    .name {
+        font-size: 4.9em;
+        letter-spacing: 0.12em;
         margin: 0;
-        padding: 0;
-        border: none;
+        padding: 0px 20px 10px 20px;
         color: var(--accent5);
         margin-left: -2px;
+        font-family: "GlitchGoblin";
+    }
+
+    .shadow1 {
+        text-shadow: #00ffffaf 3px 3px 0px;
+    }
+
+    .shadow2 {
+        color: #00000000;
+        text-shadow: black 2px 2px 30px, black 2px 2px 20px;
     }
 
     @media screen and (max-width: 900px) {
-        #name {
-            font-size: 3em;
+        .name {
+            font-size: 4em;
+            padding: 0px 10px 10px 10px;
         }
+    }
+
+    #post-name {
+        font-family: "Fira Code";
     }
 
     .btn-content {

@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+
+@font-face {
+	font-family: "GlitchGoblin";
+	src: url("../fonts/GlitchGoblin.ttf");
+}
 
 * {
 	font-family: 'Montserrat', sans-serif;
