@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
 
 @font-face {
@@ -7,7 +7,7 @@
 }
 
 * {
-	font-family: 'Montserrat', sans-serif;
+	font-family: "Inter", sans-serif;
 
 	--bgr-color: #f5f6fa;
 	
@@ -57,16 +57,23 @@ body {
 h1 {
 	font-size: 3em;
 	line-height: 1.05em;
+	font-weight: 800;
 }
 
 h2 {
 	font-size: 2.25em;
 	line-height: 1.25em;
+	font-weight: 600;
 }
 
 h3 {
 	font-size: 1.75em;
 	line-height: 1.25em;
+	font-weight: 600;
+}
+
+h4 {
+	font-weight: 600;
 }
 
 @media screen and (max-width: 900px) {
