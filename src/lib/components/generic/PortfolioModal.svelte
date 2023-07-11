@@ -167,6 +167,7 @@
         font-family: "Fira Code", monospace;
         text-align: start;
         margin: 10px 0;
+        white-space: pre-wrap;
     }
 
     @media screen and (max-width: 900px) {

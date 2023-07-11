@@ -1,7 +1,7 @@
 <script>
     import { redact } from "../../../functions/redactTransition";
-    import PortfolioTile from "../../generic/PortfolioTile.svelte";
     import SplitPageSegment from "../../generic/SplitPageSegment.svelte";
+    import CryptoBotTile from "../PortfolioTiles/CryptoBotTile.svelte";
     import FroggerTile from "../PortfolioTiles/FroggerTile.svelte";
     import PlantumlTile from "../PortfolioTiles/PlantumlTile.svelte";
 </script>
@@ -10,14 +10,13 @@
     <div class="tile-container" slot="content">
         <FroggerTile />
         <PlantumlTile />
-        <PlantumlTile />
-        <PlantumlTile />
+        <CryptoBotTile />
     </div>
 
     <div slot="title">
         <h1 class="shrink" in:redact>Portfolio</h1>
         <h3 class="shrink" in:redact>
-            Links to live demo and code are provided in project info
+            Links to live demos and code are provided in project info
         </h3>
     </div>
 </SplitPageSegment>

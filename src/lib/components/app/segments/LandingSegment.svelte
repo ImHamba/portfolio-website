@@ -69,6 +69,7 @@
         min-height: inherit;
         display: grid;
         grid-template-columns: 1fr;
+        overflow-x: hidden;
     }
 
     .dot-matrix-layer1 {
