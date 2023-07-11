@@ -61,7 +61,7 @@
         {shortDescription}
     </div>
     <div class="btn-wrapper" on:click={openModal} on:keypress={openModal}>
-        <SpecialButton --color1={getCSSvariable("accent2")} --color2="#89a48b">
+        <SpecialButton --color1="#f4de61" --color2="#a49020">
             <h4 class="btn-txt">More Info</h4>
         </SpecialButton>
     </div>
@@ -135,6 +135,6 @@
     }
 
     .btn-txt {
-        padding: 15px 10px;
+        padding: 15px 20px;
     }
 </style>

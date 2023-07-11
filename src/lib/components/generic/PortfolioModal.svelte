@@ -67,8 +67,6 @@
 </Modal>
 
 <style>
-    @import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
-
     * {
         box-sizing: border-box;
     }
@@ -164,9 +162,9 @@
 
     .description {
         flex: 1;
-        font-family: "Fira Code", monospace;
         text-align: start;
         margin: 10px 0;
+        padding-right: 10px;
         white-space: pre-wrap;
     }
 

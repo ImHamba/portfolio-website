@@ -11,22 +11,13 @@
             website.
         </p>
         <p>
-            I'm currently studying Computer Science at Monash University, but I
-            started my professional career in structural engineering. While it
-            was mentally stimulating and I enjoyed the inter-disciplinary team
-            based work towards a unified design, in engineering I couldn't help
-            but miss the satisfaction that came from seeing the direct results
-            of my work like I had from my personal coding projects.
-        </p>
-        <p>
-            Ever since I was young I have had an interest in programming and
-            computers, and my mind always naturally thinks about how to automate
-            and optimise everything I encounter, so in 2022 I took the plunge
-            and pivoted my career to software development. I aim to bring the
-            problem solving skills engineers are known for, my previous
-            professional workplace experience, and my natural aptitude for
-            logical thinking and coding in my new career as a software
-            developer.
+            I'm a junior software developer but my professional career started
+            in structural engineering. In engineering I missed the satisfaction
+            that came from seeing the direct results of my work, like I
+            experienced in my coding projects, so in 2022 I pivoted my career to
+            software development. I bring the problem solving skills engineers
+            are known for, and my natural aptitude for logical thinking to build
+            smart and elegant code.
         </p>
         <p>
             When I'm not at my computer, I enjoy playing a casual game of
@@ -39,6 +30,12 @@
                 <img src="../images/personal/about1.jpg" />
             </div>
         </div>
+
+        <!-- <div class="images-container">
+            <div class="card" />
+            <div class="card" />
+            <div class="card" />
+        </div> -->
     </div>
 
     <div slot="title">
@@ -50,11 +47,82 @@
 </SplitPageSegment>
 
 <style>
+    /* .images-container {
+        width: 100%;
+        height: 400px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        place-items: center;
+
+        overflow: visible;
+        margin: 50px 0px;
+    }
+
+    .card {
+        grid-row-start: 1;
+        grid-column-start: 1;
+        height: 80%;
+        width: min(40vw, 250px);
+        border-radius: 10px;
+        background-image: url("../images/personal/about1.jpg");
+        background-size: cover;
+        background-position: center;
+        background-color: #00000022;
+        box-shadow: 0 0 8px #000000b1;
+
+        transition: transform 500ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
+    }
+
+    .card:nth-child(1) {
+        transform: translate(45%, 5%) rotate(20deg);
+    }
+    .card:nth-child(2) {
+        transform: translate(0%, -4%) rotate(2deg);
+    }
+    .card:nth-child(3) {
+        transform: translate(-45%, 6%) rotate(-20deg);
+    }
+
+    .images-container:hover > .card:nth-child(1) {
+        transform: translate(100%, -15%) rotate(10deg);
+    }
+    .images-container:hover > .card:nth-child(2) {
+        transform: translate(0%, 15%) rotate(5deg);
+    }
+    .images-container:hover > .card:nth-child(3) {
+        transform: translate(-100%, -15%) rotate(-10deg);
+    }
+
+    @media screen and (max-width: 900px) {
+        .card:nth-child(1) {
+            transform: translate(45%, 5%) rotate(12deg);
+        }
+        .card:nth-child(2) {
+            transform: translate(0%, -4%) rotate(2deg);
+        }
+        .card:nth-child(3) {
+            transform: translate(-45%, 6%) rotate(-12deg);
+        }
+
+        .images-container:hover > .card:nth-child(1) {
+            transform: translate(55%, -25%) rotate(5deg);
+        }
+        .images-container:hover > .card:nth-child(2) {
+            transform: translate(5%, 15%) rotate(7deg);
+        }
+        .images-container:hover > .card:nth-child(3) {
+            transform: translate(-55%, -15%) rotate(-5deg);
+        }
+    } */
+
     .shrink {
         width: fit-content;
     }
 
     .about-wrapper {
+        font-size: 1.3em;
+        line-height: 1.3em;
         display: flex;
         flex-direction: column;
         min-height: inherit;
@@ -65,6 +133,8 @@
 
     @media screen and (max-width: 900px) {
         .about-wrapper {
+            font-size: 1em;
+            line-height: 1.25em;
             justify-content: start;
         }
 

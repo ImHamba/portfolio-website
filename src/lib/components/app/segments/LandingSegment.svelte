@@ -28,8 +28,8 @@
                 </div>
 
                 <h3 id="post-name">
-                    I'm a developer with a passion for all things coding and
-                    tech, with a previous background in engineering.
+                    I'm a software developer with a passion for all things
+                    coding and tech, with a previous background in engineering
                 </h3>
                 <div>
                     <SpecialButton
@@ -139,18 +139,19 @@
     .vcr-layer {
         height: 100%;
         width: 100%;
+        filter: blur(2px);
 
         --stripe-size: 4px;
 
         background: linear-gradient(
-            #ffffff30,
-            #ffffff69 var(--stripe-size),
+            #ffffff50,
+            #ffffff99 var(--stripe-size),
             transparent var(--stripe-size),
             transparent calc(3 * var(--stripe-size))
         );
         background-size: 100% calc(3 * var(--stripe-size));
 
-        animation: scroll-vcr 100s infinite linear,
+        animation: scroll-vcr 200s infinite linear,
             pulse-opacity 10s infinite linear;
     }
 
@@ -158,16 +159,16 @@
         height: 100%;
         width: 100%;
 
-        animation: opacity-gradient 8s infinite linear;
+        animation: scroll-mask 4s infinite linear;
 
         -webkit-mask-image: linear-gradient(
             to bottom,
-            black 0%,
-            transparent 50%,
-            black 100%
+            black 0% 35%,
+            #00000011 50%,
+            black 65% 100%
         );
 
-        -webkit-mask-size: 100% 25%;
+        -webkit-mask-size: 100% 250%;
     }
 
     @keyframes scroll-vcr {
@@ -191,12 +192,12 @@
         }
     }
 
-    @keyframes opacity-gradient {
+    @keyframes scroll-mask {
         0% {
             -webkit-mask-position: 0% 0%;
         }
         100% {
-            -webkit-mask-position: 0% -100%;
+            -webkit-mask-position: 0% 100%;
         }
     }
 
@@ -251,6 +252,11 @@
         font-family: "Fira Code";
     }
 
+    #pre-name h2::before {
+        content: "⚡";
+        margin-right: 0.3em;
+    }
+
     .name-wrapper {
         width: fit-content;
         display: grid;
@@ -264,16 +270,16 @@
 
     .name {
         font-size: 4.9em;
-        letter-spacing: 0.12em;
+        /* letter-spacing: 0.12em; */
         margin: 0;
         padding: 0px 20px 10px 20px;
         color: var(--accent5);
         margin-left: -2px;
-        font-family: "GlitchGoblin";
+        /* font-family: "GlitchGoblin"; */
     }
 
     .shadow1 {
-        text-shadow: #00ffffaf 3px 3px 0px;
+        text-shadow: #11d2d2ff 3px 3px 0px;
     }
 
     .shadow2 {
@@ -290,6 +296,24 @@
 
     #post-name {
         font-family: "Fira Code";
+    }
+
+    #post-name::after {
+        margin-left: 3px;
+        content: "_";
+        animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+        0%,
+        50% {
+            opacity: 1;
+        }
+
+        51%,
+        100% {
+            opacity: 0;
+        }
     }
 
     .btn-content {

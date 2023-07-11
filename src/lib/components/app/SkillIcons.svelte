@@ -9,29 +9,47 @@
 
     // paths to icons for technologies
     let iconPaths = [
-        [
-            { name: "Python", path: "./images/technologies/python-icon.svg" },
-            {
-                name: "Javascript",
-                path: "./images/technologies/javascript-icon.svg",
-            },
-            {
-                name: "Typescript",
-                path: "./images/technologies/typescript-icon.svg",
-            },
-            { name: "Java", path: "./images/technologies/java-icon.svg" },
-        ],
+        {
+            title: "Languages",
+            links: [
+                {
+                    name: "Python",
+                    path: "./images/technologies/python-icon.svg",
+                },
+                {
+                    name: "Javascript",
+                    path: "./images/technologies/javascript-icon.svg",
+                },
+                {
+                    name: "Typescript",
+                    path: "./images/technologies/typescript-icon.svg",
+                },
+                { name: "Java", path: "./images/technologies/java-icon.svg" },
+            ],
+        },
 
-        [
-            { name: "Html", path: "./images/technologies/html-icon.svg" },
-            { name: "CSS", path: "./images/technologies/css-icon.svg" },
-            { name: "Svelte", path: "./images/technologies/svelte-icon.svg" },
-        ],
+        {
+            title: "Web",
+            links: [
+                { name: "Html", path: "./images/technologies/html-icon.svg" },
+                { name: "CSS", path: "./images/technologies/css-icon.svg" },
+                {
+                    name: "Svelte",
+                    path: "./images/technologies/svelte-icon.svg",
+                },
+            ],
+        },
 
-        [
-            { name: "Git", path: "./images/technologies/git-icon.svg" },
-            { name: "Github", path: "./images/technologies/github-icon.svg" },
-        ],
+        {
+            title: "Other tools",
+            links: [
+                { name: "Git", path: "./images/technologies/git-icon.svg" },
+                {
+                    name: "Github",
+                    path: "./images/technologies/github-icon.svg",
+                },
+            ],
+        },
     ];
 
     function easeInOutQuad(x: number): number {
@@ -45,22 +63,25 @@
     <div class="wrapper1">
         <div class="wrapper2">
             {#each iconPaths as iconSegment, row}
-                <div class="segment scroll" transition:fade={{ duration: 100 }}>
-                    {#each iconSegment as icon, col}
-                        <div
-                            class="tile"
-                            in:flipTransition={{
-                                delay: 200 * row + 100 * col,
-                                flipDuration1: 400,
-                                flipDuration2: 400,
-                                ease: easeInOutQuad,
-                            }}
-                            out:fade
-                        >
-                            <SkillIcon imgPath={icon.path} />
-                            <div id="skill-name">{icon.name}</div>
-                        </div>
-                    {/each}
+                <div class="segment" transition:fade={{ duration: 100 }}>
+                    <h3>{iconSegment.title}</h3>
+                    <div class="icon-container scroll">
+                        {#each iconSegment.links as icon, col}
+                            <div
+                                class="tile"
+                                in:flipTransition={{
+                                    delay: 200 * row + 100 * col,
+                                    flipDuration1: 400,
+                                    flipDuration2: 400,
+                                    ease: easeInOutQuad,
+                                }}
+                                out:fade
+                            >
+                                <SkillIcon imgPath={icon.path} />
+                                <div id="skill-name">{icon.name}</div>
+                            </div>
+                        {/each}
+                    </div>
                 </div>
             {/each}
         </div>
@@ -89,26 +110,37 @@
     }
 
     .segment {
+        margin: 15px 0px 15px 10px;
+        background: var(--grey-light);
+        /* background-image: linear-gradient(120deg, #ffd90093, #ffd90015); */
+        border-radius: 20px;
+        box-shadow: 0 0 8px #00000075;
+        overflow: hidden;
+    }
+
+    .segment h3 {
+        margin: 15px 25px 0px;
+        padding-right: 5px;
+
+        width: fit-content;
+        border-bottom: 4px var(--accent5) dashed;
+    }
+
+    .icon-container {
         width: fit-content;
         display: flex;
         flex-direction: row;
         align-items: center;
         flex-wrap: wrap;
-        margin: 15px 0px 15px 10px;
-        padding: 10px;
-        background-image: linear-gradient(120deg, #ffd90093, #ffd90015);
-
-        border-radius: 20px;
-        box-shadow: 0 0 8px #00000075;
-
         perspective: 50rem;
+        padding: 10px;
     }
 
     @media screen and (max-width: 500px) {
         .wrapper2 {
             width: 100%;
         }
-        .segment {
+        .icon-container {
             width: 100%;
             box-sizing: border-box;
             align-items: start;
