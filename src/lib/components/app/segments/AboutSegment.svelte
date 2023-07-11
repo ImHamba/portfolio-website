@@ -25,9 +25,9 @@
         </p>
         <div class="images-backing">
             <div class="images-grid">
-                <img src="../images/personal/about1.jpg" />
-                <img src="../images/personal/about1.jpg" />
-                <img src="../images/personal/about1.jpg" />
+                <img src="./images/personal/about1.jpg" />
+                <img src="./images/personal/about1.jpg" />
+                <img src="./images/personal/about1.jpg" />
             </div>
         </div>
 
