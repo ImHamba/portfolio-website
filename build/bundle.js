@@ -2049,11 +2049,11 @@ var app = (function () {
     			t1 = space();
     			h11 = element("h1");
     			h11.textContent = "DENNIS RIGON";
-    			attr_dev(h10, "class", "name svelte-1lchflb");
+    			attr_dev(h10, "class", "name svelte-177bkbd");
     			add_location(h10, file$i, 21, 32, 915);
-    			attr_dev(h11, "class", "name shadow1 svelte-1lchflb");
+    			attr_dev(h11, "class", "name shadow1 svelte-177bkbd");
     			add_location(h11, file$i, 22, 32, 983);
-    			attr_dev(div, "class", "name-wrapper svelte-1lchflb");
+    			attr_dev(div, "class", "name-wrapper svelte-177bkbd");
     			add_location(div, file$i, 20, 28, 855);
     		},
     		m: function mount(target, anchor) {
@@ -2096,11 +2096,11 @@ var app = (function () {
     			h4.textContent = "See my projects";
     			if (!src_url_equal(img.src, img_src_value = "./images/down-arrow-icon.svg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "down arrow");
-    			attr_dev(img, "class", "svelte-1lchflb");
+    			attr_dev(img, "class", "svelte-177bkbd");
     			add_location(img, file$i, 39, 28, 1711);
-    			attr_dev(h4, "class", "prompt-text svelte-1lchflb");
+    			attr_dev(h4, "class", "prompt-text svelte-177bkbd");
     			add_location(h4, file$i, 43, 28, 1895);
-    			attr_dev(a, "class", "btn-content svelte-1lchflb");
+    			attr_dev(a, "class", "btn-content svelte-177bkbd");
     			attr_dev(a, "href", "#portfolio");
     			add_location(a, file$i, 38, 24, 1640);
     		},
@@ -2129,7 +2129,7 @@ var app = (function () {
 
     // (10:0) <PageSegment id="home">
     function create_default_slot$9(ctx) {
-    	let div9;
+    	let div11;
     	let div6;
     	let div4;
     	let div0;
@@ -2153,6 +2153,8 @@ var app = (function () {
     	let t8;
     	let wavescontainer;
     	let t9;
+    	let div10;
+    	let div9;
     	let div8;
     	let div7;
     	let current;
@@ -2180,7 +2182,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div9 = element("div");
+    			div11 = element("div");
     			div6 = element("div");
     			div4 = element("div");
     			div0 = element("div");
@@ -2206,46 +2208,52 @@ var app = (function () {
     			t8 = space();
     			create_component(wavescontainer.$$.fragment);
     			t9 = space();
+    			div10 = element("div");
+    			div9 = element("div");
     			div8 = element("div");
     			div7 = element("div");
-    			attr_dev(h2, "class", "svelte-1lchflb");
+    			attr_dev(h2, "class", "svelte-177bkbd");
     			add_location(h2, file$i, 15, 20, 622);
     			attr_dev(div0, "id", "pre-name");
-    			attr_dev(div0, "class", "svelte-1lchflb");
+    			attr_dev(div0, "class", "svelte-177bkbd");
     			add_location(div0, file$i, 13, 16, 533);
-    			attr_dev(div1, "class", "svelte-1lchflb");
+    			attr_dev(div1, "class", "svelte-177bkbd");
     			add_location(div1, file$i, 18, 20, 738);
-    			attr_dev(h1, "class", "name shadow2 svelte-1lchflb");
+    			attr_dev(h1, "class", "name shadow2 svelte-177bkbd");
     			add_location(h1, file$i, 26, 20, 1150);
-    			attr_dev(div2, "class", "name-wrapper svelte-1lchflb");
+    			attr_dev(div2, "class", "name-wrapper svelte-177bkbd");
     			add_location(div2, file$i, 17, 16, 690);
     			attr_dev(h3, "id", "post-name");
-    			attr_dev(h3, "class", "svelte-1lchflb");
+    			attr_dev(h3, "class", "svelte-177bkbd");
     			add_location(h3, file$i, 29, 16, 1236);
     			set_style(div, "display", "contents");
     			set_style(div, "--color1", getCSSvariable("accent5"));
     			set_style(div, "--color2", "#a88f00");
     			add_location(div3, file$i, 33, 16, 1444);
-    			attr_dev(div4, "class", "text-panel svelte-1lchflb");
+    			attr_dev(div4, "class", "text-panel svelte-177bkbd");
     			add_location(div4, file$i, 12, 12, 491);
-    			attr_dev(img, "class", "portrait svelte-1lchflb");
+    			attr_dev(img, "class", "portrait svelte-177bkbd");
     			if (!src_url_equal(img.src, img_src_value = "./images/portrait.jpg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "portrait of Dennis");
     			add_location(img, file$i, 49, 16, 2108);
-    			attr_dev(div5, "class", "image-panel svelte-1lchflb");
+    			attr_dev(div5, "class", "image-panel svelte-177bkbd");
     			add_location(div5, file$i, 48, 12, 2065);
-    			attr_dev(div6, "class", "panel-wrapper svelte-1lchflb");
+    			attr_dev(div6, "class", "panel-wrapper svelte-177bkbd");
     			add_location(div6, file$i, 11, 8, 450);
-    			attr_dev(div7, "class", "dot-matrix-layer2 svelte-1lchflb");
-    			add_location(div7, file$i, 60, 12, 2388);
-    			attr_dev(div8, "class", "dot-matrix-layer1 svelte-1lchflb");
-    			add_location(div8, file$i, 59, 8, 2343);
-    			attr_dev(div9, "class", "landing-wrapper svelte-1lchflb");
-    			add_location(div9, file$i, 10, 4, 411);
+    			attr_dev(div7, "class", "vcr-layer svelte-177bkbd");
+    			add_location(div7, file$i, 62, 20, 2481);
+    			attr_dev(div8, "class", "vcr-mask svelte-177bkbd");
+    			add_location(div8, file$i, 61, 16, 2437);
+    			attr_dev(div9, "class", "dot-matrix-layer2 svelte-177bkbd");
+    			add_location(div9, file$i, 60, 12, 2388);
+    			attr_dev(div10, "class", "dot-matrix-layer1 svelte-177bkbd");
+    			add_location(div10, file$i, 59, 8, 2343);
+    			attr_dev(div11, "class", "landing-wrapper svelte-177bkbd");
+    			add_location(div11, file$i, 10, 4, 411);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div9, anchor);
-    			append_dev(div9, div6);
+    			insert_dev(target, div11, anchor);
+    			append_dev(div11, div6);
     			append_dev(div6, div4);
     			append_dev(div4, div0);
     			append_dev(div0, h2);
@@ -2264,9 +2272,11 @@ var app = (function () {
     			append_dev(div6, t7);
     			append_dev(div6, div5);
     			append_dev(div5, img);
-    			append_dev(div9, t8);
-    			mount_component(wavescontainer, div9, null);
-    			append_dev(div9, t9);
+    			append_dev(div11, t8);
+    			mount_component(wavescontainer, div11, null);
+    			append_dev(div11, t9);
+    			append_dev(div11, div10);
+    			append_dev(div10, div9);
     			append_dev(div9, div8);
     			append_dev(div8, div7);
     			current = true;
@@ -2301,7 +2311,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div9);
+    			if (detaching) detach_dev(div11);
     			destroy_component(glitchtext);
     			destroy_component(specialbutton);
     			destroy_component(wavescontainer);
@@ -3505,7 +3515,7 @@ var app = (function () {
     			p2.textContent = "Ever since I was young I have had an interest in programming and\r\n            computers, and my mind always naturally thinks about how to automate\r\n            and optimise everything I encounter, so in 2022 I took the plunge\r\n            and pivoted my career to software development. I aim to bring the\r\n            problem solving skills engineers are known for, my previous\r\n            professional workplace experience, and my natural aptitude for\r\n            logical thinking and coding in my new career as a software\r\n            developer.";
     			t5 = space();
     			p3 = element("p");
-    			p3.textContent = "In my free time, I enjoy a casual game of badminton, cooking foods\r\n            from different cuisines, creating cool coding projects, traveling\r\n            and gaming.";
+    			p3.textContent = "When I'm not at my computer, I enjoy playing a casual game of\r\n            badminton, cooking foods from different cuisines, and travelling.";
     			t7 = space();
     			div1 = element("div");
     			div0 = element("div");
@@ -3524,17 +3534,17 @@ var app = (function () {
     			add_location(p3, file$e, 30, 8, 1543);
     			if (!src_url_equal(img0.src, img0_src_value = "../images/personal/about1.jpg")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "class", "svelte-1h2bpww");
-    			add_location(img0, file$e, 37, 16, 1839);
+    			add_location(img0, file$e, 36, 16, 1809);
     			if (!src_url_equal(img1.src, img1_src_value = "../images/personal/about1.jpg")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "class", "svelte-1h2bpww");
-    			add_location(img1, file$e, 38, 16, 1900);
+    			add_location(img1, file$e, 37, 16, 1870);
     			if (!src_url_equal(img2.src, img2_src_value = "../images/personal/about1.jpg")) attr_dev(img2, "src", img2_src_value);
     			attr_dev(img2, "class", "svelte-1h2bpww");
-    			add_location(img2, file$e, 39, 16, 1961);
+    			add_location(img2, file$e, 38, 16, 1931);
     			attr_dev(div0, "class", "images-grid svelte-1h2bpww");
-    			add_location(div0, file$e, 36, 12, 1796);
+    			add_location(div0, file$e, 35, 12, 1766);
     			attr_dev(div1, "class", "images-backing svelte-1h2bpww");
-    			add_location(div1, file$e, 35, 8, 1754);
+    			add_location(div1, file$e, 34, 8, 1724);
     			attr_dev(div2, "class", "about-wrapper svelte-1h2bpww");
     			attr_dev(div2, "slot", "content");
     			add_location(div2, file$e, 7, 4, 280);
@@ -3574,7 +3584,7 @@ var app = (function () {
     	return block;
     }
 
-    // (47:8) <GlitchText layers={3} initialGlitchEnabled={false}>
+    // (46:8) <GlitchText layers={3} initialGlitchEnabled={false}>
     function create_default_slot$6(ctx) {
     	let h3;
     	let h3_intro;
@@ -3584,7 +3594,7 @@ var app = (function () {
     			h3 = element("h3");
     			h3.textContent = "Dennis Rigon";
     			attr_dev(h3, "class", "shrink sub-title svelte-1h2bpww");
-    			add_location(h3, file$e, 47, 12, 2206);
+    			add_location(h3, file$e, 46, 12, 2176);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
@@ -3608,14 +3618,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$6.name,
     		type: "slot",
-    		source: "(47:8) <GlitchText layers={3} initialGlitchEnabled={false}>",
+    		source: "(46:8) <GlitchText layers={3} initialGlitchEnabled={false}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (45:4) 
+    // (44:4) 
     function create_title_slot$3(ctx) {
     	let div;
     	let h1;
@@ -3642,9 +3652,9 @@ var app = (function () {
     			t1 = space();
     			create_component(glitchtext.$$.fragment);
     			attr_dev(h1, "class", "shrink svelte-1h2bpww");
-    			add_location(h1, file$e, 45, 8, 2088);
+    			add_location(h1, file$e, 44, 8, 2058);
     			attr_dev(div, "slot", "title");
-    			add_location(div, file$e, 44, 4, 2060);
+    			add_location(div, file$e, 43, 4, 2030);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3689,7 +3699,7 @@ var app = (function () {
     		block,
     		id: create_title_slot$3.name,
     		type: "slot",
-    		source: "(45:4) ",
+    		source: "(44:4) ",
     		ctx
     	});
 
