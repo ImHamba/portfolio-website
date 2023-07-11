@@ -29,9 +29,8 @@
             developer.
         </p>
         <p>
-            In my free time, I enjoy a casual game of badminton, cooking foods
-            from different cuisines, creating cool coding projects, traveling
-            and gaming.
+            When I'm not at my computer, I enjoy playing a casual game of
+            badminton, cooking foods from different cuisines, and travelling.
         </p>
         <div class="images-backing">
             <div class="images-grid">

@@ -58,7 +58,11 @@
         <WavesContainer />
 
         <div class="dot-matrix-layer1">
-            <div class="dot-matrix-layer2" />
+            <div class="dot-matrix-layer2">
+                <div class="vcr-mask">
+                    <div class="vcr-layer" />
+                </div>
+            </div>
         </div>
     </div>
 </PageSegment>
@@ -69,7 +73,7 @@
         min-height: inherit;
         display: grid;
         grid-template-columns: 1fr;
-        overflow-x: hidden;
+        overflow: hidden;
     }
 
     .dot-matrix-layer1 {
@@ -86,8 +90,10 @@
         -webkit-mask-image: linear-gradient(
             to right,
             black,
-            transparent 15%,
-            transparent 85%,
+            #00000020 15%,
+            transparent 30%,
+            transparent 70%,
+            #00000020 85%,
             black
         );
     }
@@ -127,6 +133,70 @@
                 transparent 80%,
                 transparent 100%
             );
+        }
+    }
+
+    .vcr-layer {
+        height: 100%;
+        width: 100%;
+
+        --stripe-size: 4px;
+
+        background: linear-gradient(
+            #ffffff30,
+            #ffffff69 var(--stripe-size),
+            transparent var(--stripe-size),
+            transparent calc(3 * var(--stripe-size))
+        );
+        background-size: 100% calc(3 * var(--stripe-size));
+
+        animation: scroll-vcr 100s infinite linear,
+            pulse-opacity 10s infinite linear;
+    }
+
+    .vcr-mask {
+        height: 100%;
+        width: 100%;
+
+        animation: opacity-gradient 8s infinite linear;
+
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            black 0%,
+            transparent 50%,
+            black 100%
+        );
+
+        -webkit-mask-size: 100% 25%;
+    }
+
+    @keyframes scroll-vcr {
+        0% {
+            background-position: 0% 0%;
+        }
+        100% {
+            background-position: 0% 100%;
+        }
+    }
+
+    @keyframes pulse-opacity {
+        0% {
+            opacity: 100%;
+        }
+        50% {
+            opacity: 50%;
+        }
+        100% {
+            opacity: 100%;
+        }
+    }
+
+    @keyframes opacity-gradient {
+        0% {
+            -webkit-mask-position: 0% 0%;
+        }
+        100% {
+            -webkit-mask-position: 0% -100%;
         }
     }
 
