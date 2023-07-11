@@ -111,8 +111,14 @@
 
     .segment {
         margin: 15px 0px 15px 10px;
-        background: var(--grey-light);
-        /* background-image: linear-gradient(120deg, #ffd90093, #ffd90015); */
+        /* background: var(--grey-light); */
+        background: linear-gradient(
+            60deg,
+            var(--grey-light) 80%,
+            #f7f7f7b6 90%,
+            #f7f7f7b6
+        );
+        /* background-image: linear-gradient(120deg, #ffd90093 0%, #ffd90093 80%, #ffd90015 80%, #ffd90015); */
         border-radius: 20px;
         box-shadow: 0 0 8px #00000075;
         overflow: hidden;

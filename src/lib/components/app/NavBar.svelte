@@ -130,7 +130,7 @@
         transition: all 0.3s ease 0s;
         text-decoration: none;
         color: var(--txt-dark);
-        font-weight: bold;
+        font-weight: 600;
     }
 
     #hamburger {
