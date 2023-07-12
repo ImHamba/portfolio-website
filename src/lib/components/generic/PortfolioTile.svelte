@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { getCSSvariable } from "../../functions/util";
+    import { onMount } from "svelte";
     import PortfolioModal from "./PortfolioModal.svelte";
     import SpecialButton from "./SpecialButton.svelte";
 
@@ -11,30 +11,38 @@
     export let liveLink: string;
     export let tags: string[] = [];
 
+    let tile: HTMLElement;
+
+    onMount(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate-in");
+                    }
+                });
+            },
+            { threshold: 0.8 }
+        );
+
+        observer.observe(tile);
+    });
+
     let showModal = false;
     const body = document.body;
 
     const openModal = () => {
         showModal = true;
 
+        // prevent scrolling while modal is open
         body.style.overflowY = "hidden";
-
-        // scroll = document.documentElement.scrollTop;
-        // body.style.position = "fixed";
-        // body.style.top = `-${scroll}px`;
-        // body.style.overflowY = "scroll";
     };
 
     const closeModal = () => {
         showModal = false;
 
-        // body.style.position = "static";
+        // enable scrolling when modal is closed
         body.style.overflowY = "auto";
-
-        // document.documentElement.style.scrollBehavior = "auto";
-        // document.documentElement.scrollTop = scroll + 100;
-        // document.documentElement.scrollTop = scroll;
-        // document.documentElement.style.scrollBehavior = "smooth";
     };
 </script>
 
@@ -49,7 +57,7 @@
     on:click={closeModal}
 />
 
-<div class="tile-box">
+<div class="tile-box" class:animate-in={false} bind:this={tile}>
     <img src={imagePath} alt="screenshot of project" />
     <h3 class="title">{title}</h3>
     <div class="tags">
@@ -88,12 +96,31 @@
 
         /* border: 3px grey solid; */
         box-shadow: 0 0 8px #0000009d;
+
+        visibility: hidden;
     }
 
     @media screen and (max-width: 550px) {
         .tile-box {
             min-width: auto;
             width: 100%;
+        }
+    }
+
+    .animate-in {
+        visibility: visible;
+        animation: scroll-effect 1s ease-out;
+    }
+
+    @keyframes scroll-effect {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
         }
     }
 

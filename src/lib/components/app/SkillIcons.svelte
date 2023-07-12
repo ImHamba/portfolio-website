@@ -60,10 +60,10 @@
 <svelte:window bind:scrollY={scroll} bind:innerWidth={pageWidth} />
 
 <CreateOnScrollWrapper {...$$restProps} alwaysVisible={pageWidth <= 500}>
-    <div class="wrapper1">
+    <div class="wrapper1" out:fade>
         <div class="wrapper2">
             {#each iconPaths as iconSegment, row}
-                <div class="segment" transition:fade={{ duration: 100 }}>
+                <div class="segment">
                     <h3>{iconSegment.title}</h3>
                     <div class="icon-container scroll">
                         {#each iconSegment.links as icon, col}
@@ -75,7 +75,6 @@
                                     flipDuration2: 400,
                                     ease: easeInOutQuad,
                                 }}
-                                out:fade
                             >
                                 <SkillIcon imgPath={icon.path} />
                                 <div id="skill-name">{icon.name}</div>
@@ -122,6 +121,20 @@
         border-radius: 20px;
         box-shadow: 0 0 8px #00000075;
         overflow: hidden;
+
+        animation: scroll-effect 1s ease-out;
+    }
+
+    @keyframes scroll-effect {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
     }
 
     .segment h3 {
