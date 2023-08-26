@@ -11,8 +11,6 @@
         "Python",
         "Regex",
         "Web API",
-        "HTTP Requests",
-        "JSON",
         "Websockets",
     ];
 </script>

@@ -1,4 +1,5 @@
 <script>
+    import YtRandomiserTile from "./../PortfolioTiles/ytRandomiserTile.svelte";
     import { redact } from "../../../functions/redactTransition";
     import SplitPageSegment from "../../generic/SplitPageSegment.svelte";
     import CryptoBotTile from "../PortfolioTiles/CryptoBotTile.svelte";
@@ -8,9 +9,10 @@
 
 <SplitPageSegment {...$$restProps} id="portfolio">
     <div class="tile-container" slot="content">
-        <FroggerTile />
+        <YtRandomiserTile />
+        <!-- <FroggerTile /> -->
         <PlantumlTile />
-        <CryptoBotTile />
+        <!-- <CryptoBotTile /> -->
     </div>
 
     <div slot="title">

@@ -50,17 +50,26 @@
                     </SpecialButton>
                 </div>
 
-                <div class="btn-wrapper">
-                    <SpecialButton
-                        --color1={getCSSvariable("grey-light")}
-                        --color2="#b8b8b8"
-                    >
-                        <a class="btn-content" href={liveLink} target="_blank">
-                            <img src="./images/live-icon.svg" alt="code icon" />
-                            <h4>Live Demo</h4>
-                        </a>
-                    </SpecialButton>
-                </div>
+                {#if liveLink}
+                    <div class="btn-wrapper">
+                        <SpecialButton
+                            --color1={getCSSvariable("grey-light")}
+                            --color2="#b8b8b8"
+                        >
+                            <a
+                                class="btn-content"
+                                href={liveLink}
+                                target="_blank"
+                            >
+                                <img
+                                    src="./images/live-icon.svg"
+                                    alt="code icon"
+                                />
+                                <h4>Live Demo</h4>
+                            </a>
+                        </SpecialButton>
+                    </div>
+                {/if}
             </div>
         </div>
     </div>
