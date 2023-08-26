@@ -59,7 +59,11 @@
 
 <svelte:window bind:scrollY={scroll} bind:innerWidth={pageWidth} />
 
-<CreateOnScrollWrapper {...$$restProps} alwaysVisible={pageWidth <= 500}>
+<CreateOnScrollWrapper
+    {...$$restProps}
+    alwaysVisible={pageWidth <= 500}
+    stayVisible={true}
+>
     <div class="wrapper1" out:fade>
         <div class="wrapper2">
             {#each iconPaths as iconSegment, row}

@@ -8,6 +8,7 @@
     export let rectTopOverride: number = null;
 
     export let alwaysVisible = false;
+    export let stayVisible = false;
 
     let panel: HTMLElement = null;
     let visible = false;
@@ -49,6 +50,11 @@
             }
 
             visible = btmLimit > midScreenPos && topLimit < midScreenPos;
+
+            // if stayVisible setting is true, once element becomes visible for the first time, set it to remain visible
+            if (visible && stayVisible) {
+                alwaysVisible = true;
+            }
         }
     }
 </script>
